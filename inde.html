@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Hub — Agência Criativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/image/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-bubble" id="cursorBubble">&#8599;</div>
+
+<header>
+  <a href="#" class="logo">Infinity <span>Hub</span></a>
+  <nav>
+    <a href="#servicos">Servi&#231;os</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#processo">Processo</a>
+  </nav>
+  <a href="#contato" class="header-cta">Iniciar projeto</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <a href="#servicos" class="mobile-nav-link">Servi&#231;os</a>
+  <a href="#sobre" class="mobile-nav-link">Sobre</a>
+  <a href="#trabalhe-conosco" class="mobile-nav-link">Trabalhe Conosco</a>
+  <a href="#processo" class="mobile-nav-link">Processo</a>
+  <a href="#contato" class="mobile-nav-link" style="color:var(--accent);opacity:1;">Iniciar projeto</a>
+</div>
+
+<section class="hero-wrap">
+  <div class="hero-noise"></div>
+<div class="hero">
+  <div class="hero-eyebrow">
+    <div class="eyebrow-tag">Infinity Hub</div>
+    <h1 class="hero-title">Criamos<br><em>formas</em><br>de impactar.</h1>
+
+  </div>
+  <div class="hero-right">
+    <!-- CYBER ORB VISUAL -->
+    <div class="hero-orb-wrap">
+      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow-core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9e3fa" stop-opacity="0.18"/>
+            <stop offset="60%" stop-color="#073156" stop-opacity="0.06"/>
+            <stop offset="100%" stop-color="#073156" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glow-mid" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#073156" stop-opacity="0.12"/>
+            <stop offset="100%" stop-color="#073156" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="sphere-grad" cx="38%" cy="35%" r="62%">
+            <stop offset="0%" stop-color="#c9e3fa" stop-opacity="0.13"/>
+            <stop offset="45%" stop-color="#073156" stop-opacity="0.07"/>
+            <stop offset="100%" stop-color="#0D0D0D" stop-opacity="0.04"/>
+          </radialGradient>
+          <filter id="soft-glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="inner-glow">
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <clipPath id="sphere-clip">
+            <circle cx="240" cy="240" r="158"/>
+          </clipPath>
+        </defs>
+
+        <g class="orb-float">
+          <!-- Glow bg halo -->
+          <circle cx="240" cy="240" r="200" fill="url(#glow-mid)" class="orb-glow-core"/>
+          <circle cx="240" cy="240" r="160" fill="url(#glow-core)"/>
+
+          <!-- Outer orbit rings -->
+          <g class="orb-ring-1">
+            <ellipse cx="240" cy="240" rx="218" ry="60" stroke="#073156" stroke-width="0.8" stroke-opacity="0.35" fill="none"/>
+          </g>
+          <g class="orb-ring-2">
+            <ellipse cx="240" cy="240" rx="195" ry="80" stroke="#073156" stroke-width="0.6" stroke-opacity="0.25" fill="none" transform="rotate(60 240 240)"/>
+          </g>
+          <g class="orb-ring-3">
+            <ellipse cx="240" cy="240" rx="205" ry="50" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.18" fill="none" transform="rotate(-30 240 240)"/>
+          </g>
+
+          <!-- Dashed orbit -->
+          <g class="orb-dash-path">
+            <circle cx="240" cy="240" r="178" stroke="#073156" stroke-width="0.7" stroke-dasharray="8 14" stroke-opacity="0.3" fill="none"/>
+          </g>
+
+          <!-- Main sphere -->
+          <circle cx="240" cy="240" r="158" stroke="#C8B89A" stroke-width="0.8" stroke-opacity="0.3" fill="url(#sphere-grad)"/>
+
+          <!-- Latitude lines (clipped) -->
+          <g clip-path="url(#sphere-clip)" opacity="0.22">
+            <ellipse cx="240" cy="240" rx="158" ry="40" stroke="#073156" stroke-width="0.7" fill="none"/>
+            <ellipse cx="240" cy="240" rx="158" ry="80" stroke="#073156" stroke-width="0.6" fill="none"/>
+            <ellipse cx="240" cy="240" rx="158" ry="118" stroke="#073156" stroke-width="0.5" fill="none"/>
+            <ellipse cx="240" cy="240" rx="158" ry="145" stroke="#073156" stroke-width="0.5" fill="none"/>
+            <!-- Longitude lines -->
+            <ellipse cx="240" cy="240" rx="40" ry="158" stroke="#073156" stroke-width="0.7" fill="none"/>
+            <ellipse cx="240" cy="240" rx="80" ry="158" stroke="#073156" stroke-width="0.6" fill="none"/>
+            <ellipse cx="240" cy="240" rx="120" ry="158" stroke="#073156" stroke-width="0.5" fill="none"/>
+          </g>
+
+          <!-- ═══ CÉREBRO ANATÔMICO ═══ -->
+          <g clip-path="url(#sphere-clip)">
+            <defs>
+              <radialGradient id="hemi-l" cx="35%" cy="40%" r="65%">
+                <stop offset="0%" stop-color="#1a3a5c" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#071828" stop-opacity="0.05"/>
+              </radialGradient>
+              <radialGradient id="hemi-r" cx="65%" cy="40%" r="65%">
+                <stop offset="0%" stop-color="#1a3a5c" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#071828" stop-opacity="0.05"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Fundo escuro atrás do cérebro -->
+
+            <!-- ── SILHUETA HEMISFÉRIO ESQUERDO ── -->
+            <path d="
+              M240,155
+              C228,154 214,157 202,164
+              C186,173 174,188 168,205
+              C162,222 162,241 168,257
+              C174,273 184,285 196,294
+              C206,301 218,307 230,310
+              L240,312
+              Z
+            " fill="url(#hemi-l)" stroke="#2a6a9a" stroke-width="2" stroke-opacity="0.9"/>
+
+            <!-- ── SILHUETA HEMISFÉRIO DIREITO ── -->
+            <path d="
+              M240,155
+              C252,154 266,157 278,164
+              C294,173 306,188 312,205
+              C318,222 318,241 312,257
+              C306,273 296,285 284,294
+              C274,301 262,307 250,310
+              L240,312
+              Z
+            " fill="url(#hemi-r)" stroke="#2a6a9a" stroke-width="2" stroke-opacity="0.9"/>
+
+            <!-- ── GIROS HEMISFÉRIO ESQUERDO (convoluções em camadas) ── -->
+            <!-- Sulco central de Rolando — linha mestra -->
+            <path d="M220,162 C214,178 210,196 212,214 C214,230 220,244 228,256" stroke="#3d8fc2" stroke-width="2.4" fill="none" stroke-opacity="1" stroke-linecap="round"/>
+            <!-- Sulco de Sylvius / lateral -->
+            <path d="M170,212 C180,216 194,218 208,216 C220,214 232,208 238,202" stroke="#3d8fc2" stroke-width="2.2" fill="none" stroke-opacity="1" stroke-linecap="round"/>
+            <!-- Giro frontal superior esq -->
+            <path d="M200,166 C192,180 188,196 190,212 C192,224 198,234 206,240" stroke="#2e7db5" stroke-width="1.9" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
+            <!-- Giro frontal médio esq -->
+            <path d="M208,162 C200,176 198,194 200,210 C202,222 208,232 214,238" stroke="#2e7db5" stroke-width="1.7" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
+            <!-- Giro pré-central esq -->
+            <path d="M216,160 C210,175 208,192 210,208 C212,220 218,230 224,236" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
+            <!-- Giro pós-central / parietal esq -->
+            <path d="M228,260 C222,272 218,286 218,298 C218,304 220,308 224,310" stroke="#2e7db5" stroke-width="1.8" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
+            <path d="M234,262 C230,276 228,290 228,302" stroke="#2573a8" stroke-width="1.5" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <!-- Sulcos occipitais esq -->
+            <path d="M178,262 C182,274 186,284 192,292 C196,298 202,304 208,308" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <path d="M186,266 C188,278 192,290 196,300" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
+            <!-- Giros temporais esq -->
+            <path d="M172,228 C180,234 190,238 200,238 C208,238 216,234 222,228" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <path d="M170,244 C178,250 188,254 198,254 C206,254 214,250 220,244" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
+            <path d="M172,258 C180,264 190,268 200,268 C208,268 214,264 220,258" stroke="#1a577f" stroke-width="1.2" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
+
+            <!-- ── GIROS HEMISFÉRIO DIREITO (espelho) ── -->
+            <!-- Sulco central de Rolando dir -->
+            <path d="M260,162 C266,178 270,196 268,214 C266,230 260,244 252,256" stroke="#3d8fc2" stroke-width="2.4" fill="none" stroke-opacity="1" stroke-linecap="round"/>
+            <!-- Sulco lateral dir -->
+            <path d="M310,212 C300,216 286,218 272,216 C260,214 248,208 242,202" stroke="#3d8fc2" stroke-width="2.2" fill="none" stroke-opacity="1" stroke-linecap="round"/>
+            <!-- Giro frontal superior dir -->
+            <path d="M280,166 C288,180 292,196 290,212 C288,224 282,234 274,240" stroke="#2e7db5" stroke-width="1.9" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
+            <!-- Giro frontal médio dir -->
+            <path d="M272,162 C280,176 282,194 280,210 C278,222 272,232 266,238" stroke="#2e7db5" stroke-width="1.7" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
+            <!-- Giro pré-central dir -->
+            <path d="M264,160 C270,175 272,192 270,208 C268,220 262,230 256,236" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
+            <!-- Giro pós-central dir -->
+            <path d="M252,260 C258,272 262,286 262,298 C262,304 260,308 256,310" stroke="#2e7db5" stroke-width="1.8" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
+            <path d="M246,262 C250,276 252,290 252,302" stroke="#2573a8" stroke-width="1.5" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <!-- Sulcos occipitais dir -->
+            <path d="M302,262 C298,274 294,284 288,292 C284,298 278,304 272,308" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <path d="M294,266 C292,278 288,290 284,300" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
+            <!-- Giros temporais dir -->
+            <path d="M308,228 C300,234 290,238 280,238 C272,238 264,234 258,228" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
+            <path d="M310,244 C302,250 292,254 282,254 C274,254 266,250 260,244" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
+            <path d="M308,258 C300,264 290,268 280,268 C272,268 266,264 260,258" stroke="#1a577f" stroke-width="1.2" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
+
+            <!-- ── FISSURA LONGITUDINAL ── -->
+            <line x1="240" y1="155" x2="240" y2="312" stroke="#030e1a" stroke-width="3" stroke-opacity="1"/>
+            <line x1="240" y1="155" x2="240" y2="312" stroke="#0a2030" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="5 6"/>
+
+            <!-- ── CEREBELO — lamelas horizontais ── -->
+            <path d="M208,312 C212,318 220,322 230,324 C236,325 240,325 240,325 C240,325 244,325 250,324 C260,322 268,318 272,312 L262,310 L240,312 L218,310 Z"
+              fill="#0a1e34" stroke="#2a6a9a" stroke-width="1.8" stroke-opacity="0.95"/>
+            <!-- Lamelas -->
+            <path d="M210,316 C220,320 230,322 240,322 C250,322 260,320 270,316" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
+            <path d="M212,321 C221,325 231,327 240,327 C249,327 259,325 268,321" stroke="#2573a8" stroke-width="1.2" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
+            <path d="M214,326 C222,330 232,332 240,332 C248,332 258,330 266,326" stroke="#1f6596" stroke-width="1.1" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
+            <path d="M216,330 C224,334 232,336 240,336 C248,336 256,334 264,330" stroke="#1a577f" stroke-width="1" fill="none" stroke-opacity="0.75" stroke-linecap="round"/>
+            <path d="M218,334 C226,338 233,340 240,340 C247,340 254,338 262,334" stroke="#154d72" stroke-width="0.9" fill="none" stroke-opacity="0.7" stroke-linecap="round"/>
+
+            <!-- ── TRONCO CEREBRAL ── -->
+            <path d="M226,312 C224,324 224,338 226,348 L254,348 C256,338 256,324 254,312 Z"
+              fill="none" stroke="#2a6a9a" stroke-width="1.8" stroke-opacity="0.95"/>
+            <line x1="226" y1="322" x2="254" y2="322" stroke="#2e7db5" stroke-width="1.2" stroke-opacity="0.85"/>
+            <line x1="225" y1="332" x2="255" y2="332" stroke="#2573a8" stroke-width="1.1" stroke-opacity="0.78"/>
+            <line x1="225" y1="342" x2="255" y2="342" stroke="#1f6596" stroke-width="1" stroke-opacity="0.7"/>
+
+            <!-- ── MÓDULO CYBER ── -->
+            <rect x="217" y="348" width="46" height="18" rx="3" fill="none" stroke="#2e7db5" stroke-width="1.8" stroke-opacity="1"/>
+            <rect x="221" y="352" width="11" height="10" rx="1.5" fill="#1a4a72" stroke="#3d8fc2" stroke-width="1.2" stroke-opacity="1"/>
+            <rect x="235" y="352" width="11" height="10" rx="1.5" fill="#1a4a72" stroke="#3d8fc2" stroke-width="1.2" stroke-opacity="1"/>
+            <rect x="249" y="352" width="10" height="10" rx="1.5" fill="#122e4a" stroke="#2573a8" stroke-width="1.1" stroke-opacity="0.9"/>
+            <!-- LED no primeiro quadrado -->
+            <circle cx="226" cy="357" r="2" fill="#4ab0f0" fill-opacity="0.9" class="orb-dot"/>
+            <circle cx="240" cy="357" r="2" fill="#3d8fc2" fill-opacity="0.8" class="orb-dot-2"/>
+            <!-- Fios -->
+            <path d="M223,366 L218,376 L210,376" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
+            <path d="M240,366 L240,378" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
+            <path d="M257,366 L262,376 L270,376" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
+
+            <!-- ── NÓS NEURAIS ── -->
+            <circle cx="194" cy="218" r="4.5" fill="#4ab0f0" fill-opacity="1" class="orb-dot"/>
+            <circle cx="186" cy="254" r="4" fill="#3d8fc2" fill-opacity="1" class="orb-dot-2"/>
+            <circle cx="194" cy="286" r="4" fill="#3d8fc2" fill-opacity="0.95" class="orb-dot-3"/>
+            <circle cx="286" cy="218" r="4.5" fill="#4ab0f0" fill-opacity="1" class="orb-dot-2"/>
+            <circle cx="294" cy="254" r="4" fill="#3d8fc2" fill-opacity="1" class="orb-dot-3"/>
+            <circle cx="286" cy="286" r="4" fill="#3d8fc2" fill-opacity="0.95" class="orb-dot"/>
+            <circle cx="240" cy="158" r="4.5" fill="#4ab0f0" fill-opacity="0.9" class="orb-dot-3"/>
+            <!-- Conexões -->
+            <line x1="194" y1="218" x2="186" y2="254" stroke="#2e7db5" stroke-width="1" stroke-opacity="0.8"/>
+            <line x1="186" y1="254" x2="194" y2="286" stroke="#2573a8" stroke-width="1" stroke-opacity="0.75"/>
+            <line x1="286" y1="218" x2="294" y2="254" stroke="#2e7db5" stroke-width="1" stroke-opacity="0.8"/>
+            <line x1="294" y1="254" x2="286" y2="286" stroke="#2573a8" stroke-width="1" stroke-opacity="0.75"/>
+            <line x1="240" y1="158" x2="194" y2="218" stroke="#1f6596" stroke-width="0.8" stroke-opacity="0.55"/>
+            <line x1="240" y1="158" x2="286" y2="218" stroke="#1f6596" stroke-width="0.8" stroke-opacity="0.55"/>
+          </g>
+
+          <!-- Orbiting dots on outer ring -->
+          <g class="orb-ring-1">
+            <circle cx="458" cy="240" r="4" fill="#c9e3fa" class="orb-dot" fill-opacity="0.8"/>
+            <circle cx="22" cy="240" r="3" fill="#C8B89A" class="orb-dot-2" fill-opacity="0.6"/>
+          </g>
+          <g class="orb-ring-2">
+            <circle cx="435" cy="240" r="3.5" fill="#c9e3fa" class="orb-dot-3" fill-opacity="0.7" transform="rotate(60 240 240)"/>
+          </g>
+
+          <!-- Node connectors (outside sphere, decorative) -->
+          <g filter="url(#soft-glow)" opacity="0.7">
+            <line x1="398" y1="165" x2="370" y2="185" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.4"/>
+            <circle cx="398" cy="165" r="3" fill="#c9e3fa" fill-opacity="0.5"/>
+            <line x1="82" y1="170" x2="112" y2="190" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.35"/>
+            <circle cx="82" cy="170" r="2.5" fill="#c9e3fa" fill-opacity="0.4"/>
+            <line x1="380" y1="330" x2="356" y2="308" stroke="#C8B89A" stroke-width="0.6" stroke-opacity="0.35"/>
+            <circle cx="380" cy="330" r="2.5" fill="#C8B89A" fill-opacity="0.4"/>
+            <line x1="100" y1="330" x2="126" y2="308" stroke="#C8B89A" stroke-width="0.6" stroke-opacity="0.3"/>
+            <circle cx="100" cy="330" r="2" fill="#C8B89A" fill-opacity="0.3"/>
+          </g>
+
+          <!-- Outer dashed accent ring -->
+          <g class="orb-ring-4">
+            <circle cx="240" cy="240" r="210" stroke="#C8B89A" stroke-width="0.5" stroke-dasharray="3 20" stroke-opacity="0.2" fill="none"/>
+          </g>
+        </g>
+      </svg>
+      <canvas id="orbParticles" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:10;"></canvas>
+    </div>
+    <div class="hero-divider" style="width:100%;max-width:360px;"></div>
+    <p class="hero-desc">Transformamos marcas em experi&#234;ncias memor&#225;veis atrav&#233;s de design estrat&#233;gico, identidade visual e narrativas que ficam.</p>
+    <div class="hero-tagline">Construa o Futuro, com a <em>Infinity Hub.</em></div>
+  </div>
+  <div class="hero-bottom">
+    <div class="scroll-hint"><div class="scroll-line"></div>Rolar para explorar</div>
+    <div class="hero-marquee-wrap">
+      <div class="hero-marquee">
+        <div class="hero-marquee-group"><span class="marquee-item">Branding</span><span class="marquee-item">Criação de Sites</span><span class="marquee-item">Bots Discord</span><span class="marquee-item">Loja Online</span><span class="marquee-item">UI/UX Design</span><span class="marquee-item">Automação</span><span class="marquee-item">Identidade Visual</span><span class="marquee-item">Bots Telegram</span><span class="marquee-item">Tráfego Pago</span></div>
+        <div class="hero-marquee-group" aria-hidden="true"><span class="marquee-item">Branding</span><span class="marquee-item">Criação de Sites</span><span class="marquee-item">Bots Discord</span><span class="marquee-item">Loja Online</span><span class="marquee-item">UI/UX Design</span><span class="marquee-item">Automação</span><span class="marquee-item">Identidade Visual</span><span class="marquee-item">Bots Telegram</span><span class="marquee-item">Tráfego Pago</span></div>
+        <div class="hero-marquee-group" aria-hidden="true"><span class="marquee-item">Branding</span><span class="marquee-item">Criação de Sites</span><span class="marquee-item">Bots Discord</span><span class="marquee-item">Loja Online</span><span class="marquee-item">UI/UX Design</span><span class="marquee-item">Automação</span><span class="marquee-item">Identidade Visual</span><span class="marquee-item">Bots Telegram</span><span class="marquee-item">Tráfego Pago</span></div>
+        <div class="hero-marquee-group" aria-hidden="true"><span class="marquee-item">Branding</span><span class="marquee-item">Criação de Sites</span><span class="marquee-item">Bots Discord</span><span class="marquee-item">Loja Online</span><span class="marquee-item">UI/UX Design</span><span class="marquee-item">Automação</span><span class="marquee-item">Identidade Visual</span><span class="marquee-item">Bots Telegram</span><span class="marquee-item">Tráfego Pago</span></div>
+      </div>
+    </div>
+  </div>
+</div><!-- /hero -->
+</section><!-- /hero-wrap -->
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-group"><span class="strip-item accent">·</span><span class="strip-item">LOJA ONLINE</span><span class="strip-item accent">·</span><span class="strip-item">UI/UX</span><span class="strip-item accent">·</span><span class="strip-item">BRANDING</span><span class="strip-item accent">·</span><span class="strip-item">SITES</span><span class="strip-item accent">·</span><span class="strip-item">BOTS DISCORD</span><span class="strip-item accent">·</span><span class="strip-item">WHATSAPP</span><span class="strip-item accent">·</span><span class="strip-item">AUTOMAÇÃO</span><span class="strip-item accent">·</span><span class="strip-item">IDENTIDADE VISUAL</span><span class="strip-item accent">·</span><span class="strip-item">TRÁFEGO PAGO</span></div>
+    <div class="strip-group" aria-hidden="true"><span class="strip-item accent">·</span><span class="strip-item">LOJA ONLINE</span><span class="strip-item accent">·</span><span class="strip-item">UI/UX</span><span class="strip-item accent">·</span><span class="strip-item">BRANDING</span><span class="strip-item accent">·</span><span class="strip-item">SITES</span><span class="strip-item accent">·</span><span class="strip-item">BOTS DISCORD</span><span class="strip-item accent">·</span><span class="strip-item">WHATSAPP</span><span class="strip-item accent">·</span><span class="strip-item">AUTOMAÇÃO</span><span class="strip-item accent">·</span><span class="strip-item">IDENTIDADE VISUAL</span><span class="strip-item accent">·</span><span class="strip-item">TRÁFEGO PAGO</span></div>
+    <div class="strip-group" aria-hidden="true"><span class="strip-item accent">·</span><span class="strip-item">LOJA ONLINE</span><span class="strip-item accent">·</span><span class="strip-item">UI/UX</span><span class="strip-item accent">·</span><span class="strip-item">BRANDING</span><span class="strip-item accent">·</span><span class="strip-item">SITES</span><span class="strip-item accent">·</span><span class="strip-item">BOTS DISCORD</span><span class="strip-item accent">·</span><span class="strip-item">WHATSAPP</span><span class="strip-item accent">·</span><span class="strip-item">AUTOMAÇÃO</span><span class="strip-item accent">·</span><span class="strip-item">IDENTIDADE VISUAL</span><span class="strip-item accent">·</span><span class="strip-item">TRÁFEGO PAGO</span></div>
+    <div class="strip-group" aria-hidden="true"><span class="strip-item accent">·</span><span class="strip-item">LOJA ONLINE</span><span class="strip-item accent">·</span><span class="strip-item">UI/UX</span><span class="strip-item accent">·</span><span class="strip-item">BRANDING</span><span class="strip-item accent">·</span><span class="strip-item">SITES</span><span class="strip-item accent">·</span><span class="strip-item">BOTS DISCORD</span><span class="strip-item accent">·</span><span class="strip-item">WHATSAPP</span><span class="strip-item accent">·</span><span class="strip-item">AUTOMAÇÃO</span><span class="strip-item accent">·</span><span class="strip-item">IDENTIDADE VISUAL</span><span class="strip-item accent">·</span><span class="strip-item">TRÁFEGO PAGO</span></div>
+  </div>
+</div>
+
+<section class="projects" id="servicos">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-overline">Nossos Servi&#231;os</div>
+      <h2 class="section-title">O que <em>criamos</em></h2>
+    </div>
+  </div>
+  <div class="stack-cards-wrap">
+  <div class="projects-grid stack-cards">
+
+    <!-- CARD 1: Branding & Identidade Visual -->
+    <div class="proj-card card-1 card-bg-1 reveal stagger-1" style="background:linear-gradient(135deg,#1a0e00 0%,#2e1a00 40%,#3d2200 70%,#1a1000 100%);">
+      <div class="stack-card-num">01 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg1" cx="30%" cy="50%"><stop offset="0%" stop-color="#c8860a" stop-opacity="0.35"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg1)"/>
+          <!-- Letra A gigante watermark -->
+          <text x="-40" y="620" font-family="Georgia,serif" font-size="700" font-weight="900" fill="white" fill-opacity="0.025" letter-spacing="-40">A</text>
+          <!-- Círculo de cor - roda cromática de marca -->
+          <circle cx="220" cy="300" r="180" stroke="#c9e3fa" stroke-width="0.5" fill="none" opacity="0.08"/>
+          <circle cx="220" cy="300" r="130" stroke="#c9e3fa" stroke-width="0.5" fill="none" opacity="0.05"/>
+          <!-- Fatias de cor da paleta -->
+          <path d="M220 120 A180 180 0 0 1 376 390 L220 300 Z" fill="#c9e3fa" fill-opacity="0.18"/>
+          <path d="M376 390 A180 180 0 0 1 220 480 L220 300 Z" fill="#7eb8f7" fill-opacity="0.14"/>
+          <path d="M220 480 A180 180 0 0 1 64 390 L220 300 Z" fill="#3a7bd5" fill-opacity="0.14"/>
+          <path d="M64 390 A180 180 0 0 1 64 210 L220 300 Z" fill="#073258" fill-opacity="0.2"/>
+          <path d="M64 210 A180 180 0 0 1 220 120 L220 300 Z" fill="#0a1e3c" fill-opacity="0.3"/>
+          <!-- Centro do logotipo -->
+          <circle cx="220" cy="300" r="55" fill="#071428" stroke="#c9e3fa" stroke-width="1.5" stroke-opacity="0.35"/>
+          <circle cx="220" cy="300" r="26" fill="none" stroke="#c9e3fa" stroke-width="1" stroke-opacity="0.4"/>
+          <circle cx="220" cy="300" r="8" fill="#c9e3fa" fill-opacity="0.8"/>
+          <!-- Linhas baseline tipografia -->
+          <line x1="460" y1="110" x2="1100" y2="110" stroke="white" stroke-width="0.5" opacity="0.07"/>
+          <line x1="460" y1="195" x2="1100" y2="195" stroke="white" stroke-width="0.5" opacity="0.05"/>
+          <line x1="460" y1="235" x2="1100" y2="235" stroke="white" stroke-width="0.3" opacity="0.04"/>
+          <!-- Specimen tipográfico -->
+          <text x="465" y="190" font-family="Georgia,serif" font-size="110" font-weight="900" fill="white" fill-opacity="0.1" letter-spacing="-4">Branding</text>
+          <text x="466" y="285" font-family="Arial,sans-serif" font-size="36" font-weight="200" fill="white" fill-opacity="0.2" letter-spacing="14">IDENTITY VISUAL</text>
+          <!-- Escala de fontes -->
+          <text x="465" y="355" font-family="Georgia,serif" font-size="28" fill="white" fill-opacity="0.3">Playfair Display — Aa Bb Cc 123</text>
+          <text x="465" y="395" font-family="Arial,sans-serif" font-size="20" fill="white" fill-opacity="0.2">Syne — Aa Bb Cc Dd Ee Ff Gg</text>
+          <text x="465" y="425" font-family="Arial,sans-serif" font-size="15" font-weight="300" fill="white" fill-opacity="0.15">DM Sans Light — The quick brown fox jumps</text>
+          <!-- Divisor -->
+          <line x1="465" y1="450" x2="1050" y2="450" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.15"/>
+          <!-- Swatches inline -->
+          <rect x="465" y="468" width="22" height="22" rx="3" fill="#c9e3fa" fill-opacity="0.7"/>
+          <rect x="494" y="468" width="22" height="22" rx="3" fill="#7eb8f7" fill-opacity="0.55"/>
+          <rect x="523" y="468" width="22" height="22" rx="3" fill="#3a7bd5" fill-opacity="0.5"/>
+          <rect x="552" y="468" width="22" height="22" rx="3" fill="#073258" fill-opacity="0.7"/>
+          <rect x="581" y="468" width="22" height="22" rx="3" fill="white" fill-opacity="0.07" stroke="white" stroke-width="0.6" stroke-opacity="0.3"/>
+          <text x="615" y="483" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.2" letter-spacing="3">COLOR PALETTE</text>
+          <!-- Símbolo de marca decorativo canto direito -->
+          <g transform="translate(990,60)" opacity="0.2">
+            <circle cx="70" cy="70" r="64" stroke="#c9e3fa" stroke-width="1.5" fill="none"/>
+            <circle cx="70" cy="70" r="40" stroke="#c9e3fa" stroke-width="0.8" fill="none" stroke-dasharray="6 8"/>
+            <path d="M42 92 L70 28 L98 92" stroke="#c9e3fa" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+            <line x1="50" y1="72" x2="90" y2="72" stroke="#c9e3fa" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">Identidade</div><div class="card-title">Branding e Identidade Visual</div><div class="card-year">Logo · Paleta · Tipografia · Guidelines</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 2: Loja Online -->
+    <div class="proj-card card-2 card-bg-2 reveal stagger-2" style="background:linear-gradient(135deg,#001a0e 0%,#003d1f 40%,#005228 70%,#001810 100%);">
+      <div class="stack-card-num">02 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg2" cx="70%" cy="40%"><stop offset="0%" stop-color="#00a86b" stop-opacity="0.28"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg2)"/>
+          <!-- Grid de produtos estilo e-commerce -->
+          <!-- Produto 1 -->
+          <rect x="60" y="60" width="190" height="260" rx="8" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.25"/>
+          <rect x="75" y="75" width="160" height="160" rx="5" fill="white" fill-opacity="0.05"/>
+          <circle cx="155" cy="155" r="45" fill="#c9e3fa" fill-opacity="0.07" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.3"/>
+          <circle cx="155" cy="155" r="22" fill="#c9e3fa" fill-opacity="0.1"/>
+          <rect x="80" y="248" width="100" height="10" rx="2" fill="white" fill-opacity="0.25"/>
+          <rect x="80" y="265" width="65" height="8" rx="2" fill="#c9e3fa" fill-opacity="0.5"/>
+          <rect x="80" y="280" width="80" height="22" rx="11" fill="#c9e3fa" fill-opacity="0.12" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.4"/>
+          <!-- Produto 2 (destacado) -->
+          <rect x="268" y="40" width="190" height="260" rx="8" fill="white" fill-opacity="0.06" stroke="#c9e3fa" stroke-width="1.2" stroke-opacity="0.45"/>
+          <rect x="278" y="28" width="50" height="24" rx="12" fill="#c9e3fa" fill-opacity="0.3"/>
+          <text x="288" y="44" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="white" fill-opacity="0.8">NOVO</text>
+          <rect x="283" y="55" width="160" height="160" rx="5" fill="white" fill-opacity="0.06"/>
+          <rect x="308" y="80" width="110" height="110" rx="4" fill="#c9e3fa" fill-opacity="0.08" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.35"/>
+          <path d="M343 135 L363 108 L383 135 L370 155 L356 155 Z" fill="#c9e3fa" fill-opacity="0.18"/>
+          <rect x="285" y="228" width="100" height="10" rx="2" fill="white" fill-opacity="0.28"/>
+          <rect x="285" y="244" width="70" height="8" rx="2" fill="#c9e3fa" fill-opacity="0.55"/>
+          <rect x="285" y="260" width="150" height="26" rx="13" fill="#c9e3fa" fill-opacity="0.18" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.5"/>
+          <!-- Produto 3 -->
+          <rect x="476" y="60" width="190" height="260" rx="8" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.25"/>
+          <rect x="491" y="75" width="160" height="160" rx="5" fill="white" fill-opacity="0.05"/>
+          <rect x="531" y="115" width="80" height="80" rx="40" fill="#c9e3fa" fill-opacity="0.07" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.3"/>
+          <rect x="491" y="248" width="100" height="10" rx="2" fill="white" fill-opacity="0.22"/>
+          <rect x="491" y="265" width="60" height="8" rx="2" fill="#c9e3fa" fill-opacity="0.45"/>
+          <rect x="491" y="280" width="80" height="22" rx="11" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.3"/>
+          <!-- Carrinho flutuante -->
+          <g transform="translate(720,40)">
+            <circle cx="75" cy="75" r="70" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="1" stroke-opacity="0.3"/>
+            <path d="M42 50 L52 50 L66 90 L104 90 L114 62 L58 62" stroke="#c9e3fa" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+            <circle cx="70" cy="102" r="7" fill="#c9e3fa" fill-opacity="0.6"/>
+            <circle cx="98" cy="102" r="7" fill="#c9e3fa" fill-opacity="0.6"/>
+            <circle cx="108" cy="50" r="14" fill="#c9e3fa" fill-opacity="0.25"/>
+            <text x="103" y="56" font-family="Arial,sans-serif" font-size="13" font-weight="900" fill="white" fill-opacity="0.8">3</text>
+          </g>
+          <!-- Barra de pagamento -->
+          <rect x="60" y="360" width="780" height="80" rx="10" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.15"/>
+          <!-- Steps de checkout -->
+          <circle cx="130" cy="400" r="22" fill="#c9e3fa" fill-opacity="0.2" stroke="#c9e3fa" stroke-width="1" stroke-opacity="0.6"/>
+          <text x="123" y="406" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#c9e3fa" fill-opacity="0.9">1</text>
+          <rect x="162" y="396" width="80" height="8" rx="2" fill="white" fill-opacity="0.2"/>
+          <line x1="255" y1="400" x2="310" y2="400" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.2" stroke-dasharray="5 4"/>
+          <circle cx="340" cy="400" r="22" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.35"/>
+          <text x="333" y="406" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="white" fill-opacity="0.35">2</text>
+          <rect x="372" y="396" width="80" height="8" rx="2" fill="white" fill-opacity="0.12"/>
+          <line x1="465" y1="400" x2="520" y2="400" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.15" stroke-dasharray="5 4"/>
+          <circle cx="550" cy="400" r="22" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.6" stroke-opacity="0.2"/>
+          <text x="543" y="406" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="white" fill-opacity="0.2">3</text>
+          <rect x="582" y="396" width="80" height="8" rx="2" fill="white" fill-opacity="0.07"/>
+          <!-- Badges de pagamento -->
+          <rect x="60" y="465" width="120" height="38" rx="19" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.35"/>
+          <text x="80" y="488" font-family="Arial,sans-serif" font-size="12" fill="#c9e3fa" fill-opacity="0.6" letter-spacing="1">🔒 SEGURO</text>
+          <rect x="195" y="465" width="100" height="38" rx="19" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.18"/>
+          <text x="210" y="488" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.28" letter-spacing="1">PIX · CARD</text>
+          <rect x="308" y="465" width="110" height="38" rx="19" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <text x="320" y="488" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.22" letter-spacing="1">RASTREIO</text>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">E-commerce</div><div class="card-title">Loja Online</div><div class="card-year">Catálogo · Pagamentos · Gestão</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 3: Bots Discord -->
+    <div class="proj-card card-3 card-bg-3 reveal stagger-3" style="background:linear-gradient(135deg,#0e0620 0%,#1e0e48 40%,#2d1870 70%,#120840 100%);">
+      <div class="stack-card-num">03 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg3" cx="50%" cy="50%"><stop offset="0%" stop-color="#7289da" stop-opacity="0.3"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg3)"/>
+          <!-- Interface Discord mockup -->
+          <!-- Sidebar esquerda -->
+          <rect x="40" y="40" width="80" height="520" rx="12" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.1"/>
+          <!-- Server icons na sidebar -->
+          <rect x="58" y="65" width="44" height="44" rx="22" fill="#5865f2" fill-opacity="0.4"/>
+          <rect x="58" y="120" width="44" height="44" rx="22" fill="white" fill-opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+          <rect x="58" y="175" width="44" height="44" rx="22" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <rect x="58" y="230" width="44" height="44" rx="22" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+          <line x1="66" y1="285" x2="102" y2="285" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <rect x="63" y="298" width="34" height="34" rx="17" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.25"/>
+          <!-- Canal list -->
+          <rect x="136" y="40" width="200" height="520" rx="0" fill="white" fill-opacity="0.03" stroke="white" stroke-width="0.3" stroke-opacity="0.1"/>
+          <text x="150" y="78" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="white" fill-opacity="0.5" letter-spacing="1">SERVIDOR</text>
+          <text x="148" y="110" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.25" letter-spacing="2">▾ GERAL</text>
+          <rect x="145" y="118" width="185" height="28" rx="4" fill="white" fill-opacity="0.06"/>
+          <text x="162" y="136" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.55"># boas-vindas</text>
+          <text x="148" y="162" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.2" letter-spacing="2">▾ SUPORTE</text>
+          <text x="162" y="186" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.4"># tickets</text>
+          <text x="162" y="208" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.35"># moderação</text>
+          <text x="162" y="230" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.3"># logs</text>
+          <text x="148" y="256" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.2" letter-spacing="2">▾ BOTS</text>
+          <text x="162" y="278" font-family="Arial,sans-serif" font-size="12" fill="#c9e3fa" fill-opacity="0.6">🤖 bot-commands</text>
+          <text x="162" y="300" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.3"># bot-logs</text>
+          <!-- Chat principal -->
+          <rect x="336" y="40" width="580" height="520" rx="0" fill="white" fill-opacity="0.02"/>
+          <!-- Header do canal -->
+          <rect x="336" y="40" width="580" height="52" fill="white" fill-opacity="0.03" stroke="white" stroke-width="0.3" stroke-opacity="0.08"/>
+          <text x="360" y="70" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#c9e3fa" fill-opacity="0.7"># bot-commands</text>
+          <!-- Mensagens no chat -->
+          <!-- BOT mensagem de boas vindas -->
+          <circle cx="368" cy="130" r="18" fill="#5865f2" fill-opacity="0.4"/>
+          <text x="360" y="136" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="white" fill-opacity="0.8">B</text>
+          <text x="396" y="123" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#c9e3fa" fill-opacity="0.8">InfinityBot</text>
+          <text x="440" y="123" font-family="Arial,sans-serif" font-size="10" fill="white" fill-opacity="0.2">BOT</text>
+          <rect x="460" y="112" width="32" height="14" rx="3" fill="#5865f2" fill-opacity="0.4"/>
+          <text x="466" y="122" font-family="Arial,sans-serif" font-size="9" fill="white" fill-opacity="0.7">APP</text>
+          <!-- Embed de boas vindas -->
+          <rect x="395" y="132" width="480" height="100" rx="4" fill="white" fill-opacity="0.04" stroke-left="3" stroke="#5865f2" stroke-width="0.5" stroke-opacity="0.4"/>
+          <rect x="395" y="132" width="4" height="100" rx="2" fill="#5865f2" fill-opacity="0.6"/>
+          <text x="408" y="152" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="white" fill-opacity="0.7">👋 Bem-vindo ao servidor!</text>
+          <rect x="408" y="160" width="200" height="8" rx="2" fill="white" fill-opacity="0.12"/>
+          <rect x="408" y="174" width="150" height="8" rx="2" fill="white" fill-opacity="0.08"/>
+          <rect x="408" y="188" width="80" height="20" rx="10" fill="#5865f2" fill-opacity="0.4"/>
+          <text x="420" y="202" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.7">Ver Regras</text>
+          <!-- Ticket -->
+          <circle cx="368" cy="290" r="18" fill="#c9e3fa" fill-opacity="0.15"/>
+          <text x="360" y="296" font-family="Arial,sans-serif" font-size="13" fill="white" fill-opacity="0.6">🎟</text>
+          <text x="396" y="283" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#c9e3fa" fill-opacity="0.7">InfinityBot</text>
+          <rect x="395" y="295" width="380" height="70" rx="4" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <rect x="395" y="295" width="4" height="70" rx="2" fill="#c9e3fa" fill-opacity="0.4"/>
+          <text x="408" y="315" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="white" fill-opacity="0.6">🎫 Ticket #0042 aberto</text>
+          <rect x="408" y="322" width="160" height="7" rx="2" fill="white" fill-opacity="0.1"/>
+          <rect x="408" y="336" width="60" height="18" rx="9" fill="#c9e3fa" fill-opacity="0.2"/>
+          <rect x="475" y="336" width="60" height="18" rx="9" fill="white" fill-opacity="0.06"/>
+          <!-- Comando do usuário -->
+          <circle cx="368" cy="420" r="18" fill="white" fill-opacity="0.08"/>
+          <text x="361" y="426" font-family="Arial,sans-serif" font-size="13" fill="white" fill-opacity="0.5">U</text>
+          <text x="396" y="413" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.5">usuário</text>
+          <text x="396" y="433" font-family="Arial,sans-serif" font-size="14" fill="#c9e3fa" fill-opacity="0.6">/ticket criar problema-no-pedido</text>
+          <!-- Campo de mensagem -->
+          <rect x="350" y="510" width="550" height="44" rx="8" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.5" stroke-opacity="0.12"/>
+          <text x="370" y="537" font-family="Arial,sans-serif" font-size="13" fill="white" fill-opacity="0.2">Mensagem para #bot-commands</text>
+          <!-- Membros online -->
+          <rect x="930" y="40" width="200" height="520" rx="0" fill="white" fill-opacity="0.02" stroke="white" stroke-width="0.3" stroke-opacity="0.08"/>
+          <text x="945" y="75" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.25" letter-spacing="2">ONLINE — 3</text>
+          <circle cx="960" cy="105" r="14" fill="#c9e3fa" fill-opacity="0.2"/>
+          <circle cx="1112" cy="105" r="8" fill="#44b700" fill-opacity="0.8"/>
+          <rect x="980" y="99" width="80" height="8" rx="2" fill="white" fill-opacity="0.25"/>
+          <rect x="980" y="112" width="50" height="6" rx="2" fill="#c9e3fa" fill-opacity="0.2"/>
+          <circle cx="960" cy="150" r="14" fill="white" fill-opacity="0.07"/>
+          <circle cx="1112" cy="150" r="8" fill="#44b700" fill-opacity="0.5"/>
+          <rect x="980" y="144" width="65" height="8" rx="2" fill="white" fill-opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">Automação</div><div class="card-title">Bots Discord</div><div class="card-year">Moderação · Tickets · Integrações</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 4: Bots Telegram & WhatsApp -->
+    <div class="proj-card card-4 card-bg-4 reveal stagger-2" style="background:linear-gradient(135deg,#001a0a 0%,#003520 40%,#004a28 60%,#001a30 100%);">
+      <div class="stack-card-num">04 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg4a" cx="25%" cy="50%"><stop offset="0%" stop-color="#00a86b" stop-opacity="0.2"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            <radialGradient id="bg4b" cx="75%" cy="50%"><stop offset="0%" stop-color="#0088cc" stop-opacity="0.18"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg4a)"/>
+          <rect width="1200" height="600" fill="url(#bg4b)"/>
+          <!-- WHATSAPP mockup (esquerda) -->
+          <rect x="40" y="30" width="320" height="540" rx="24" fill="white" fill-opacity="0.04" stroke="#25d366" stroke-width="0.8" stroke-opacity="0.25"/>
+          <!-- Header WA -->
+          <rect x="40" y="30" width="320" height="72" rx="24" fill="#128c3a" fill-opacity="0.2"/>
+          <rect x="40" y="78" width="320" height="24" fill="#128c3a" fill-opacity="0.15"/>
+          <circle cx="82" cy="66" r="22" fill="#25d366" fill-opacity="0.25"/>
+          <text x="71" y="73" font-family="Arial,sans-serif" font-size="18" fill="white" fill-opacity="0.7">🤖</text>
+          <text x="114" y="60" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="white" fill-opacity="0.75">InfinityBot WA</text>
+          <text x="114" y="77" font-family="Arial,sans-serif" font-size="11" fill="#25d366" fill-opacity="0.7">● online</text>
+          <!-- Mensagens WA -->
+          <rect x="58" y="120" width="220" height="50" rx="12" rx-top-left="4" fill="#128c3a" fill-opacity="0.25" stroke="#25d366" stroke-width="0.5" stroke-opacity="0.2"/>
+          <text x="72" y="140" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.7">👋 Olá! Como posso ajudar?</text>
+          <text x="72" y="158" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.3">1) Suporte  2) Pedidos  3) Info</text>
+          <rect x="160" y="188" width="178" height="36" rx="12" fill="white" fill-opacity="0.07"/>
+          <text x="174" y="210" font-family="Arial,sans-serif" font-size="13" fill="white" fill-opacity="0.55">2 — Ver meus pedidos</text>
+          <!-- Bot resposta WA -->
+          <rect x="58" y="240" width="240" height="80" rx="12" fill="#128c3a" fill-opacity="0.22" stroke="#25d366" stroke-width="0.5" stroke-opacity="0.2"/>
+          <text x="72" y="260" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.7">📦 Seus últimos pedidos:</text>
+          <text x="72" y="278" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.45">#4521 — Em transporte ✈</text>
+          <text x="72" y="294" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">#4498 — Entregue ✅</text>
+          <text x="72" y="310" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35">Ver mais...</text>
+          <!-- Notificação push WA -->
+          <rect x="58" y="345" width="200" height="40" rx="8" fill="#25d366" fill-opacity="0.12" stroke="#25d366" stroke-width="0.6" stroke-opacity="0.3"/>
+          <text x="72" y="360" font-family="Arial,sans-serif" font-size="11" fill="#25d366" fill-opacity="0.7">🔔 Notificação automática</text>
+          <text x="72" y="375" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">Pedido enviado! Rastreie aqui.</text>
+          <!-- Input WA -->
+          <rect x="52" y="520" width="250" height="38" rx="19" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.4" stroke-opacity="0.15"/>
+          <text x="72" y="543" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.2">Mensagem</text>
+          <circle cx="320" cy="539" r="16" fill="#25d366" fill-opacity="0.4"/>
+          <!-- TELEGRAM mockup (direita) -->
+          <rect x="430" y="30" width="320" height="540" rx="24" fill="white" fill-opacity="0.04" stroke="#0088cc" stroke-width="0.8" stroke-opacity="0.25"/>
+          <!-- Header TG -->
+          <rect x="430" y="30" width="320" height="72" rx="24" fill="#0066aa" fill-opacity="0.2"/>
+          <rect x="430" y="78" width="320" height="24" fill="#0066aa" fill-opacity="0.15"/>
+          <circle cx="472" cy="66" r="22" fill="#0088cc" fill-opacity="0.3"/>
+          <text x="461" y="73" font-family="Arial,sans-serif" font-size="18" fill="white" fill-opacity="0.7">✈</text>
+          <text x="504" y="60" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="white" fill-opacity="0.75">InfinityBot TG</text>
+          <text x="504" y="77" font-family="Arial,sans-serif" font-size="11" fill="#0088cc" fill-opacity="0.9">● online</text>
+          <!-- Mensagens TG -->
+          <rect x="448" y="120" width="200" height="46" rx="12" fill="#0066aa" fill-opacity="0.28" stroke="#0088cc" stroke-width="0.5" stroke-opacity="0.25"/>
+          <text x="460" y="139" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.7">🚀 Bem-vindo!</text>
+          <text x="460" y="155" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">Use /help para comandos</text>
+          <!-- Comando -->
+          <rect x="550" y="184" width="178" height="30" rx="12" fill="white" fill-opacity="0.06"/>
+          <text x="564" y="203" font-family="Arial,sans-serif" font-size="13" fill="#0088cc" fill-opacity="0.8">/status pedido 4521</text>
+          <!-- Resposta bot TG -->
+          <rect x="448" y="232" width="260" height="110" rx="12" fill="#0066aa" fill-opacity="0.22" stroke="#0088cc" stroke-width="0.5" stroke-opacity="0.2"/>
+          <text x="462" y="252" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.7">📋 Status do Pedido #4521</text>
+          <line x1="462" y1="260" x2="692" y2="260" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <text x="462" y="277" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.5">Status: Em transporte ✈</text>
+          <text x="462" y="294" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.45">Previsão: 2–3 dias úteis</text>
+          <text x="462" y="311" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">Código: BR123456789</text>
+          <rect x="462" y="318" width="80" height="18" rx="9" fill="#0088cc" fill-opacity="0.35"/>
+          <text x="474" y="330" font-family="Arial,sans-serif" font-size="10" fill="white" fill-opacity="0.7">Rastrear</text>
+          <!-- Input TG -->
+          <rect x="442" y="520" width="250" height="38" rx="19" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.4" stroke-opacity="0.15"/>
+          <text x="462" y="543" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.2">Escreva uma mensagem...</text>
+          <!-- Fluxo de automação conectando os dois -->
+          <g opacity="0.35">
+            <rect x="810" y="160" width="340" height="280" rx="10" fill="white" fill-opacity="0.02" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.15"/>
+            <text x="830" y="188" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.5" letter-spacing="2">FLUXO DE AUTOMAÇÃO</text>
+            <!-- Nós do fluxo -->
+            <rect x="850" y="200" width="100" height="36" rx="6" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.4"/>
+            <text x="870" y="222" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.6">Mensagem</text>
+            <line x1="950" y1="218" x2="990" y2="218" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.3" marker-end="url(#arr)"/>
+            <rect x="990" y="200" width="100" height="36" rx="6" fill="#c9e3fa" fill-opacity="0.08" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.3"/>
+            <text x="1005" y="222" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.5">Condição</text>
+            <line x1="1040" y1="236" x2="1040" y2="276" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.25"/>
+            <rect x="990" y="276" width="100" height="36" rx="6" fill="#c9e3fa" fill-opacity="0.06" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.25"/>
+            <text x="1008" y="298" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">Resposta</text>
+            <line x1="950" y1="294" x2="850" y2="340" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.2" stroke-dasharray="4 4"/>
+            <rect x="850" y="340" width="100" height="36" rx="6" fill="#25d366" fill-opacity="0.1" stroke="#25d366" stroke-width="0.7" stroke-opacity="0.3"/>
+            <text x="873" y="362" font-family="Arial,sans-serif" font-size="11" fill="#25d366" fill-opacity="0.6">WhatsApp</text>
+            <rect x="1000" y="340" width="100" height="36" rx="6" fill="#0088cc" fill-opacity="0.1" stroke="#0088cc" stroke-width="0.7" stroke-opacity="0.3"/>
+            <text x="1022" y="362" font-family="Arial,sans-serif" font-size="11" fill="#0088cc" fill-opacity="0.7">Telegram</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">Automação</div><div class="card-title">Bots Telegram e WhatsApp</div><div class="card-year">Atendimento · Vendas · Notificações</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 5: Criação de Sites -->
+    <div class="proj-card card-5 card-bg-5 reveal stagger-1" style="background:linear-gradient(135deg,#000d1a 0%,#001e3d 40%,#003355 70%,#001020 100%);">
+      <div class="stack-card-num">05 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg5" cx="50%" cy="35%"><stop offset="0%" stop-color="#0070cc" stop-opacity="0.35"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg5)"/>
+          <!-- Monitor mockup -->
+          <rect x="60" y="30" width="1080" height="480" rx="14" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.2"/>
+          <!-- Barra do browser -->
+          <rect x="60" y="30" width="1080" height="44" rx="14" fill="white" fill-opacity="0.05"/>
+          <rect x="60" y="60" width="1080" height="14" fill="white" fill-opacity="0.04"/>
+          <!-- Botões browser -->
+          <circle cx="92" cy="52" r="6" fill="#ff5f57" fill-opacity="0.55"/>
+          <circle cx="112" cy="52" r="6" fill="#febc2e" fill-opacity="0.5"/>
+          <circle cx="132" cy="52" r="6" fill="#28c840" fill-opacity="0.45"/>
+          <!-- URL bar -->
+          <rect x="360" y="40" width="480" height="24" rx="12" fill="white" fill-opacity="0.06" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <circle cx="378" cy="52" r="6" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.4" fill="none"/>
+          <line x1="382" y1="56" x2="388" y2="62" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.4"/>
+          <text x="396" y="57" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35">infinityhub.com.br</text>
+          <!-- HERO da landing page -->
+          <rect x="75" y="78" width="1050" height="200" rx="0" fill="white" fill-opacity="0.02"/>
+          <!-- Nav do site -->
+          <rect x="75" y="78" width="1050" height="40" fill="white" fill-opacity="0.04"/>
+          <rect x="96" y="88" width="60" height="14" rx="2" fill="white" fill-opacity="0.3"/>
+          <rect x="800" y="90" width="50" height="10" rx="2" fill="white" fill-opacity="0.12"/>
+          <rect x="862" y="90" width="50" height="10" rx="2" fill="white" fill-opacity="0.12"/>
+          <rect x="924" y="90" width="50" height="10" rx="2" fill="white" fill-opacity="0.12"/>
+          <rect x="990" y="85" width="80" height="22" rx="11" fill="#c9e3fa" fill-opacity="0.2" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.4"/>
+          <!-- Hero content -->
+          <rect x="110" y="136" width="340" height="28" rx="4" fill="white" fill-opacity="0.18"/>
+          <rect x="110" y="172" width="280" height="16" rx="3" fill="white" fill-opacity="0.1"/>
+          <rect x="110" y="194" width="260" height="16" rx="3" fill="white" fill-opacity="0.08"/>
+          <rect x="110" y="222" width="120" height="32" rx="16" fill="#c9e3fa" fill-opacity="0.25" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.5"/>
+          <rect x="242" y="222" width="100" height="32" rx="16" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/>
+          <!-- Hero image placeholder -->
+          <rect x="640" y="120" width="460" height="150" rx="8" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <circle cx="870" cy="195" r="50" fill="#c9e3fa" fill-opacity="0.06" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <!-- Seção de cards do site -->
+          <rect x="75" y="285" width="1050" height="180" rx="0" fill="white" fill-opacity="0.02"/>
+          <rect x="96" y="300" width="310" height="140" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <rect x="108" y="312" width="200" height="60" rx="4" fill="#c9e3fa" fill-opacity="0.07"/>
+          <rect x="108" y="380" width="140" height="10" rx="2" fill="white" fill-opacity="0.2"/>
+          <rect x="108" y="396" width="100" height="8" rx="2" fill="white" fill-opacity="0.1"/>
+          <rect x="428" y="300" width="310" height="140" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <rect x="440" y="312" width="200" height="60" rx="4" fill="#c9e3fa" fill-opacity="0.05"/>
+          <rect x="440" y="380" width="140" height="10" rx="2" fill="white" fill-opacity="0.18"/>
+          <rect x="440" y="396" width="100" height="8" rx="2" fill="white" fill-opacity="0.09"/>
+          <rect x="760" y="300" width="310" height="140" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.2"/>
+          <rect x="772" y="312" width="200" height="60" rx="4" fill="#c9e3fa" fill-opacity="0.05"/>
+          <rect x="772" y="380" width="140" height="10" rx="2" fill="white" fill-opacity="0.18"/>
+          <rect x="772" y="396" width="100" height="8" rx="2" fill="white" fill-opacity="0.09"/>
+          <!-- Base do monitor -->
+          <rect x="540" y="515" width="120" height="14" rx="4" fill="white" fill-opacity="0.06"/>
+          <rect x="480" y="529" width="240" height="8" rx="4" fill="white" fill-opacity="0.05"/>
+          <!-- Tags de tecnologia -->
+          <rect x="60" y="555" width="80" height="28" rx="14" fill="white" fill-opacity="0.06" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.25"/>
+          <text x="80" y="573" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.5">React</text>
+          <rect x="150" y="555" width="80" height="28" rx="14" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.4" stroke-opacity="0.15"/>
+          <text x="167" y="573" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35">Next.js</text>
+          <rect x="240" y="555" width="90" height="28" rx="14" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.4" stroke-opacity="0.12"/>
+          <text x="258" y="573" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.28">Tailwind</text>
+          <rect x="340" y="555" width="90" height="28" rx="14" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.4" stroke-opacity="0.1"/>
+          <text x="358" y="573" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.22">WordPress</text>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">Web</div><div class="card-title">Criação de Sites</div><div class="card-year">Landing Pages · Portfólios · Institucionais</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 6: UI/UX Design -->
+    <div class="proj-card card-6 card-bg-6 reveal stagger-3" style="background:linear-gradient(135deg,#1a0014 0%,#380028 40%,#4d0038 70%,#1a0018 100%);">
+      <div class="stack-card-num">06 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg6" cx="60%" cy="40%"><stop offset="0%" stop-color="#e0008a" stop-opacity="0.28"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg6)"/>
+          <!-- Figma-like interface -->
+          <!-- Toolbar esquerda -->
+          <rect x="40" y="40" width="52" height="520" rx="8" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.4" stroke-opacity="0.1"/>
+          <!-- Tool icons -->
+          <rect x="52" y="60" width="28" height="28" rx="5" fill="#c9e3fa" fill-opacity="0.15"/>
+          <path d="M60 74 L64 66 L72 74 L68 80 L64 80 Z" stroke="#c9e3fa" stroke-width="1.2" fill="none" stroke-opacity="0.7"/>
+          <rect x="52" y="98" width="28" height="28" rx="5" fill="white" fill-opacity="0.06"/>
+          <rect x="59" y="106" width="14" height="14" rx="2" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.4"/>
+          <rect x="52" y="136" width="28" height="28" rx="5" fill="white" fill-opacity="0.05"/>
+          <circle cx="66" cy="150" r="7" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.35"/>
+          <rect x="52" y="174" width="28" height="28" rx="5" fill="white" fill-opacity="0.05"/>
+          <line x1="58" y1="188" x2="80" y2="188" stroke="white" stroke-width="1" stroke-opacity="0.3"/>
+          <line x1="58" y1="194" x2="74" y2="194" stroke="white" stroke-width="1" stroke-opacity="0.2"/>
+          <!-- Canvas -->
+          <rect x="100" y="40" width="720" height="520" rx="0" fill="white" fill-opacity="0.015"/>
+          <!-- Grid dots no canvas -->
+          <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="12" cy="12" r="0.8" fill="white" fill-opacity="0.08"/>
+          </pattern>
+          <rect x="100" y="40" width="720" height="520" fill="url(#dots)"/>
+          <!-- Frame / Artboard -->
+          <rect x="140" y="80" width="460" height="440" rx="2" fill="none" stroke="#c9e3fa" stroke-width="1" stroke-opacity="0.35"/>
+          <!-- Label do frame -->
+          <text x="140" y="70" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.45">Mobile — 390×844</text>
+          <!-- Conteúdo do wireframe dentro do frame -->
+          <!-- Nav bar -->
+          <rect x="140" y="80" width="460" height="56" rx="0" fill="white" fill-opacity="0.04"/>
+          <rect x="160" y="96" width="60" height="14" rx="2" fill="white" fill-opacity="0.25"/>
+          <circle cx="560" cy="108" r="18" fill="white" fill-opacity="0.06"/>
+          <circle cx="520" cy="108" r="18" fill="white" fill-opacity="0.04"/>
+          <!-- Hero component -->
+          <rect x="155" y="148" width="430" height="180" rx="8" fill="#c9e3fa" fill-opacity="0.07" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.25"/>
+          <rect x="175" y="168" width="200" height="22" rx="4" fill="white" fill-opacity="0.22"/>
+          <rect x="175" y="198" width="160" height="14" rx="3" fill="white" fill-opacity="0.12"/>
+          <rect x="175" y="218" width="140" height="14" rx="3" fill="white" fill-opacity="0.08"/>
+          <rect x="175" y="248" width="100" height="32" rx="16" fill="#c9e3fa" fill-opacity="0.3" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.6"/>
+          <!-- Cards na grid -->
+          <rect x="155" y="348" width="200" height="130" rx="8" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.5" stroke-opacity="0.15"/>
+          <rect x="165" y="358" width="180" height="80" rx="4" fill="white" fill-opacity="0.04"/>
+          <rect x="165" y="446" width="120" height="10" rx="2" fill="white" fill-opacity="0.2"/>
+          <rect x="165" y="460" width="80" height="8" rx="2" fill="white" fill-opacity="0.12"/>
+          <rect x="385" y="348" width="200" height="130" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.25"/>
+          <rect x="395" y="358" width="180" height="80" rx="4" fill="#c9e3fa" fill-opacity="0.06"/>
+          <rect x="395" y="446" width="120" height="10" rx="2" fill="white" fill-opacity="0.2"/>
+          <rect x="395" y="460" width="80" height="8" rx="2" fill="white" fill-opacity="0.12"/>
+          <!-- Cursor Figma -->
+          <g transform="translate(480,240)" opacity="0.9">
+            <path d="M0 0 L0 22 L6 17 L10 26 L13 25 L9 16 L16 16 Z" fill="white" fill-opacity="0.7" stroke="#0f0820" stroke-width="0.8"/>
+            <rect x="18" y="8" width="60" height="20" rx="4" fill="#c9e3fa" fill-opacity="0.9"/>
+            <text x="24" y="22" font-family="Arial,sans-serif" font-size="10" fill="#0f0820" font-weight="700">Você</text>
+          </g>
+          <!-- Right panel -->
+          <rect x="830" y="40" width="330" height="520" rx="0" fill="white" fill-opacity="0.03" stroke="white" stroke-width="0.3" stroke-opacity="0.1"/>
+          <!-- Layers panel -->
+          <text x="848" y="68" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.5" letter-spacing="1">LAYERS</text>
+          <rect x="842" y="76" width="300" height="1" fill="white" fill-opacity="0.1"/>
+          <!-- Layer items -->
+          <rect x="848" y="90" width="280" height="28" rx="4" fill="white" fill-opacity="0.06"/>
+          <text x="870" y="108" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.55">▾ 🖼 Frame Mobile</text>
+          <text x="880" y="132" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35">  ▾ Navigation</text>
+          <rect x="855" y="140" width="265" height="24" rx="4" fill="#c9e3fa" fill-opacity="0.1"/>
+          <text x="892" y="156" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.7">    ▾ Hero Component</text>
+          <text x="904" y="176" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.3">      Title</text>
+          <text x="904" y="196" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.25">      Subtitle</text>
+          <text x="904" y="216" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.25">      CTA Button</text>
+          <text x="892" y="240" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.3">    Card Grid</text>
+          <!-- Design tokens -->
+          <text x="848" y="290" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4" letter-spacing="2">DESIGN TOKENS</text>
+          <rect x="842" y="298" width="300" height="1" fill="white" fill-opacity="0.08"/>
+          <rect x="848" y="310" width="20" height="20" rx="4" fill="#c9e3fa" fill-opacity="0.7"/>
+          <text x="876" y="323" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">Primary</text>
+          <rect x="848" y="340" width="20" height="20" rx="4" fill="white" fill-opacity="0.07" stroke="white" stroke-width="0.5" stroke-opacity="0.3"/>
+          <text x="876" y="353" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35">Surface</text>
+          <rect x="848" y="370" width="20" height="20" rx="4" fill="#073258" fill-opacity="0.9"/>
+          <text x="876" y="383" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.3">Accent</text>
+          <!-- Auto-layout badge -->
+          <rect x="848" y="430" width="140" height="30" rx="6" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.35"/>
+          <text x="862" y="449" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.65">⚡ Auto Layout</text>
+          <rect x="848" y="470" width="140" height="30" rx="6" fill="white" fill-opacity="0.04" stroke="white" stroke-width="0.5" stroke-opacity="0.18"/>
+          <text x="862" y="489" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.4">◈ Component</text>
+        </svg>
+      </div>
+      <div class="card-overlay"><div class="card-cat">Design</div><div class="card-title">UI/UX Design</div><div class="card-year">Wireframes · Protótipos · Design System</div><div class="card-cta">Saiba mais →</div></div>
+    </div>
+
+    <!-- CARD 7: Marketing & Tráfego Digital -->
+    <div class="proj-card card-7 card-bg-7 reveal stagger-2" style="background:linear-gradient(135deg,#1a0a00 0%,#3d1400 40%,#521e00 70%,#1a0800 100%);">
+      <div class="stack-card-num">07 / 07</div>
+      <div class="card-visual" style="inset:0;position:absolute;overflow:hidden;">
+        <svg viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+          <defs>
+            <radialGradient id="bg7" cx="50%" cy="50%"><stop offset="0%" stop-color="#d44000" stop-opacity="0.35"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          </defs>
+          <rect width="1200" height="600" fill="url(#bg7)"/>
+          <!-- Dashboard analytics estilo completo -->
+          <!-- Header dashboard -->
+          <rect x="40" y="30" width="1120" height="60" rx="8" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.4" stroke-opacity="0.15"/>
+          <text x="68" y="67" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="white" fill-opacity="0.55">Analytics Dashboard</text>
+          <rect x="900" y="42" width="120" height="36" rx="18" fill="#c9e3fa" fill-opacity="0.12" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.3"/>
+          <text x="920" y="64" font-family="Arial,sans-serif" font-size="12" fill="#c9e3fa" fill-opacity="0.7">Últimos 30 dias</text>
+          <rect x="1034" y="42" width="110" height="36" rx="18" fill="white" fill-opacity="0.05" stroke="white" stroke-width="0.4" stroke-opacity="0.15"/>
+          <text x="1053" y="64" font-family="Arial,sans-serif" font-size="12" fill="white" fill-opacity="0.35">Exportar ↗</text>
+          <!-- KPI Cards -->
+          <rect x="40" y="108" width="250" height="100" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.25"/>
+          <text x="62" y="134" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35" letter-spacing="2">ALCANCE</text>
+          <text x="62" y="172" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="white" fill-opacity="0.75">248K</text>
+          <rect x="180" y="158" width="70" height="22" rx="11" fill="#44b700" fill-opacity="0.2"/>
+          <text x="193" y="173" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.9">↑ 18.4%</text>
+          <rect x="308" y="108" width="250" height="100" rx="8" fill="white" fill-opacity="0.05" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.2"/>
+          <text x="330" y="134" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.35" letter-spacing="2">CONVERSÕES</text>
+          <text x="330" y="172" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="white" fill-opacity="0.7">3.842</text>
+          <rect x="450" y="158" width="70" height="22" rx="11" fill="#44b700" fill-opacity="0.18"/>
+          <text x="463" y="173" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.8">↑ 24.1%</text>
+          <rect x="576" y="108" width="250" height="100" rx="8" fill="#c9e3fa" fill-opacity="0.07" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.35"/>
+          <text x="598" y="134" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.55" letter-spacing="2">ROI</text>
+          <text x="598" y="172" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#c9e3fa" fill-opacity="0.9">412%</text>
+          <rect x="718" y="158" width="70" height="22" rx="11" fill="#44b700" fill-opacity="0.22"/>
+          <text x="731" y="173" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.95">↑ 62.8%</text>
+          <rect x="844" y="108" width="250" height="100" rx="8" fill="white" fill-opacity="0.04" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.18"/>
+          <text x="866" y="134" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.3" letter-spacing="2">CUSTO/CLICK</text>
+          <text x="866" y="172" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="white" fill-opacity="0.65">R$0.47</text>
+          <rect x="986" y="158" width="70" height="22" rx="11" fill="#44b700" fill-opacity="0.15"/>
+          <text x="999" y="173" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.75">↓ 12.3%</text>
+          <!-- Gráfico de linha grande -->
+          <rect x="40" y="228" width="720" height="250" rx="8" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.18"/>
+          <text x="62" y="256" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.45">Performance de Campanha</text>
+          <!-- Grid lines -->
+          <line x1="60" y1="290" x2="740" y2="290" stroke="white" stroke-width="0.4" stroke-opacity="0.08"/>
+          <line x1="60" y1="320" x2="740" y2="320" stroke="white" stroke-width="0.4" stroke-opacity="0.06"/>
+          <line x1="60" y1="350" x2="740" y2="350" stroke="white" stroke-width="0.4" stroke-opacity="0.06"/>
+          <line x1="60" y1="380" x2="740" y2="380" stroke="white" stroke-width="0.4" stroke-opacity="0.06"/>
+          <line x1="60" y1="410" x2="740" y2="410" stroke="white" stroke-width="0.4" stroke-opacity="0.06"/>
+          <line x1="60" y1="440" x2="740" y2="440" stroke="white" stroke-width="0.4" stroke-opacity="0.06"/>
+          <!-- Área fill sob a curva -->
+          <path d="M80 430 L160 390 L240 360 L320 340 L400 310 L480 290 L560 260 L640 240 L720 220 L720 460 L80 460 Z" fill="#c9e3fa" fill-opacity="0.06"/>
+          <!-- Linha principal -->
+          <polyline points="80,430 160,390 240,360 320,340 400,310 480,290 560,260 640,240 720,220" stroke="#c9e3fa" stroke-width="2.5" fill="none" stroke-opacity="0.8" stroke-linejoin="round"/>
+          <!-- Linha secundária -->
+          <polyline points="80,450 160,440 240,430 320,420 400,400 480,390 560,370 640,355 720,340" stroke="#c9e3fa" stroke-width="1.2" fill="none" stroke-opacity="0.3" stroke-dasharray="6 4" stroke-linejoin="round"/>
+          <!-- Pontos na linha -->
+          <circle cx="80" cy="430" r="5" fill="#c9e3fa" fill-opacity="0.8" stroke="#071828" stroke-width="1.5"/>
+          <circle cx="240" cy="360" r="5" fill="#c9e3fa" fill-opacity="0.8" stroke="#071828" stroke-width="1.5"/>
+          <circle cx="400" cy="310" r="5" fill="#c9e3fa" fill-opacity="0.8" stroke="#071828" stroke-width="1.5"/>
+          <circle cx="560" cy="260" r="5" fill="#c9e3fa" fill-opacity="0.8" stroke="#071828" stroke-width="1.5"/>
+          <circle cx="720" cy="220" r="7" fill="#c9e3fa" fill-opacity="1" stroke="#071828" stroke-width="1.5"/>
+          <!-- Tooltip no ponto final -->
+          <rect x="680" y="195" width="100" height="32" rx="6" fill="#0c2440" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.5"/>
+          <text x="696" y="212" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.9" font-weight="700">+62% ROI</text>
+          <text x="696" y="224" font-family="Arial,sans-serif" font-size="10" fill="white" fill-opacity="0.4">Dez 2024</text>
+          <!-- Funil + plataformas (direita) -->
+          <rect x="780" y="228" width="380" height="250" rx="8" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.15"/>
+          <text x="800" y="256" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.4">Funil de Conversão</text>
+          <!-- Funil -->
+          <path d="M820 275 L1130 275 L1100 320 L850 320 Z" fill="#c9e3fa" fill-opacity="0.14" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.4"/>
+          <text x="960" y="302" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.55">Impressões — 248K</text>
+          <path d="M850 325 L1100 325 L1080 365 L870 365 Z" fill="#c9e3fa" fill-opacity="0.1" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.3"/>
+          <text x="960" y="350" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.45">Cliques — 18.4K</text>
+          <path d="M870 370 L1080 370 L1062 405 L888 405 Z" fill="#c9e3fa" fill-opacity="0.08" stroke="#c9e3fa" stroke-width="0.6" stroke-opacity="0.25"/>
+          <text x="960" y="393" font-family="Arial,sans-serif" font-size="11" fill="white" fill-opacity="0.38">Leads — 4.2K</text>
+          <path d="M888 410 L1062 410 L1048 440 L902 440 Z" fill="#c9e3fa" fill-opacity="0.18" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.5"/>
+          <text x="960" y="430" font-family="Arial,sans-serif" font-size="11" fill="#c9e3fa" fill-opacity="0.75" font-weight="700">Vendas — 3.842</text>
+          <!-- Plataformas icons -->
+          <rect x="40" y="498" width="1120" height="72" rx="6" fill="white" fill-opacity="0.03" stroke="#c9e3fa" stroke-width="0.4" stroke-opacity="0.12"/>
+          <!-- Meta -->
+          <circle cx="100" cy="534" r="24" fill="#1877f2" fill-opacity="0.25" stroke="#1877f2" stroke-width="0.8" stroke-opacity="0.4"/>
+          <text x="90" y="540" font-family="Arial,sans-serif" font-size="14" font-weight="900" fill="white" fill-opacity="0.7">f</text>
+          <text x="134" y="528" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.55">Meta Ads</text>
+          <text x="134" y="545" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.7">↑ 18.4% CTR</text>
+          <!-- Google -->
+          <circle cx="360" cy="534" r="24" fill="#ea4335" fill-opacity="0.22" stroke="#ea4335" stroke-width="0.8" stroke-opacity="0.35"/>
+          <text x="349" y="540" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="white" fill-opacity="0.6">G</text>
+          <text x="394" y="528" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.5">Google Ads</text>
+          <text x="394" y="545" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.65">↑ 24.1% Conv.</text>
+          <!-- TikTok -->
+          <circle cx="620" cy="534" r="24" fill="white" fill-opacity="0.08" stroke="white" stroke-width="0.6" stroke-opacity="0.2"/>
+          <path d="M612 522 L612 542 L628 532 Z" fill="white" fill-opacity="0.5"/>
+          <text x="654" y="528" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.45">TikTok Ads</text>
+          <text x="654" y="545" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.6">↑ 31.7% Views</text>
+          <!-- Instagram -->
+          <circle cx="880" cy="534" r="24" fill="#e1306c" fill-opacity="0.2" stroke="#e1306c" stroke-width="0.7" stroke-opacity="0.3"/>
+          <rect x="870" y="524" width="20" height="20" rx="5" stroke="white" stroke-width="1.5" fill="none" stroke-opacity="0.5"/>
+          <circle cx="880" cy="534" r="5" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.4"/>
+          <text x="914" y="528" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" fill-opacity="0.45">Instagram</text>
+          <text x="914" y="545" font-family="Arial,sans-serif" font-size="11" fill="#44b700" fill-opacity="0.55">↑ 44.2% Eng.</text>
+        </svg>
+      </div>
+      <div class="card-overlay">
+        <div class="card-cat">Marketing</div>
+        <div class="card-title">Marketing &amp; Tráfego Digital</div>
+        <div class="card-year">Meta Ads · Google Ads · Funil de Conversão · Análise de Métricas</div>
+        <div class="card-cta">Saiba mais →</div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /stack-cards-wrap -->
+</section>
+
+<section class="featured" id="sobre">
+  <div class="featured-inner">
+    <div style="display:flex;gap:40px;align-items:center;">
+      <div class="featured-label reveal">Destaque</div>
+      <div class="reveal-left">
+        <div class="featured-num">01</div>
+        <h2 class="featured-title">Quem<br><em>Somos</em></h2>
+        <p class="featured-desc">Somos uma ag&#234;ncia tech e hub de inova&#231;&#227;o digital criada para transformar ideias em solu&#231;&#245;es tecnol&#243;gicas reais. Nosso objetivo &#233; conectar empresas, projetos e profissionais de tecnologia para desenvolver ferramentas digitais que gerem resultados. Atuamos criando solu&#231;&#245;es modernas, eficientes e sob medida para cada necessidade.</p>
+      </div>
+    </div>
+    <div class="featured-visual reveal-right">
+      <div class="featured-card-main" style="align-items:flex-start;padding:52px 48px;overflow:hidden;position:relative;">
+
+        <!-- decoração de fundo -->
+        <div style="position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;border:1px solid rgba(201,227,250,0.06);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(201,227,250,0.04);pointer-events:none;"></div>
+
+        <div style="position:relative;z-index:1;width:100%;">
+
+          <!-- Overline -->
+          <div style="font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#c9e3fa;opacity:0.45;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+            <span style="display:inline-block;width:20px;height:1px;background:#c9e3fa;opacity:0.5;"></span>Modelo Operacional
+          </div>
+
+          <!-- Título interno -->
+          <h3 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,28px);font-weight:700;color:#F5F0E8;letter-spacing:-0.02em;line-height:1.15;margin-bottom:18px;">Estrutura <em style="color:#c9e3fa;font-style:italic;">sob medida</em> para cada projeto</h3>
+
+          <!-- Texto principal -->
+          <p style="font-size:14px;line-height:1.9;color:rgba(245,240,232,0.5);font-weight:300;margin-bottom:28px;border-left:2px solid rgba(201,227,250,0.15);padding-left:16px;">Adotamos um modelo operacional flexível e orientado a resultados: cada projeto é conduzido pela equipe com maior aderência técnica àquela demanda específica, garantindo precisão na execução e eficiência na entrega.</p>
+
+          <!-- 3 pilares do modelo -->
+          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:28px;border:1px solid rgba(201,227,250,0.07);border-radius:8px;overflow:hidden;">
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(201,227,250,0.07);">
+              <div style="width:28px;height:28px;border-radius:6px;background:rgba(201,227,250,0.06);border:1px solid rgba(201,227,250,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c9e3fa;opacity:0.7;">01</span>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#F5F0E8;margin-bottom:4px;">Times especializados por projeto</div>
+                <div style="font-size:12px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Cada demanda recebe profissionais com expertise diretamente aplicável ao escopo contratado.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:18px 20px;border-bottom:1px solid rgba(201,227,250,0.07);">
+              <div style="width:28px;height:28px;border-radius:6px;background:rgba(201,227,250,0.06);border:1px solid rgba(201,227,250,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c9e3fa;opacity:0.7;">02</span>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#F5F0E8;margin-bottom:4px;">Foco total na área de atuação</div>
+                <div style="font-size:12px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Os colaboradores executam exclusivamente dentro de sua especialidade, elevando o padrão de qualidade.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:18px 20px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:rgba(201,227,250,0.06);border:1px solid rgba(201,227,250,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <span style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:#c9e3fa;opacity:0.7;">03</span>
+              </div>
+              <div>
+                <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#F5F0E8;margin-bottom:4px;">Entregas ágeis e de alta performance</div>
+                <div style="font-size:12px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">A composição ideal de equipe resulta em prazos mais curtos, menor retrabalho e soluções mais robustas.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Responsabilidades da IH -->
+          <div style="margin-bottom:0;">
+            <div style="font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c9e3fa;opacity:0.4;margin-bottom:14px;">Responsabilidades da Infinity Hub</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;">
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(201,227,250,0.05);">
+                <span style="width:5px;height:1px;background:#c9e3fa;opacity:0.35;flex-shrink:0;display:inline-block;"></span>
+                <span style="font-size:12px;color:rgba(245,240,232,0.45);font-weight:300;letter-spacing:0.02em;">Captação e gestão comercial</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(201,227,250,0.05);">
+                <span style="width:5px;height:1px;background:#c9e3fa;opacity:0.35;flex-shrink:0;display:inline-block;"></span>
+                <span style="font-size:12px;color:rgba(245,240,232,0.45);font-weight:300;letter-spacing:0.02em;">Coordenação e gestão de equipes</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(201,227,250,0.05);">
+                <span style="width:5px;height:1px;background:#c9e3fa;opacity:0.35;flex-shrink:0;display:inline-block;"></span>
+                <span style="font-size:12px;color:rgba(245,240,232,0.45);font-weight:300;letter-spacing:0.02em;">Planejamento e gestão de projetos</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(201,227,250,0.05);">
+                <span style="width:5px;height:1px;background:#c9e3fa;opacity:0.35;flex-shrink:0;display:inline-block;"></span>
+                <span style="font-size:12px;color:rgba(245,240,232,0.45);font-weight:300;letter-spacing:0.02em;">Posicionamento e desenvolvimento de marca</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="trabalhe-conosco">
+  <div class="about-grid-inner">
+
+    <!-- Coluna esquerda -->
+    <div class="about-content reveal">
+      <div class="about-overline">Trabalhe conosco</div>
+      <h2 class="about-title">Pensamos<br><em>diferente.</em><br>Entregamos<br>diferen&#231;a.</h2>
+      <p class="about-text">Na Infinity Hub, acreditamos que grandes soluções nascem da união de pessoas talentosas, criativas e apaixonadas por tecnologia.</p>
+      <p class="about-text" style="margin-top:20px;opacity:0.7;">Nosso modelo é construído para reunir profissionais especializados que querem trabalhar em projetos reais, desenvolver soluções inovadoras e crescer junto com uma agência tech em constante evolução.</p>
+    </div>
+
+    <!-- Coluna direita -->
+    <div class="reveal stagger-2">
+
+      <div style="margin-bottom:28px;">
+        <div style="font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#c9e3fa;margin-bottom:20px;display:flex;align-items:center;gap:10px;">
+          <span style="display:inline-block;width:16px;height:1px;background:#c9e3fa;"></span>O que buscamos
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-top:1px solid rgba(245,240,232,0.07);">
+            <span style="font-family:'Playfair Display',serif;font-size:13px;color:#c9e3fa;opacity:0.4;flex-shrink:0;margin-top:2px;">01</span>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:rgba(245,240,232,0.85);margin-bottom:6px;">Desenvolvedores & Programadores</div>
+              <div style="font-size:13px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Front-end, back-end, mobile — se você constrói soluções digitais, tem espaço aqui.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-top:1px solid rgba(245,240,232,0.07);">
+            <span style="font-family:'Playfair Display',serif;font-size:13px;color:#c9e3fa;opacity:0.4;flex-shrink:0;margin-top:2px;">02</span>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:rgba(245,240,232,0.85);margin-bottom:6px;">Designers UI/UX & Criativos</div>
+              <div style="font-size:13px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Interfaces, identidades visuais, motion — criatividade com propósito e entrega.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-top:1px solid rgba(245,240,232,0.07);">
+            <span style="font-family:'Playfair Display',serif;font-size:13px;color:#c9e3fa;opacity:0.4;flex-shrink:0;margin-top:2px;">03</span>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:rgba(245,240,232,0.85);margin-bottom:6px;">Especialistas em Automação & Bots</div>
+              <div style="font-size:13px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Discord, Telegram, WhatsApp — automações que escalam negócios sem esforço manual.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-top:1px solid rgba(245,240,232,0.07);border-bottom:1px solid rgba(245,240,232,0.07);">
+            <span style="font-family:'Playfair Display',serif;font-size:13px;color:#c9e3fa;opacity:0.4;flex-shrink:0;margin-top:2px;">04</span>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;color:rgba(245,240,232,0.85);margin-bottom:6px;">Profissionais de Marketing & Tráfego Digital</div>
+              <div style="font-size:13px;line-height:1.7;color:rgba(245,240,232,0.4);font-weight:300;">Gestão de anúncios, funis, conteúdo e crescimento — quem coloca as soluções na frente das pessoas certas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contato" style="display:inline-flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);background:#c9e3fa;padding:16px 36px;text-decoration:none;">
+        Quero fazer parte &#8594;
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="process" id="processo">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-overline">Como trabalhamos</div>
+      <h2 class="section-title">O nosso <em>processo</em></h2>
+    </div>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal stagger-1"><div class="step-num">01</div><div class="step-title">Descoberta</div><p class="step-desc">Imergimos no universo da marca. Pesquisamos, questionamos e identificamos oportunidades que n&#227;o est&#227;o na superf&#237;cie.</p></div>
+    <div class="process-step reveal stagger-2"><div class="step-num">02</div><div class="step-title">Estrat&#233;gia</div><p class="step-desc">Definimos o caminho criativo antes do primeiro tra&#231;o. Posicionamento, territ&#243;rio e narrativa como alicerces.</p></div>
+    <div class="process-step reveal stagger-3"><div class="step-num">03</div><div class="step-title">Cria&#231;&#227;o</div><p class="step-desc">Aqui a magia acontece. Design com inten&#231;&#227;o &#8212; cada detalhe &#233; uma decis&#227;o estrat&#233;gica com prop&#243;sito est&#233;tico.</p></div>
+    <div class="process-step reveal stagger-4"><div class="step-num">04</div><div class="step-title">Entrega</div><p class="step-desc">Sistemas completos e escal&#225;veis. N&#227;o entregamos apenas arquivos &#8212; entregamos ferramentas para o futuro.</p></div>
+  </div>
+</section>
+
+<section class="testimonial">
+
+  <!-- Decoração de fundo -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(7,49,86,0.35) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(201,227,250,0.04) 0%,transparent 60%);pointer-events:none;"></div>
+  <div style="position:absolute;top:-120px;left:-120px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,227,250,0.04);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;right:-80px;width:340px;height:340px;border-radius:50%;border:1px solid rgba(201,227,250,0.03);pointer-events:none;"></div>
+
+  <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;">
+
+    <!-- Overline -->
+    <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;">
+      <span style="display:inline-block;width:28px;height:1px;background:rgba(201,227,250,0.3);"></span>
+      <span style="font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,227,250,0.45);">O que dizem sobre nós</span>
+      <span style="display:inline-block;width:28px;height:1px;background:rgba(201,227,250,0.3);"></span>
+    </div>
+
+    <!-- Avaliação geral -->
+    <div class="reveal stagger-1" style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:60px;">
+      <div style="display:flex;gap:4px;">
+        <span style="color:#F5A623;font-size:22px;">★</span>
+        <span style="color:#F5A623;font-size:22px;">★</span>
+        <span style="color:#F5A623;font-size:22px;">★</span>
+        <span style="color:#F5A623;font-size:22px;">★</span>
+        <span style="color:#F5A623;font-size:22px;">★</span>
+      </div>
+      <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;">5.0</span>
+      <span style="font-size:13px;color:rgba(255,255,255,0.3);font-weight:300;">· baseado em avaliações de clientes</span>
+    </div>
+
+    <!-- Depoimento principal em destaque -->
+    <div class="reveal stagger-1" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,227,250,0.1);border-radius:20px;padding:56px 64px;margin-bottom:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:32px;left:56px;font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:rgba(201,227,250,0.05);line-height:1;pointer-events:none;">"</div>
+      <div style="display:flex;gap:3px;margin-bottom:28px;position:relative;">
+        <span style="color:#F5A623;font-size:18px;">★</span><span style="color:#F5A623;font-size:18px;">★</span><span style="color:#F5A623;font-size:18px;">★</span><span style="color:#F5A623;font-size:18px;">★</span><span style="color:#F5A623;font-size:18px;">★</span>
+      </div>
+      <blockquote class="testimonial-quote" style="margin:0 0 36px;text-align:left;font-size:clamp(22px,3vw,36px);max-width:100%;position:relative;">A Infinity Hub não apenas criou nossa identidade — criou a linguagem que usamos para contar nossa história ao mundo.</blockquote>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#073156,#c9e3fa22);border:1px solid rgba(201,227,250,0.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#c9e3fa;">R</div>
+        <div>
+          <div style="font-family:Syne,sans-serif;font-size:13px;font-weight:700;color:#fff;letter-spacing:0.05em;">Rodrigo Campos</div>
+          
+        </div>
+        <div style="margin-left:auto;background:rgba(201,227,250,0.06);border:1px solid rgba(201,227,250,0.1);border-radius:20px;padding:6px 16px;font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;color:rgba(201,227,250,0.5);">BRANDING</div>
+      </div>
+    </div>
+
+    <!-- Grid de avaliações menores -->
+    <div class="reveal stagger-2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:0;">
+
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,227,250,0.07);border-radius:16px;padding:32px 28px;">
+        <div style="display:flex;gap:3px;margin-bottom:16px;"><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span></div>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.7;color:rgba(245,240,232,0.6);margin:0 0 24px;">"Entregaram o site em tempo recorde, com um design que superou todas as nossas expectativas."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#00D68F22,#00D68F44);border:1px solid rgba(0,214,143,0.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#00D68F;">M</div>
+          <div><div style="font-family:Syne,sans-serif;font-size:12px;font-weight:700;color:#fff;">Marina Costa</div></div>
+          <div style="margin-left:auto;font-family:Syne,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;color:rgba(0,214,143,0.5);background:rgba(0,214,143,0.08);border:1px solid rgba(0,214,143,0.15);border-radius:12px;padding:4px 10px;">SITE</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,227,250,0.07);border-radius:16px;padding:32px 28px;">
+        <div style="display:flex;gap:3px;margin-bottom:16px;"><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span></div>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.7;color:rgba(245,240,232,0.6);margin:0 0 24px;">"O bot do Discord transformou nossa comunidade. Engajamento triplicou em menos de 30 dias."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7289DA22,#7289DA44);border:1px solid rgba(114,137,218,0.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#7289DA;">L</div>
+          <div><div style="font-family:Syne,sans-serif;font-size:12px;font-weight:700;color:#fff;">Lucas Ferreira</div></div>
+          <div style="margin-left:auto;font-family:Syne,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;color:rgba(114,137,218,0.6);background:rgba(114,137,218,0.08);border:1px solid rgba(114,137,218,0.15);border-radius:12px;padding:4px 10px;">DISCORD</div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,227,250,0.07);border-radius:16px;padding:32px 28px;">
+        <div style="display:flex;gap:3px;margin-bottom:16px;"><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span><span style="color:#F5A623;font-size:14px;">★</span></div>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;line-height:1.7;color:rgba(245,240,232,0.6);margin:0 0 24px;">"O site ficou exatamente como imaginamos — rápido, moderno e com um design que realmente representa a nossa marca."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#38BDF822,#38BDF844);border:1px solid rgba(56,189,248,0.2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#38BDF8;">A</div>
+          <div><div style="font-family:Syne,sans-serif;font-size:12px;font-weight:700;color:#fff;">Ana Beatriz</div></div>
+          <div style="margin-left:auto;font-family:Syne,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;color:rgba(56,189,248,0.6);background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.15);border-radius:12px;padding:4px 10px;">SITE</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contato">
+  <div class="cta-bg-text">Infinity Hub</div>
+  <div class="cta-overline reveal">Vamos criar juntos</div>
+  <h2 class="cta-title reveal stagger-1">Tem um<br>projeto <em>em mente?</em></h2>
+  <div class="contact-form-wrap reveal stagger-2">
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Nome</label><input type="text" name="nome" class="form-input" placeholder="Seu nome completo" required></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="seu@email.com" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Servi&#231;o</label><select name="servico" class="form-input form-select"><option value="" disabled selected>Selecione um servi&#231;o</option><option>Branding e Identidade Visual</option><option>Cria&#231;&#227;o de Sites</option><option>Bots Discord</option><option>Bots Telegram e WhatsApp</option><option>Loja Online</option><option>UI/UX Design</option><option>Outros assuntos</option></select></div>
+      </div>
+      <div class="form-group"><label class="form-label">Mensagem</label><textarea name="mensagem" class="form-input form-textarea" placeholder="Conte sobre seu projeto, prazos e objetivos..."></textarea></div>
+      <div class="form-footer">
+        <span class="form-note">Respondemos em at&#233; 24 horas &#250;teis.</span>
+        <button type="submit" class="form-btn" id="formBtn">Enviar mensagem &#8594;</button>
+      </div>
+      <div class="form-success" id="formSuccess">&#10003; Mensagem enviada! Entraremos em contato em breve.</div>
+      <div class="form-success" id="formError" style="display:none;background:rgba(255,80,80,0.08);border-color:rgba(255,80,80,0.3);color:#ff6b6b;">&#10005; Erro ao enviar. Tente novamente ou escreva para <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8a7a188a1a6aea1a6a1bcb1a0bdaae6aba7a5e6aaba">[email&#160;protected]</a></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#" class="footer-logo">Infinity <span>Hub</span></a>
+    </div>
+    <div>
+      <div class="footer-col-title">Servi&#231;os</div>
+      <div class="footer-links"><a href="#">Branding</a><a href="#">Cria&#231;&#227;o de Sites</a><a href="#">Bots Discord</a><a href="#">Bots Telegram e WhatsApp</a><a href="#">Loja Online</a><a href="#">UI/UX Design</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Empresa</div>
+      <div class="footer-links"><a href="#sobre">Sobre n&#243;s</a><a href="#trabalhe-conosco">Trabalhe conosco</a><a href="#processo">Processo</a><a href="#contato">Contato</a><a href="#">Termos</a><a href="#">Privacidade</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contato</div>
+      <div class="footer-links">
+        <a href="/cdn-cgi/l/email-protection#85eaecc5ecebe3ecebecf1fcedf0e7abe6eae8abe7f7"><span class="__cf_email__" data-cfemail="4827210821262e2126213c31203d2a662b2725662a3a">[email&#160;protected]</span></a>
+        <a href="https://wa.me/5531936182051?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20de" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/infihub.global/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/aginfinityhub" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://discord.gg/ayQVA8DN" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom" style="justify-content:center;">
+    <div class="footer-copy">2026 Infinity Hub. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
