@@ -86,7 +86,7 @@
     requestAnimationFrame(lerp);
   })();
 
-  document.querySelectorAll('a, button, .proj-card').forEach(function(el) {
+  document.querySelectorAll('button, .proj-card, .hero-cta-primary, .hero-cta-secondary, .header-cta').forEach(function(el) {
     el.addEventListener('mouseenter', function() {
       dot.style.transform = 'translate(-50%, -50%) scale(0)';
       ring.style.transform = 'translate(-50%, -50%) scale(0)';
