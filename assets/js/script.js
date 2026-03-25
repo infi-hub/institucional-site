@@ -61,7 +61,7 @@
     var el = document.elementFromPoint(x, y);
     while (el && el !== document.body) {
       if (el.id === 'svcModal' || el.id === 'svcModalBox') return true;
-      if (el.classList && (el.classList.contains('proj-card') || el.classList.contains('stack-cards-wrap'))) return true;
+      if (el.classList && (el.classList.contains('proj-card') || el.classList.contains('stack-cards-wrap') || el.classList.contains('team-card') || el.classList.contains('team-card-photo-wrap') || el.classList.contains('team-card-cta'))) return true;
       el = el.parentElement;
     }
     return getCursorColor(x, y);
@@ -258,7 +258,7 @@
   function tag(el,style,inner){ return '<'+el+' style="'+style+'">'+inner+'</'+el+'>'; }
 
   function featureCard(icon, title, desc, accent) {
-    return '<div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px 24px;transition:background 0.2s;">' +
+    return '<div style="background:rgba(233,244,255,0.05);border:1px solid rgba(233,244,255,0.12);border-radius:14px;padding:28px 24px;transition:background 0.2s;">' +
       '<div style="font-size:28px;margin-bottom:14px;">'+icon+'</div>' +
       '<div style="font-family:Syne,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;color:'+accent+';margin-bottom:8px;">'+title+'</div>' +
       '<div style="font-size:13px;line-height:1.75;color:rgba(255,255,255,0.55);font-weight:300;">'+desc+'</div>' +
@@ -275,18 +275,18 @@
   }
 
   function ctaBar(accent, accentText) {
-    return '<div style="padding:44px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:'+accent+';border-radius:0 0 20px 20px;">' +
+    return '<div style="padding:44px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:#073156;border-radius:0 0 20px 20px;">' +
       '<div>' +
-        '<div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:'+accentText+';margin-bottom:6px;">Pronto para começar?</div>' +
-        '<div style="font-size:13px;color:'+accentText+';opacity:0.65;font-weight:300;">Orçamento personalizado em até 24 horas.</div>' +
+        '<div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:#E9F4FF;margin-bottom:6px;">Pronto para começar?</div>' +
+        '<div style="font-size:13px;color:#E9F4FF;opacity:0.75;font-weight:400;">Orçamento personalizado em até 24 horas.</div>' +
       '</div>' +
-      '<a href="#contato" class="svcCTA" style="display:inline-flex;align-items:center;gap:10px;font-family:Syne,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:'+accent+';background:'+accentText+';padding:16px 36px;border-radius:50px;text-decoration:none;cursor:none;white-space:nowrap;transition:transform 0.25s cubic-bezier(0.23,1,0.32,1),box-shadow 0.25s;" onmouseenter="this.style.transform=\'scale(1.07)\';this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.3)\';" onmouseleave="this.style.transform=\'scale(1)\';this.style.boxShadow=\'none\';">Solicitar orçamento →</a>' +
+      '<a href="#contato" class="svcCTA" style="display:inline-flex;align-items:center;gap:10px;font-family:Syne,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#07131E;background:#E9F4FF;padding:16px 36px;border-radius:50px;text-decoration:none;cursor:none;white-space:nowrap;transition:transform 0.25s cubic-bezier(0.23,1,0.32,1),box-shadow 0.25s;" onmouseenter="this.style.transform=\'scale(1.07)\';this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.3)\';" onmouseleave="this.style.transform=\'scale(1)\';this.style.boxShadow=\'none\';">Solicitar orçamento →</a>' +
     '</div>';
   }
 
   /* ── CARD 1 — Branding: dourado quente ────────── */
   function renderCard1() {
-    var A='#F5A623'; var BG='#1A0E00'; var BG2='#2C1A00';
+    var A='#E9F4FF'; var BG='#07131E'; var BG2='#132331';
     return '<div style="background:linear-gradient(160deg,'+BG+','+BG2+');">' +
 
       /* Hero 2 colunas */
@@ -344,13 +344,13 @@
       '</div>' +
 
       '<div style="padding:20px 0 0;"></div>' +
-      ctaBar(A,'#1A0E00') +
+      ctaBar(A,'#E9F4FF') +
     '</div>';
   }
 
   /* ── CARD 2 — Loja Online: verde esmeralda ─────── */
   function renderCard2() {
-    var A='#00D68F'; var BG='#001A0E'; var BG2='#003020';
+    var A='#c9e3fa'; var BG='#07131E'; var BG2='#132331';
     return '<div style="background:linear-gradient(160deg,'+BG+','+BG2+');">' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">' +
         '<div style="padding:60px 48px;display:flex;flex-direction:column;justify-content:center;">' +
@@ -367,7 +367,7 @@
             '<rect x="32" y="156" width="50" height="8" rx="3" fill="'+A+'" fill-opacity="0.5"/>' +
             '<rect x="150" y="10" width="130" height="170" rx="10" fill="'+A+'" fill-opacity="0.1" stroke="'+A+'" stroke-width="1.2" stroke-opacity="0.5"/>' +
             '<rect x="148" y="4" width="54" height="22" rx="11" fill="'+A+'" fill-opacity="0.7"/>' +
-            '<text x="157" y="19" font-family="Arial" font-size="10" font-weight="700" fill="#001A0E">NOVO</text>' +
+            '<text x="157" y="19" font-family="Arial" font-size="10" font-weight="700" fill="#E9F4FF">NOVO</text>' +
             '<rect x="162" y="26" width="106" height="100" rx="6" fill="'+A+'" fill-opacity="0.1"/>' +
             '<rect x="182" y="56" width="66" height="66" rx="6" fill="'+A+'" fill-opacity="0.15" stroke="'+A+'" stroke-width="0.8" stroke-opacity="0.4"/>' +
             '<rect x="162" y="136" width="70" height="8" rx="3" fill="white" fill-opacity="0.25"/>' +
@@ -403,13 +403,13 @@
         '</div>' +
       '</div>' +
       '<div style="padding:20px 0 0;"></div>' +
-      ctaBar(A,'#001A0E') +
+      ctaBar(A,'#E9F4FF') +
     '</div>';
   }
 
   /* ── CARD 3 — Bots Discord: roxo índigo ─────────── */
   function renderCard3() {
-    var A='#7289DA'; var BG='#0E0620'; var BG2='#1a0e3a';
+    var A='#E9F4FF'; var BG='#07131E'; var BG2='#132331';
     return '<div style="background:linear-gradient(160deg,'+BG+','+BG2+');">' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">' +
         '<div style="padding:60px 48px;display:flex;flex-direction:column;justify-content:center;">' +
@@ -459,51 +459,51 @@
         '</div>' +
       '</div>' +
       '<div style="padding:20px 0 0;"></div>' +
-      ctaBar(A,'#0E0620') +
+      ctaBar(A,'#E9F4FF') +
     '</div>';
   }
 
   /* ── CARD 4 — Telegram & WhatsApp: bicolor ──────── */
   function renderCard4() {
-    var AG='#25D366'; var AT='#2AABEE'; var BG='#001a0a'; var BG2='#001a28';
-    return '<div style="background:linear-gradient(145deg,'+BG+' 0%,#001e14 50%,'+BG2+' 100%);">' +
+    var AG='#E9F4FF'; var AT='#E9F4FF'; var BG='#07131E'; var BG2='#132331';
+    return '<div style="background:linear-gradient(145deg,'+BG+' 0%,#0a1c2a 50%,'+BG2+' 100%);">' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">' +
         '<div style="padding:60px 48px;display:flex;flex-direction:column;justify-content:center;">' +
           '<div style="display:flex;gap:10px;margin-bottom:24px;">' +
             '<div style="background:'+AG+'22;border:1px solid '+AG+'44;border-radius:20px;padding:6px 16px;font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;color:'+AG+';">● WHATSAPP</div>' +
             '<div style="background:'+AT+'22;border:1px solid '+AT+'44;border-radius:20px;padding:6px 16px;font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;color:'+AT+';">✈ TELEGRAM</div>' +
           '</div>' +
-          '<h2 style="font-family:\'Playfair Display\',serif;font-size:clamp(32px,4vw,50px);font-weight:900;color:#fff;line-height:1;letter-spacing:-0.03em;margin-bottom:16px;">Bots que<br><em style="color:'+AG+';">atendem</em> e<br><em style="color:'+AT+';">vendem</em></h2>' +
+          '<h2 style="font-family:\'Playfair Display\',serif;font-size:clamp(32px,4vw,50px);font-weight:900;color:#E9F4FF;line-height:1;letter-spacing:-0.03em;margin-bottom:16px;">Bots que<br><em style="color:#E9F4FF;opacity:0.75;">atendem</em> e<br><em style="color:#E9F4FF;opacity:0.75;">vendem</em></h2>' +
           '<p style="font-size:15px;line-height:1.85;color:rgba(255,255,255,0.55);font-weight:300;max-width:380px;">Automatize atendimento, vendas e notificações — 24h por dia, 7 dias por semana, sem equipe presencial.</p>' +
         '</div>' +
         '<div style="display:flex;align-items:center;justify-content:center;padding:36px;gap:16px;">' +
           /* WA mini chat */
-          '<div style="flex:1;background:#0d2818;border:1px solid '+AG+'25;border-radius:16px;overflow:hidden;max-width:190px;">' +
-            '<div style="background:#1a3d24;padding:14px 16px;display:flex;align-items:center;gap:10px;">' +
+          '<div style="flex:1;background:#0a1c2a;border:1px solid '+AG+'25;border-radius:16px;overflow:hidden;max-width:190px;">' +
+            '<div style="background:#0f2535;padding:14px 16px;display:flex;align-items:center;gap:10px;">' +
               '<div style="width:32px;height:32px;border-radius:50%;background:'+AG+'30;display:flex;align-items:center;justify-content:center;font-size:14px;">🤖</div>' +
               '<div><div style="font-family:Syne,sans-serif;font-size:11px;font-weight:700;color:white;">InfinityBot</div><div style="font-size:10px;color:'+AG+';opacity:0.8;">● online</div></div>' +
             '</div>' +
             '<div style="padding:12px;">' +
-              '<div style="background:#1a3d24;border-radius:0 12px 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.75);">👋 Olá! Como posso ajudar?<br><span style="font-size:11px;color:rgba(255,255,255,0.4);">1) Suporte  2) Pedidos</span></div>' +
+              '<div style="background:#0f2535;border-radius:0 12px 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.75);">👋 Olá! Como posso ajudar?<br><span style="font-size:11px;color:rgba(255,255,255,0.4);">1) Suporte  2) Pedidos</span></div>' +
               '<div style="background:rgba(255,255,255,0.07);border-radius:12px 0 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.55);text-align:right;">2 — Ver pedidos</div>' +
-              '<div style="background:#1a3d24;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:11px;color:rgba(255,255,255,0.65);">📦 #4521 — Em rota ✈<br>#4498 — Entregue ✅</div>' +
+              '<div style="background:#0f2535;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:11px;color:rgba(255,255,255,0.65);">📦 #4521 — Em rota ✈<br>#4498 — Entregue ✅</div>' +
             '</div>' +
           '</div>' +
           /* TG mini chat */
-          '<div style="flex:1;background:#0a1e2d;border:1px solid '+AT+'25;border-radius:16px;overflow:hidden;max-width:190px;">' +
-            '<div style="background:#0f2d42;padding:14px 16px;display:flex;align-items:center;gap:10px;">' +
+          '<div style="flex:1;background:#0a1c2a;border:1px solid '+AT+'25;border-radius:16px;overflow:hidden;max-width:190px;">' +
+            '<div style="background:#0f2535;padding:14px 16px;display:flex;align-items:center;gap:10px;">' +
               '<div style="width:32px;height:32px;border-radius:50%;background:'+AT+'30;display:flex;align-items:center;justify-content:center;font-size:14px;">✈</div>' +
               '<div><div style="font-family:Syne,sans-serif;font-size:11px;font-weight:700;color:white;">InfinityBot TG</div><div style="font-size:10px;color:'+AT+';opacity:0.8;">● online</div></div>' +
             '</div>' +
             '<div style="padding:12px;">' +
-              '<div style="background:#0f2d42;border-radius:0 12px 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.75);">🚀 Use /status para ver seu pedido</div>' +
+              '<div style="background:#0f2535;border-radius:0 12px 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.75);">🚀 Use /status para ver seu pedido</div>' +
               '<div style="background:rgba(255,255,255,0.07);border-radius:12px 0 12px 12px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:rgba(255,255,255,0.55);text-align:right;">/status 4521</div>' +
-              '<div style="background:#0f2d42;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:11px;color:rgba(255,255,255,0.65);">📋 #4521 — Em transporte<br>Previsão: 2–3 dias úteis</div>' +
+              '<div style="background:#0f2535;border-radius:0 12px 12px 12px;padding:10px 14px;font-size:11px;color:rgba(255,255,255,0.65);">📋 #4521 — Em transporte<br>Previsão: 2–3 dias úteis</div>' +
             '</div>' +
           '</div>' +
         '</div>' +
       '</div>' +
-      '<div style="background:linear-gradient(90deg,'+AG+'18,'+AT+'18);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 52px;display:flex;gap:12px;flex-wrap:wrap;">' +
+      '<div style="background:rgba(233,244,255,0.07);border-top:1px solid rgba(233,244,255,0.1);border-bottom:1px solid rgba(233,244,255,0.1);padding:16px 52px;display:flex;gap:12px;flex-wrap:wrap;">' +
         [['Atendimento 24/7',AG],['Funil de Vendas',AG],['Notificações Auto',AT],['Comandos Slash',AT],['Multi-idioma',AG],['Relatórios',AT]].map(function(t){
           return '<span style="background:'+t[1]+'18;border:1px solid '+t[1]+'35;color:'+t[1]+';font-family:Syne,sans-serif;font-size:11px;font-weight:600;padding:6px 16px;border-radius:20px;">'+t[0]+'</span>';
         }).join('') +
@@ -520,8 +520,8 @@
         '</div>' +
       '</div>' +
       '<div style="padding:20px 0 0;"></div>' +
-      '<div style="padding:44px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:linear-gradient(90deg,'+AG+','+AT+');border-radius:0 0 20px 20px;">' +
-        '<div><div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:#001a0a;margin-bottom:6px;">Pronto para começar?</div><div style="font-size:13px;color:#001a0a;opacity:0.65;font-weight:300;">Orçamento personalizado em até 24 horas.</div></div>' +
+      '<div style="padding:44px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:linear-gradient(90deg,#073156,#0d2035);border-radius:0 0 20px 20px;">' +
+        '<div><div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:#E9F4FF;margin-bottom:6px;">Pronto para começar?</div><div style="font-size:13px;color:#E9F4FF;opacity:0.55;font-weight:300;">Orçamento personalizado em até 24 horas.</div></div>' +
         '<a href="#contato" class="svcCTA" style="display:inline-flex;align-items:center;gap:10px;font-family:Syne,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:white;background:#001a0a;padding:16px 36px;border-radius:50px;text-decoration:none;cursor:none;white-space:nowrap;transition:transform 0.25s cubic-bezier(0.23,1,0.32,1),box-shadow 0.25s;" onmouseenter="this.style.transform=\'scale(1.07)\';this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.3)\';" onmouseleave="this.style.transform=\'scale(1)\';this.style.boxShadow=\'none\';">Solicitar orçamento →</a>' +
       '</div>' +
     '</div>';
@@ -529,7 +529,7 @@
 
   /* ── CARD 5 — Sites: azul tech ─────────────────── */
   function renderCard5() {
-    var A='#38BDF8'; var BG='#000d1a'; var BG2='#001e3d';
+    var A='#E9F4FF'; var BG='#07131E'; var BG2='#132331';
     return '<div style="background:linear-gradient(160deg,'+BG+','+BG2+');">' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">' +
         '<div style="padding:60px 48px;display:flex;flex-direction:column;justify-content:center;">' +
@@ -586,13 +586,13 @@
         '</div>' +
       '</div>' +
       '<div style="padding:20px 0 0;"></div>' +
-      ctaBar(A,'#000d1a') +
+      ctaBar(A,'#E9F4FF') +
     '</div>';
   }
 
   /* ── CARD 6 — UI/UX: magenta Figma ─────────────── */
   function renderCard6() {
-    var A='#FF4ECD'; var BG='#1a0014'; var BG2='#2d0025';
+    var A='#c9e3fa'; var BG='#07131E'; var BG2='#132331';
     return '<div style="background:linear-gradient(160deg,'+BG+','+BG2+');">' +
       '<div style="display:grid;grid-template-columns:1fr 1fr;min-height:320px;">' +
         '<div style="padding:60px 48px;display:flex;flex-direction:column;justify-content:center;">' +
@@ -657,13 +657,13 @@
         '</div>' +
       '</div>' +
       '<div style="padding:20px 0 0;"></div>' +
-      ctaBar(A,'#1a0014') +
+      ctaBar(A,'#E9F4FF') +
     '</div>';
   }
 
   /* ── CARD 7 — Marketing: laranja energia ──────── */
   function renderCard7() {
-    var A='#FF6B2B'; var BG='#1a0800'; var BG2='#2c1200';
+    var A='#E9F4FF'; var BG='#07131E'; var BG2='#132331';
 
     function checklistItem(label, desc) {
       return '<div style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.06);">' +
@@ -769,10 +769,10 @@
       '</div>' +
 
       /* ── CTA customizado ── */
-      '<div style="padding:44px 52px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:'+A+';border-radius:0 0 20px 20px;">' +
+      '<div style="padding:44px 52px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;background:#073156;border-radius:0 0 20px 20px;">' +
         '<div>' +
-          '<div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:#1a0800;margin-bottom:6px;">Pronto para crescer?</div>' +
-          '<div style="font-size:13px;color:#1a0800;opacity:0.65;font-weight:300;">Diagnóstico gratuito das suas campanhas em até 24 horas.</div>' +
+          '<div style="font-family:\'Playfair Display\',serif;font-size:26px;font-weight:700;color:#E9F4FF;margin-bottom:6px;">Pronto para crescer?</div>' +
+          '<div style="font-size:13px;color:#E9F4FF;opacity:0.55;font-weight:300;">Diagnóstico gratuito das suas campanhas em até 24 horas.</div>' +
         '</div>' +
         '<a href="#contato" class="svcCTA" style="display:inline-flex;align-items:center;gap:10px;font-family:Syne,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:'+A+';background:#1a0800;padding:16px 36px;border-radius:50px;text-decoration:none;cursor:none;white-space:nowrap;transition:transform 0.25s cubic-bezier(0.23,1,0.32,1),box-shadow 0.25s;" onmouseenter="this.style.transform=\'scale(1.07)\';this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.4)\';" onmouseleave="this.style.transform=\'scale(1)\';this.style.boxShadow=\'none\';">Solicitar orçamento →</a>' +
       '</div>' +
@@ -884,7 +884,7 @@
       '</div>' +
       /* Rodapé */
       '<div style="padding:28px 56px 36px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">' +
-        '<div style="font-size:13px;color:rgba(255,255,255,0.25);font-weight:300;">Dúvidas? <a href="mailto:oi@infinityhub.com.br" style="color:rgba(201,227,250,0.6);text-decoration:none;">oi@infinityhub.com.br</a></div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.25);font-weight:300;">Dúvidas? <a href="mailto:infihub.global@gmail.com" style="color:rgba(201,227,250,0.6);text-decoration:none;">infihub.global@gmail.com</a></div>' +
         '<div style="font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.15em;color:rgba(255,255,255,0.15);">© 2026 INFINITY HUB</div>' +
       '</div>' +
     '</div>';
@@ -915,13 +915,13 @@
           ['03','COMO USAMOS SEUS DADOS','Os dados coletados são utilizados exclusivamente para responder sua mensagem, enviar orçamentos e melhorar nosso atendimento. Nunca vendemos ou compartilhamos suas informações com terceiros para fins comerciais.'],
           ['04','ARMAZENAMENTO E SEGURANÇA','Seus dados são armazenados de forma segura em servidores protegidos. Adotamos medidas técnicas para proteger suas informações contra acesso não autorizado, alteração ou destruição.'],
           ['05','COOKIES','Nosso site pode utilizar cookies básicos para análise de tráfego. Você pode desativá-los nas configurações do seu navegador a qualquer momento, sem prejuízo ao uso do site.'],
-          ['06','SEUS DIREITOS — LGPD','Em conformidade com a Lei nº 13.709/2018, você tem direito a acessar, corrigir ou excluir seus dados, revogar o consentimento e solicitar informações sobre o tratamento. Para exercer esses direitos: oi@infinityhub.com.br'],
-          ['07','CONTATO','Dúvidas sobre esta política? Entre em contato pelo e-mail: oi@infinityhub.com.br'],
+          ['06','SEUS DIREITOS — LGPD','Em conformidade com a Lei nº 13.709/2018, você tem direito a acessar, corrigir ou excluir seus dados, revogar o consentimento e solicitar informações sobre o tratamento. Para exercer esses direitos: infihub.global@gmail.com'],
+          ['07','CONTATO','Dúvidas sobre esta política? Entre em contato pelo e-mail: infihub.global@gmail.com'],
         ].map(function(item){ return legalSection(item[0], item[1], item[2]); }).join('') +
       '</div>' +
       /* Rodapé */
       '<div style="padding:28px 56px 36px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">' +
-        '<div style="font-size:13px;color:rgba(255,255,255,0.25);font-weight:300;">Dúvidas? <a href="mailto:oi@infinityhub.com.br" style="color:rgba(165,180,252,0.7);text-decoration:none;">oi@infinityhub.com.br</a></div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.25);font-weight:300;">Dúvidas? <a href="mailto:infihub.global@gmail.com" style="color:rgba(165,180,252,0.7);text-decoration:none;">infihub.global@gmail.com</a></div>' +
         '<div style="font-family:Syne,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.15em;color:rgba(255,255,255,0.15);">© 2026 INFINITY HUB</div>' +
       '</div>' +
     '</div>';
