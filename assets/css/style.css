@@ -889,6 +889,18 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
 .hero-cinematic .hero-right { display: none !important; }
 
 /* Responsive */
+/* Grain no hero */
+.hero-cinematic-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+ 
 @media (max-width: 768px) {
   .hero-cinematic { padding: 88px 20px 0 !important; }
   .hero-title-line { font-size: clamp(38px, 10vw, 64px); }
@@ -896,12 +908,12 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   .hero-desc { font-size: 14px !important; }
   .hero-tagline { font-size: 14px !important; }
 }
-
+ 
 @media (max-width: 480px) {
   .hero-title-line { font-size: clamp(32px, 10vw, 52px); }
   .hero-cinematic .hero-orb-wrap { width: 240px; height: 240px; }
 }
-
+ 
 /* =============================================
    HERO CINEMATIC — sanduíche exato
    ============================================= */
@@ -909,7 +921,10 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: var(--cream);
+  background: #07131E;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(20,76,129,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(185,221,255,0.06) 0%, transparent 55%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -917,7 +932,7 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   overflow: hidden;
   padding-top: 80px;
 }
-
+ 
 /* Linha 1 — ATRÁS do orb (z-index baixo) */
 .hc-title-back {
   position: relative;
@@ -927,7 +942,7 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   margin-bottom: -60px;
   pointer-events: none;
 }
-
+ 
 /* Linha 2 — NA FRENTE do orb (z-index alto) */
 .hc-title-front {
   position: relative;
@@ -937,22 +952,23 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   margin-top: -60px;
   pointer-events: none;
 }
-
+ 
 .hc-word {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-size: clamp(60px, 9.5vw, 148px);
   line-height: 0.9;
   letter-spacing: -0.03em;
-  color: var(--ink);
+  color: #fff;
   white-space: nowrap;
 }
-
+ 
 .hc-word em {
   font-style: italic;
-  color: var(--accent);
+  color: #B9DDFF;
+  text-shadow: 0 0 60px rgba(185,221,255,0.2);
 }
-
+ 
 /* ORB — camada do meio */
 .hc-orb {
   position: relative;
@@ -960,12 +976,12 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   display: flex;
   justify-content: center;
 }
-
+ 
 .hc-orb .hero-orb-wrap {
   width: clamp(320px, 44vw, 620px);
   height: clamp(320px, 44vw, 620px);
 }
-
+ 
 /* Painéis laterais */
 .hc-side-left,
 .hc-side-right {
@@ -974,11 +990,11 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   transform: translateY(-50%);
   z-index: 4;
 }
-
+ 
 .hc-side-left  { left: 48px; }
 .hc-side-right { right: 48px; text-align: right; }
 .hc-side-right a { align-self: flex-end; }
-
+ 
 /* Barra de baixo */
 .hc-bottom {
   position: relative;
@@ -989,9 +1005,9 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   align-items: center;
   padding: 28px 48px 32px;
   margin-top: 24px;
-  border-top: 1px solid rgba(13,13,13,0.1);
+  border-top: 1px solid rgba(185,221,255,0.08);
 }
-
+ 
 /* Responsive */
 @media (max-width: 1024px) {
   .hc-side-left, .hc-side-right { display: none; }
@@ -999,7 +1015,7 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   .hc-title-back  { margin-bottom: -40px; }
   .hc-title-front { margin-top: -40px; }
 }
-
+ 
 @media (max-width: 768px) {
   .hc-word { font-size: clamp(32px, 9.5vw, 64px); }
   .hc-orb .hero-orb-wrap { width: 260px; height: 260px; }
@@ -1007,20 +1023,20 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   .hc-title-front { margin-top: -28px; }
   .hc-bottom { padding: 20px; flex-direction: column; gap: 12px; }
 }
-
+ 
 @media (max-width: 480px) {
   .hc-word { font-size: clamp(26px, 9vw, 48px); }
   .hc-orb .hero-orb-wrap { width: 210px; height: 210px; }
   .hc-title-back  { margin-bottom: -20px; }
   .hc-title-front { margin-top: -20px; }
 }
-
+ 
 /* Nossos Serviços — E9F4FF em todos os textos dos cards */
 .stack-cards .card-cat { color: #E9F4FF; }
 .stack-cards .card-title { color: #E9F4FF; }
 .stack-cards .card-year { color: rgba(233,244,255,0.75); }
 .stack-cards .card-cta { color: #E9F4FF; }
-
+ 
 /* =============================================
    CLIENTS CAROUSEL — logos infinito
    ============================================= */
@@ -1029,22 +1045,22 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   overflow: hidden;
   width: 100%;
 }
-
+ 
 .clients-track {
   display: flex;
   width: max-content;
   animation: clients-scroll 32s linear infinite;
 }
-
+ 
 .clients-track:hover {
   animation-play-state: paused;
 }
-
+ 
 @keyframes clients-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-
+ 
 .clients-slide {
   display: flex;
   align-items: center;
@@ -1052,7 +1068,7 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   padding: 0 28px;
   flex-shrink: 0;
 }
-
+ 
 .client-logo-item {
   display: flex;
   align-items: center;
@@ -1061,11 +1077,11 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   flex-shrink: 0;
   filter: brightness(1.1);
 }
-
+ 
 .client-logo-item:hover {
   opacity: 1;
 }
-
+ 
 /* Fade nas bordas */
 .clients-fade-left,
 .clients-fade-right {
@@ -1076,17 +1092,17 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   pointer-events: none;
   z-index: 2;
 }
-
+ 
 .clients-fade-left {
   left: 0;
-  background: linear-gradient(to right, var(--ink) 0%, transparent 100%);
+  background: linear-gradient(to right, #07131E 0%, transparent 100%);
 }
-
+ 
 .clients-fade-right {
   right: 0;
-  background: linear-gradient(to left, var(--ink) 0%, transparent 100%);
+  background: linear-gradient(to left, #07131E 0%, transparent 100%);
 }
-
+ 
 @media (max-width: 768px) {
   .clients-slide { gap: 36px; }
   .clients-fade-left, .clients-fade-right { width: 60px; }
