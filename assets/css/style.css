@@ -55,7 +55,7 @@ nav a:hover { opacity: 1; }
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--light);
   margin-bottom: 36px;
 }
 .eyebrow-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
@@ -150,7 +150,7 @@ nav a:hover { opacity: 1; }
 .stat-num span { color: var(--accent); font-size: 28px; }
 .hero-bottom { grid-column: 1/-1; grid-row: 2; display: flex; justify-content: space-between; align-items: center; padding-top: 48px; margin-top: 48px; border-top: 1px solid rgba(13,13,13,0.1); }
 .scroll-hint { display: flex; align-items: center; gap: 12px; font-family: 'Syne', sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.scroll-line { width: 48px; height: 1px; background: var(--muted); position: relative; overflow: hidden; }
+.scroll-line { width: 48px; height: 1px; background: var(--cream); position: relative; overflow: hidden; }
 .scroll-line::after { content: ''; position: absolute; inset: 0; background: var(--accent); animation: sl 2s cubic-bezier(0.77,0,0.18,1) infinite; transform: scaleX(0); transform-origin: left; }
 @keyframes sl { 0%{transform:scaleX(0)} 50%{transform:scaleX(1)} 100%{transform:scaleX(0) translateX(100%)} }
 .hero-marquee-wrap { overflow: hidden; flex: 1; margin: 0 60px; }
@@ -1001,11 +1001,11 @@ footer { background: var(--ink); padding: 80px 48px 40px; }
   z-index: 4;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 28px 48px 32px;
+  padding: 200px 100px 32px;
   margin-top: 24px;
-  border-top: 1px solid rgba(185,221,255,0.08);
+  border-top: none;
 }
  
 /* Responsive */
