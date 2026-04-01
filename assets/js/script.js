@@ -35,69 +35,6 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el) { obs.observe(el); });
 
-  var dot = document.getElementById('cursorDot');
-  var ring = document.getElementById('cursorRing');
-  var bubble = document.getElementById('cursorBubble');
-  var mx = -200, my = -200, rx = -200, ry = -200, bx = -200, by = -200;
-
-  function getCursorColor(x, y) {
-    var isDark = false;
-    try {
-      var el = document.elementFromPoint(x, y);
-      while (el && el !== document.body) {
-        var bg = window.getComputedStyle(el).backgroundColor;
-        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
-          var rgb = bg.match(/\d+/g);
-          if (rgb) isDark = (parseInt(rgb[0])*299 + parseInt(rgb[1])*587 + parseInt(rgb[2])*114) / 1000 < 80;
-          break;
-        }
-        el = el.parentElement;
-      }
-    } catch(e){}
-    return isDark;
-  }
-
-  function isOverDarkSurface(x, y) {
-    var el = document.elementFromPoint(x, y);
-    while (el && el !== document.body) {
-      if (el.id === 'svcModal' || el.id === 'svcModalBox') return true;
-      if (el.classList && (el.classList.contains('proj-card') || el.classList.contains('stack-cards-wrap') || el.classList.contains('team-card') || el.classList.contains('team-card-photo-wrap') || el.classList.contains('team-card-cta'))) return true;
-      el = el.parentElement;
-    }
-    return getCursorColor(x, y);
-  }
-
-  document.addEventListener('mousemove', function(e) {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-    var dark = isOverDarkSurface(mx, my);
-    dot.style.background = dark ? '#c9e3fa' : '#073258';
-    ring.style.borderColor = dark ? '#c9e3fa' : '#073258';
-    bubble.style.background = dark ? 'rgba(201,227,250,0.12)' : '#073258';
-    bubble.style.color = dark ? '#c9e3fa' : '#f5f0e8';
-    bubble.style.border = dark ? '1.5px solid rgba(201,227,250,0.5)' : 'none';
-  });
-
-  (function lerp() {
-    rx += (mx - rx) * 0.10; ry += (my - ry) * 0.10;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    bx += (mx - bx) * 0.12; by += (my - by) * 0.12;
-    bubble.style.left = bx + 'px'; bubble.style.top = by + 'px';
-    requestAnimationFrame(lerp);
-  })();
-
-  document.querySelectorAll('button, .proj-card, .hero-cta-primary, .hero-cta-secondary, .header-cta').forEach(function(el) {
-    el.addEventListener('mouseenter', function() {
-      dot.style.transform = 'translate(-50%, -50%) scale(0)';
-      ring.style.transform = 'translate(-50%, -50%) scale(0)';
-      bubble.classList.add('active');
-    });
-    el.addEventListener('mouseleave', function() {
-      dot.style.transform = 'translate(-50%, -50%) scale(1)';
-      ring.style.transform = 'translate(-50%, -50%) scale(1)';
-      bubble.classList.remove('active');
-    });
-  });
 
   ['.hero-title','.hero-desc','.hero-tagline'].forEach(function(s, i) {
     var el = document.querySelector(s);
