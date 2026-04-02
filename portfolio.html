@@ -11,11 +11,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{--cream:#F5F0E8;--ink:#0D0D0D;--warm:#C8B89A;--accent:#073156;--muted:#8A8278;--light:#EDE8DF;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;cursor:none;}
-.cursor-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:#073258;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);will-change:left,top;transition:background .2s,transform .2s;}
-.cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid #073258;border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);opacity:.7;will-change:left,top;transition:border-color .2s,opacity .2s;}
-.cursor-dot.on-card{background:#fff;}
-.cursor-ring.on-card{border-color:#fff;opacity:.9;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;cursor:auto;}
 header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:rgba(245,240,232,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(7,49,86,.08);}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--ink);text-decoration:none;}
 .logo span{color:var(--accent);}
@@ -46,7 +42,7 @@ nav a.active{opacity:1;color:var(--accent);}
 /* FILTER */
 .filter-bar{display:flex;align-items:center;justify-content:space-between;}
 .filter-wrap{display:flex;gap:4px;flex-wrap:wrap;}
-.filter-btn{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid transparent;padding:6px 14px;cursor:none;transition:all .2s;}
+.filter-btn{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid transparent;padding:6px 14px;cursor:pointer;transition:all .2s;}
 .filter-btn:hover{color:var(--ink);border-color:rgba(13,13,13,.15);}
 .filter-btn.active{color:var(--cream);background:var(--ink);border-color:var(--ink);}
 .proj-count{font-family:'Syne',sans-serif;font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--muted);}
@@ -59,12 +55,12 @@ nav a.active{opacity:1;color:var(--accent);}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* GRID */
 .projects-section{padding:48px;}
-.projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 /* CARD */
-.proj-card{background:var(--cream);cursor:none;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);}
+.proj-card{background:var(--cream);cursor:pointer;opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);}
 .proj-card.visible{opacity:1;transform:translateY(0);}
 .card-thumb{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;}
-.card-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.23,1,.32,1);}
+.card-thumb-inner{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.23,1,.32,1);}
 .proj-card:hover .card-thumb-inner{transform:scale(1.04);}
 .card-thumb-overlay{position:absolute;inset:0;background:rgba(7,18,40,0);display:flex;align-items:center;justify-content:center;transition:background .4s;}
 .proj-card:hover .card-thumb-overlay{background:rgba(7,18,40,.45);}
@@ -103,30 +99,28 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
 .footer-beh svg{width:13px;height:13px;fill:currentColor;}
 /* RESPONSIVE */
 @media(max-width:1024px){.projects-grid{grid-template-columns:repeat(3,1fr);}header{padding:20px 32px;}.page-hero{padding:110px 32px 44px;}.projects-section{padding:32px;}.cta-bottom{padding:60px 32px;}footer{padding:36px 32px 24px;}}
-@media(max-width:768px){body{cursor:auto;}.cursor-dot,.cursor-ring{display:none;}header{padding:14px 20px;}nav{display:none;}.nav-toggle{display:flex;}.hero-top{flex-direction:column;align-items:flex-start;gap:20px;}.hero-right{text-align:left;}.hero-sub{margin-left:0;max-width:100%;}.filter-bar{flex-direction:column;align-items:flex-start;gap:12px;}.page-hero{padding:88px 20px 32px;}.projects-section{padding:20px;}.projects-grid{grid-template-columns:repeat(2,1fr);gap:2px;}.cta-bottom{padding:48px 20px;}.cta-btns{flex-direction:column;gap:14px;}footer{padding:32px 20px 20px;}.footer-inner{flex-direction:column;gap:14px;text-align:center;}}
+@media(max-width:768px){header{padding:14px 20px;}nav{display:none;}.nav-toggle{display:flex;}.hero-top{flex-direction:column;align-items:flex-start;gap:20px;}.hero-right{text-align:left;}.hero-sub{margin-left:0;max-width:100%;}.filter-bar{flex-direction:column;align-items:flex-start;gap:12px;}.page-hero{padding:88px 20px 32px;}.projects-section{padding:20px;}.projects-grid{grid-template-columns:repeat(2,1fr);gap:16px;}.cta-bottom{padding:48px 20px;}.cta-btns{flex-direction:column;gap:14px;}footer{padding:32px 20px 20px;}.footer-inner{flex-direction:column;gap:14px;text-align:center;}}
 @media(max-width:480px){.projects-grid{grid-template-columns:1fr;}.card-title{font-size:16px;}}
 </style>
 </head>
 <body>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" id="mobileNavClose">&#10005;</button>
   <a href="index.html">In&#237;cio</a>
   <a href="index.html#servicos">Servi&#231;os</a>
-  <a href="index.html#sobre">Sobre</a>
+  <a href="sobre.html">Sobre</a>
   <a href="portfolio.html" style="color:var(--accent);opacity:1;">Portf&#243;lio</a>
-  <a href="index.html#contato">Iniciar projeto</a>
+  <a href="contato.html">Iniciar projeto</a>
 </div>
 <header>
   <a href="index.html" class="logo">Infinity <span>Hub</span></a>
   <nav>
     <a href="index.html#servicos">Servi&#231;os</a>
-    <a href="index.html#sobre">Sobre</a>
+    <a href="sobre.html">Sobre</a>
     <a href="portfolio.html" class="active">Portf&#243;lio</a>
     <a href="index.html#processo">Processo</a>
   </nav>
-  <a href="index.html#contato" class="header-cta">Iniciar projeto</a>
+  <a href="contato.html" class="header-cta">Iniciar projeto</a>
   <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </header>
 <section class="page-hero">
@@ -137,7 +131,7 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
     </div>
     <div class="hero-right">
       <p class="hero-sub">Uma sele&#231;&#227;o dos trabalhos que mais nos orgulhamos &#8212; identidades, experi&#234;ncias digitais e solu&#231;&#245;es criativas.</p>
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="behance-link">
+      <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="behance-link">
         <svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>
         Ver perfil no Behance
       </a>
@@ -153,7 +147,7 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
       <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
       <button class="filter-btn" data-filter="marketing">Marketing</button>
     </div>
-    <span class="proj-count" id="projCount">6 projetos</span>
+    <span class="proj-count" id="projCount">2 projetos</span>
   </div>
 </section>
 <div class="strip">
@@ -165,10 +159,10 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
 <section class="projects-section">
 <div class="projects-grid" id="projectsGrid">
 
-<!-- CARD VISÍVEL — Skadi Viagens -->
+<!-- CARD — Skadi Viagens -->
 <article class="proj-card" data-category="sites">
   <div class="card-thumb">
-    <div class="card-thumb-inner" style="background:url(assets/imagem/siteskadi.png) center/cover no-repeat;">
+    <div class="card-thumb-inner" style="background-image:url(assets/imagem/siteskadi.png);background-size:cover;background-position:center;">
     </div>
     <div class="card-thumb-overlay">
       <a href="https://www.skadiviagens.com.br" target="_blank" rel="noopener" class="card-view-btn">Ver projeto</a>
@@ -178,28 +172,31 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
     <div class="card-cat">Sites &amp; Landing Pages</div>
     <div class="card-title">Skadi <em>Viagens</em></div>
     <div class="card-desc">Site com foco em convers&#227;o &#8212; design responsivo e anima&#231;&#245;es que guiam at&#233; o contato.</div>
-    <div class="card-footer"><div class="card-tags"><span class="card-tag">HTML/CSS</span><span class="card-tag">JavaScript</span></div><span class="card-year">2025</span></div>
+    <div class="card-footer"><div class="card-tags"><span class="card-tag">HTML/CSS</span><span class="card-tag">JavaScript</span></div><span class="card-year">2026</span></div>
+  </div>
+</article>
+
+<!-- CARD — Dash Player -->
+<article class="proj-card" data-category="sites">
+  <div class="card-thumb">
+    <div class="card-thumb-inner" style="background-image:url(assets/imagem/dashplayer.png);background-size:cover;background-position:center;">
+    </div>
+    <div class="card-thumb-overlay">
+      <a href="https://www.behance.net/gallery/246902521/Dash-Player-UIUX-Design-Web-Development" target="_blank" rel="noopener" class="card-view-btn">
+        <svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>
+        Ver projeto
+      </a>
+    </div>
+  </div>
+  <div class="card-info">
+    <div class="card-cat">Sites &amp; Landing Pages</div>
+    <div class="card-title">Dash <em>Player</em></div>
+    <div class="card-desc">Interface moderna para player de m&#237;dia &#8212; UI/UX e desenvolvimento web completo.</div>
+    <div class="card-footer"><div class="card-tags"><span class="card-tag">HTML/CSS</span><span class="card-tag">JavaScript</span></div><span class="card-year">2026</span></div>
   </div>
 </article>
 
 <!-- CARDS OCULTOS — descomentar para reativar
-
-<article class="proj-card" data-category="branding">
-  <div class="card-thumb">
-    <div class="card-thumb-inner" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);">
-      <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" opacity="0.5"><circle cx="120" cy="120" r="80" fill="none" stroke="#c9e3fa" stroke-width="1.2" stroke-opacity="0.6"/><circle cx="120" cy="120" r="50" fill="none" stroke="#c9e3fa" stroke-width="0.8" stroke-opacity="0.3"/><circle cx="120" cy="120" r="18" fill="#c9e3fa" fill-opacity="0.18"/><text x="215" y="98" font-family="serif" font-size="48" font-weight="900" fill="white" fill-opacity="0.45" font-style="italic">Aa</text><rect x="210" y="115" width="90" height="1.5" fill="#c9e3fa" fill-opacity="0.3"/><rect x="210" y="128" width="65" height="1.5" fill="#c9e3fa" fill-opacity="0.18"/><rect x="210" y="141" width="80" height="1.5" fill="#c9e3fa" fill-opacity="0.12"/></svg>
-    </div>
-    <div class="card-thumb-overlay">
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="card-view-btn"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Ver projeto</a>
-    </div>
-  </div>
-  <div class="card-info">
-    <div class="card-cat">Branding &amp; Identidade</div>
-    <div class="card-title">Identidade <em>Visual</em></div>
-    <div class="card-desc">Desenvolvimento de marca completo &#8212; logo, paleta e manual de identidade visual.</div>
-    <div class="card-footer"><div class="card-tags"><span class="card-tag">Logo</span><span class="card-tag">Tipografia</span></div><span class="card-year">2024</span></div>
-  </div>
-</article>
 
 <article class="proj-card" data-category="ecommerce">
   <div class="card-thumb">
@@ -207,13 +204,13 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
       <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" opacity="0.5"><rect x="40" y="30" width="110" height="140" rx="6" fill="none" stroke="#4ade80" stroke-width="1.2" stroke-opacity="0.4"/><rect x="52" y="44" width="86" height="56" rx="3" fill="#4ade80" fill-opacity="0.1"/><rect x="52" y="108" width="86" height="8" rx="2" fill="#4ade80" fill-opacity="0.2"/><rect x="52" y="122" width="60" height="6" rx="2" fill="#4ade80" fill-opacity="0.12"/><rect x="52" y="146" width="50" height="18" rx="9" fill="#4ade80" fill-opacity="0.2"/><rect x="170" y="50" width="110" height="140" rx="6" fill="none" stroke="#4ade80" stroke-width="1" stroke-opacity="0.3"/><rect x="182" y="64" width="86" height="56" rx="3" fill="#4ade80" fill-opacity="0.08"/><rect x="182" y="128" width="86" height="8" rx="2" fill="#4ade80" fill-opacity="0.15"/><rect x="182" y="152" width="50" height="18" rx="9" fill="#4ade80" fill-opacity="0.15"/><circle cx="260" cy="40" r="20" fill="none" stroke="#4ade80" stroke-width="1" stroke-opacity="0.4"/><text x="253" y="46" font-family="sans-serif" font-size="13" font-weight="700" fill="#4ade80" fill-opacity="0.6">3</text></svg>
     </div>
     <div class="card-thumb-overlay">
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="card-view-btn"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Ver projeto</a>
+      <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="card-view-btn">Ver projeto</a>
     </div>
   </div>
   <div class="card-info">
     <div class="card-cat">E-commerce</div>
     <div class="card-title">Loja <em>Online</em></div>
-    <div class="card-desc">E-commerce completo com cat&#225;logo din&#226;mico, PIX, cart&#227;o e painel de gest&#227;o.</div>
+    <div class="card-desc">E-commerce completo com catálogo dinâmico, PIX, cartão e painel de gestão.</div>
     <div class="card-footer"><div class="card-tags"><span class="card-tag">UI/UX</span><span class="card-tag">Dev</span></div><span class="card-year">2024</span></div>
   </div>
 </article>
@@ -221,16 +218,15 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
 <article class="proj-card" data-category="bots">
   <div class="card-thumb">
     <div class="card-thumb-inner" style="background:linear-gradient(135deg,#0e0620,#2d1870);">
-      <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" opacity="0.5"><rect x="20" y="20" width="50" height="200" rx="8" fill="none" stroke="#7289da" stroke-width="1" stroke-opacity="0.4"/><rect x="28" y="34" width="34" height="34" rx="17" fill="#5865f2" fill-opacity="0.3"/><rect x="28" y="76" width="34" height="34" rx="17" fill="#7289da" fill-opacity="0.15"/><rect x="28" y="118" width="34" height="34" rx="17" fill="#7289da" fill-opacity="0.1"/><rect x="80" y="20" width="100" height="200" rx="0" fill="none" stroke="#7289da" stroke-width="0.7" stroke-opacity="0.25"/><text x="88" y="48" font-family="sans-serif" font-size="8" fill="#7289da" fill-opacity="0.5" font-weight="700" letter-spacing="2">&#9662; GERAL</text><rect x="86" y="52" width="88" height="20" rx="3" fill="#7289da" fill-opacity="0.15"/><text x="96" y="66" font-family="sans-serif" font-size="9" fill="white" fill-opacity="0.6"># boas-vindas</text><text x="88" y="88" font-family="sans-serif" font-size="8" fill="white" fill-opacity="0.3" letter-spacing="2">&#9662; BOTS</text><text x="96" y="105" font-family="sans-serif" font-size="9" fill="#c9e3fa" fill-opacity="0.6">&#129302; commands</text><rect x="190" y="20" width="110" height="200" rx="0" fill="none" stroke="#7289da" stroke-width="0.5" stroke-opacity="0.18"/><circle cx="206" cy="55" r="12" fill="#5865f2" fill-opacity="0.35"/><rect x="224" y="48" width="60" height="6" rx="2" fill="white" fill-opacity="0.18"/><rect x="224" y="60" width="40" height="5" rx="2" fill="white" fill-opacity="0.1"/><rect x="200" y="80" width="90" height="44" rx="3" fill="#5865f2" fill-opacity="0.12" stroke="#7289da" stroke-width="0.5" stroke-opacity="0.3"/><rect x="200" y="80" width="3" height="44" rx="2" fill="#5865f2" fill-opacity="0.5"/><rect x="210" y="90" width="70" height="6" rx="2" fill="white" fill-opacity="0.2"/><rect x="210" y="102" width="50" height="5" rx="2" fill="white" fill-opacity="0.1"/></svg>
     </div>
     <div class="card-thumb-overlay">
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="card-view-btn"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Ver projeto</a>
+      <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="card-view-btn">Ver projeto</a>
     </div>
   </div>
   <div class="card-info">
-    <div class="card-cat">Bots &amp; Automa&#231;&#245;es</div>
+    <div class="card-cat">Bots &amp; Automações</div>
     <div class="card-title">Bot de <em>Tickets</em></div>
-    <div class="card-desc">Sistema completo de tickets com painel de atendimento e hist&#243;rico para Discord.</div>
+    <div class="card-desc">Sistema completo de tickets com painel de atendimento e histórico para Discord.</div>
     <div class="card-footer"><div class="card-tags"><span class="card-tag">Discord</span><span class="card-tag">Node.js</span></div><span class="card-year">2025</span></div>
   </div>
 </article>
@@ -238,16 +234,15 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
 <article class="proj-card" data-category="branding">
   <div class="card-thumb">
     <div class="card-thumb-inner" style="background:linear-gradient(135deg,#1a0a0a,#3d1515);">
-      <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" opacity="0.5"><polygon points="160,30 280,210 40,210" fill="none" stroke="#C8B89A" stroke-width="1.2" stroke-opacity="0.5"/><polygon points="160,70 250,200 70,200" fill="none" stroke="#C8B89A" stroke-width="0.7" stroke-opacity="0.25"/><circle cx="160" cy="160" r="30" fill="none" stroke="#C8B89A" stroke-width="0.8" stroke-opacity="0.35"/><circle cx="160" cy="160" r="10" fill="#C8B89A" fill-opacity="0.2"/><rect x="60" y="218" width="50" height="8" rx="2" fill="#C8B89A" fill-opacity="0.3"/><rect x="120" y="218" width="35" height="8" rx="2" fill="#C8B89A" fill-opacity="0.2"/><rect x="165" y="218" width="45" height="8" rx="2" fill="#C8B89A" fill-opacity="0.15"/></svg>
     </div>
     <div class="card-thumb-overlay">
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="card-view-btn"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Ver projeto</a>
+      <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="card-view-btn">Ver projeto</a>
     </div>
   </div>
   <div class="card-info">
     <div class="card-cat">Branding &amp; Identidade</div>
-    <div class="card-title">Rebranding <em>Estrat&#233;gico</em></div>
-    <div class="card-desc">Reestrutura&#231;&#227;o completa de identidade para empresa consolidada no mercado.</div>
+    <div class="card-title">Rebranding <em>Estratégico</em></div>
+    <div class="card-desc">Reestruturação completa de identidade para empresa consolidada no mercado.</div>
     <div class="card-footer"><div class="card-tags"><span class="card-tag">Rebranding</span><span class="card-tag">Logo</span></div><span class="card-year">2024</span></div>
   </div>
 </article>
@@ -255,16 +250,15 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
 <article class="proj-card" data-category="motion">
   <div class="card-thumb">
     <div class="card-thumb-inner" style="background:linear-gradient(135deg,#0f0f0f,#1a1a1a);">
-      <svg viewBox="0 0 320 240" width="80%" xmlns="http://www.w3.org/2000/svg" opacity="0.45"><circle cx="160" cy="120" r="80" fill="none" stroke="#C8B89A" stroke-width="1" stroke-opacity="0.4"/><circle cx="160" cy="120" r="56" fill="none" stroke="#C8B89A" stroke-width="0.7" stroke-opacity="0.25" stroke-dasharray="5 8"/><circle cx="160" cy="120" r="32" fill="none" stroke="#C8B89A" stroke-width="0.5" stroke-opacity="0.2"/><circle cx="160" cy="120" r="10" fill="#C8B89A" fill-opacity="0.15"/><circle cx="240" cy="120" r="5" fill="#C8B89A" fill-opacity="0.45"/><circle cx="80" cy="120" r="4" fill="#C8B89A" fill-opacity="0.3"/><circle cx="160" cy="40" r="4" fill="#C8B89A" fill-opacity="0.35"/><line x1="240" y1="120" x2="216" y2="120" stroke="#C8B89A" stroke-width="0.7" stroke-opacity="0.3"/><line x1="80" y1="120" x2="104" y2="120" stroke="#C8B89A" stroke-width="0.7" stroke-opacity="0.3"/><text x="108" y="225" font-family="serif" font-size="16" font-weight="700" fill="white" fill-opacity="0.28" font-style="italic">Motion Design</text></svg>
     </div>
     <div class="card-thumb-overlay">
-      <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="card-view-btn"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Ver projeto</a>
+      <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="card-view-btn">Ver projeto</a>
     </div>
   </div>
   <div class="card-info">
     <div class="card-cat">Motion Design</div>
-    <div class="card-title">Anima&#231;&#245;es <em>para Redes</em></div>
-    <div class="card-desc">Stories, reels e posts animados que aumentam engajamento e refor&#231;am a marca.</div>
+    <div class="card-title">Animações <em>para Redes</em></div>
+    <div class="card-desc">Stories, reels e posts animados que aumentam engajamento e reforçam a marca.</div>
     <div class="card-footer"><div class="card-tags"><span class="card-tag">Motion</span><span class="card-tag">Social</span></div><span class="card-year">2025</span></div>
   </div>
 </article>
@@ -278,22 +272,60 @@ footer{background:var(--ink);padding:44px 48px 28px;border-top:1px solid rgba(24
   <div class="cta-overline">Pr&#243;ximo projeto</div>
   <h2 class="cta-title">O seu pode ser<br><em>o pr&#243;ximo.</em></h2>
   <div class="cta-btns">
-    <a href="index.html#contato" class="cta-btn-p">Iniciar projeto</a>
-    <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="cta-btn-s">Ver mais no Behance &#8594;</a>
+    <a href="contato.html" class="cta-btn-p">Iniciar projeto</a>
+    <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="cta-btn-s">Ver mais no Behance &#8594;</a>
   </div>
 </section>
 <footer>
   <div class="footer-inner">
     <a href="index.html" class="footer-logo">Infinity <span>Hub</span></a>
     <span class="footer-copy">&#169; 2026 Infinity Hub. Todos os direitos reservados.</span>
-    <a href="https://www.behance.net/infinityhub" target="_blank" rel="noopener" class="footer-beh"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Behance</a>
+    <a href="https://www.behance.net/infihub" target="_blank" rel="noopener" class="footer-beh"><svg viewBox="0 0 24 24"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.836 1.98 2.101 1.98.56 0 1.085-.373 1.249-.977h2.406zm-5.25-3.89c-.091-1.004-.648-1.7-1.737-1.7-1.135 0-1.732.73-1.868 1.7h3.605zM9.547 11.338c.65-.267 1.033-.857 1.033-1.617 0-1.758-1.308-2.721-3.28-2.721H1v12h6.635c2.084 0 3.697-1.025 3.697-3.04 0-1.279-.637-2.148-1.785-2.622zM3.44 9h2.759c.735 0 1.266.308 1.266 1.07 0 .712-.479 1.087-1.266 1.087H3.44V9zm3.176 6.5H3.44v-2.5h3.233c.882 0 1.386.416 1.386 1.24 0 .865-.537 1.26-1.443 1.26z"/></svg>Behance</a>
   </div>
 </footer>
 <script>
-(function(){var dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing'),mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();document.querySelectorAll('.card-thumb').forEach(function(el){el.addEventListener('mouseenter',function(){dot.classList.add('on-card');ring.classList.add('on-card');});el.addEventListener('mouseleave',function(){dot.classList.remove('on-card');ring.classList.remove('on-card');});});})();
-(function(){var cards=document.querySelectorAll('.proj-card');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible');},i*80);obs.unobserve(e.target);}});},{threshold:.1});cards.forEach(function(c){obs.observe(c);});})();
-(function(){var btns=document.querySelectorAll('.filter-btn');var cards=document.querySelectorAll('.proj-card');var countEl=document.getElementById('projCount');btns.forEach(function(btn){btn.addEventListener('click',function(){btns.forEach(function(b){b.classList.remove('active');});btn.classList.add('active');var f=btn.getAttribute('data-filter');var visible=0;cards.forEach(function(card){var show=f==='all'||card.getAttribute('data-category')===f;card.style.display=show?'block':'none';if(show){visible++;setTimeout(function(){card.classList.add('visible');},50);}});countEl.textContent=visible+' projeto'+(visible!==1?'s':'');});});})();
-(function(){var t=document.getElementById('navToggle'),n=document.getElementById('mobileNav'),c=document.getElementById('mobileNavClose');if(t)t.addEventListener('click',function(){n.classList.add('open');document.body.style.overflow='hidden';});if(c)c.addEventListener('click',function(){n.classList.remove('open');document.body.style.overflow='';});})();
+(function(){
+  var cards=document.querySelectorAll('.proj-card');
+  if(!cards.length)return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('visible');},i*80);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:.1});
+  cards.forEach(function(c){obs.observe(c);});
+})();
+
+(function(){
+  var btns=document.querySelectorAll('.filter-btn');
+  var cards=document.querySelectorAll('.proj-card');
+  var countEl=document.getElementById('projCount');
+  if(!btns.length||!cards.length)return;
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var f=btn.getAttribute('data-filter');
+      var visible=0;
+      cards.forEach(function(card){
+        var show=f==='all'||card.getAttribute('data-category')===f;
+        card.style.display=show?'block':'none';
+        if(show){visible++;setTimeout(function(){card.classList.add('visible');},50);}
+      });
+      if(countEl)countEl.textContent=visible+' projeto'+(visible!==1?'s':'');
+    });
+  });
+})();
+
+(function(){
+  var t=document.getElementById('navToggle');
+  var n=document.getElementById('mobileNav');
+  var c=document.getElementById('mobileNavClose');
+  if(t)t.addEventListener('click',function(){n.classList.add('open');document.body.style.overflow='hidden';});
+  if(c)c.addEventListener('click',function(){n.classList.remove('open');document.body.style.overflow='';});
+})();
 </script>
 </body>
 </html>
