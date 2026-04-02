@@ -1230,3 +1230,196 @@ footer { background: linear-gradient(160deg, #07131E 0%, #0d2035 40%, #073156 75
     align-self: auto;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVIDADE COMPLETA — ACRÉSCIMOS
+   Cobre lacunas identificadas: sobre-hero, hero-bottom-row,
+   hero-stats, footer-top mobile, contact-info-strip, nav-toggle,
+   sobre-page, imagens, touch targets e acessibilidade.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── IMAGENS GLOBAIS — base segura ──────────────────────────── */
+img, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── TOUCH TARGETS — mínimo 44px em mobile ──────────────────── */
+@media (max-width: 768px) {
+  a, button, [role="button"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  /* exceções para links inline de texto */
+  p a, li a, .footer-links a, nav a {
+    min-height: unset;
+    display: inline;
+  }
+}
+
+/* ── SOBRE HERO — responsivo ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .sobre-hero { padding: 0 32px 64px; }
+  .hero-title-sobre { font-size: clamp(52px, 9vw, 110px); }
+}
+
+@media (max-width: 768px) {
+  .sobre-hero { padding: 0 20px 48px; }
+  .hero-title-sobre { font-size: clamp(40px, 10vw, 72px); margin-bottom: 28px; }
+  .hero-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding-top: 24px;
+  }
+  .hero-desc-sobre { max-width: 100%; font-size: 15px; }
+  .hero-stats { flex-direction: row; gap: 24px; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num { font-size: 36px; }
+}
+
+@media (max-width: 480px) {
+  .sobre-hero { padding: 0 16px 36px; }
+  .hero-title-sobre { font-size: clamp(32px, 10vw, 54px); }
+  .hero-stats { gap: 16px; }
+  .stat-num { font-size: 30px; }
+  .stat-label { font-size: 9px; }
+}
+
+@media (max-width: 375px) {
+  .sobre-hero { padding: 0 14px 28px; }
+  .hero-title-sobre { font-size: clamp(26px, 9.5vw, 42px); }
+}
+
+/* ── HERO OVERLINE (texto de fundo gigante) ─────────────────── */
+@media (max-width: 480px) {
+  .hero-overline { font-size: clamp(70px, 22vw, 130px); }
+}
+
+/* ── SECTION HEADER — sobre e outras páginas ────────────────── */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+}
+
+/* ── FOOTER TOP — coluna única em mobile pequeno ────────────── */
+@media (max-width: 375px) {
+  .footer-top { grid-template-columns: 1fr !important; gap: 20px; }
+  .footer-socials-col { flex-direction: row; align-items: flex-start; }
+}
+
+/* ── CONTACT INFO STRIP — 480px ─────────────────────────────── */
+@media (max-width: 480px) {
+  .contact-info-strip {
+    margin: 40px auto 0;
+    padding-top: 32px;
+    gap: 24px;
+  }
+  .contact-info-divider { margin: 0; }
+  .contact-social-icons { flex-wrap: wrap; }
+}
+
+/* ── NAV TOGGLE — garante visibilidade ──────────────────────── */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex !important; }
+}
+
+/* ── STRIP — evita overflow horizontal ──────────────────────── */
+.strip, .strip-inner, .strip-group { min-width: 0; }
+
+/* ── HERO MARQUEE — evita transbordamento ───────────────────── */
+@media (max-width: 480px) {
+  .hero-marquee-wrap { margin: 0; }
+  .marquee-item { font-size: 11px; padding: 0 8px; }
+  .hero-bottom { flex-direction: column; gap: 12px; }
+  .scroll-hint { display: none; }
+}
+
+/* ── PROCESS GRID — 1 coluna em mobile pequeno ──────────────── */
+@media (max-width: 375px) {
+  .process-grid { grid-template-columns: 1fr !important; }
+  .process-step { padding: 18px 12px; }
+}
+
+/* ── STACK CARDS — altura dinâmica em telas muito pequenas ──── */
+@media (max-width: 375px) {
+  .stack-cards .proj-card { height: 170px !important; }
+  .stack-cards .card-overlay { padding: 16px; }
+  .stack-cards .card-title { font-size: 15px !important; }
+}
+
+/* ── FEATURED CARD MAIN — mobile XS ────────────────────────── */
+@media (max-width: 375px) {
+  .featured-card-main { min-height: 200px; padding: 16px 12px !important; }
+}
+
+/* ── CTA / FORM — mobile pequeno ───────────────────────────── */
+@media (max-width: 375px) {
+  .form-btn { padding: 14px 20px; font-size: 11px; }
+  .cta-title { margin-bottom: 20px; }
+}
+
+/* ── TESTIMONIAL — padding mínimo ───────────────────────────── */
+@media (max-width: 375px) {
+  .testimonial-quote { font-size: clamp(12px, 4vw, 17px); }
+}
+
+/* ── FOOTER WORDMARK — scale suave ──────────────────────────── */
+@media (max-width: 480px) {
+  .footer-wordmark { font-size: clamp(36px, 12vw, 64px); margin: 8px -16px 0; width: calc(100% + 32px); }
+}
+@media (max-width: 375px) {
+  .footer-wordmark { font-size: clamp(28px, 10vw, 48px); }
+}
+
+/* ── MODAL — overflow interno em telas pequenas ─────────────── */
+@media (max-width: 375px) {
+  #svcModalBox, #legalModalBox {
+    margin: 4px !important;
+    width: calc(100vw - 8px) !important;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+}
+
+/* ── CLIENTS CAROUSEL — mobile XS ───────────────────────────── */
+@media (max-width: 480px) {
+  .clients-slide { gap: 24px; padding: 0 16px; }
+  .clients-fade-left, .clients-fade-right { width: 40px; }
+}
+@media (max-width: 375px) {
+  .clients-slide { gap: 16px; }
+}
+
+/* ── HERO CINEMATIC WRAP — telas muito pequenas ─────────────── */
+@media (max-width: 375px) {
+  .hero-cinematic-wrap { padding-top: 60px; }
+  .hc-word { font-size: clamp(22px, 9vw, 38px); }
+  .hc-title-back { margin-bottom: -16px; }
+  .hc-title-front { margin-top: -16px; }
+  .hc-orb .hero-orb-wrap { width: 180px; height: 180px; }
+  .hc-bottom { padding: 16px; flex-direction: column; gap: 10px; }
+}
+
+/* ── TEAM CARDS — 1 coluna em 375px ────────────────────────── */
+@media (max-width: 375px) {
+  .team-cards-grid { grid-template-columns: 1fr !important; gap: 10px; }
+  .team-card-info { padding: 12px 14px 16px; }
+}
+
+/* ── ACESSIBILIDADE — respeita preferência de movimento ─────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── PREVENÇÃO GLOBAL DE OVERFLOW HORIZONTAL ────────────────── */
+html, body { max-width: 100%; overflow-x: hidden; }
