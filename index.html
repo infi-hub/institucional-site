@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/imagem/favicon.png?v=2.5">
-<link rel="stylesheet" href="assets/css/style.css?v=2.5">
+<link rel="icon" type="image/png" href="assets/imagem/favicon.png?v=2.6">
+<link rel="stylesheet" href="assets/css/style.css?v=2.6">
 </head>
 <body>
 <div class="cursor-dot" id="cursorDot"></div>
@@ -33,269 +33,24 @@
   <a href="#contato" class="mobile-nav-link" style="color:var(--accent);opacity:1;">Iniciar projeto</a>
 </div>
 
-<section class="hero-wrap hero-cinematic-wrap">
-  <div class="hero-noise"></div>
-
-  <!-- LINHA 1: Criamos formas — atrás do orb -->
-  <div class="hc-title-back">
-    <span class="hc-word">Criamos&nbsp;<em>formas</em></span>
-  </div>
-
-  <!-- ORB — camada do meio -->
-  <div class="hc-orb">
-    <div class="hero-orb-wrap">
-      <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="glow-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c9e3fa" stop-opacity="0.18"/>
-            <stop offset="60%" stop-color="#073156" stop-opacity="0.06"/>
-            <stop offset="100%" stop-color="#073156" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="glow-mid" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#073156" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="#073156" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="sphere-grad" cx="38%" cy="35%" r="62%">
-            <stop offset="0%" stop-color="#c9e3fa" stop-opacity="0.13"/>
-            <stop offset="45%" stop-color="#073156" stop-opacity="0.07"/>
-            <stop offset="100%" stop-color="#0D0D0D" stop-opacity="0.04"/>
-          </radialGradient>
-          <filter id="soft-glow">
-            <feGaussianBlur stdDeviation="6" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="inner-glow">
-            <feGaussianBlur stdDeviation="10" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <clipPath id="sphere-clip">
-            <circle cx="240" cy="240" r="158"/>
-          </clipPath>
-        </defs>
-
-        <g class="orb-float">
-          <!-- Glow bg halo -->
-          <circle cx="240" cy="240" r="200" fill="url(#glow-mid)" class="orb-glow-core"/>
-          <circle cx="240" cy="240" r="160" fill="url(#glow-core)"/>
-
-          <!-- Outer orbit rings -->
-          <g class="orb-ring-1">
-            <ellipse cx="240" cy="240" rx="218" ry="60" stroke="#073156" stroke-width="0.8" stroke-opacity="0.35" fill="none"/>
-          </g>
-          <g class="orb-ring-2">
-            <ellipse cx="240" cy="240" rx="195" ry="80" stroke="#073156" stroke-width="0.6" stroke-opacity="0.25" fill="none" transform="rotate(60 240 240)"/>
-          </g>
-          <g class="orb-ring-3">
-            <ellipse cx="240" cy="240" rx="205" ry="50" stroke="#c9e3fa" stroke-width="0.5" stroke-opacity="0.18" fill="none" transform="rotate(-30 240 240)"/>
-          </g>
-
-          <!-- Dashed orbit -->
-          <g class="orb-dash-path">
-            <circle cx="240" cy="240" r="178" stroke="#073156" stroke-width="0.7" stroke-dasharray="8 14" stroke-opacity="0.3" fill="none"/>
-          </g>
-
-          <!-- Main sphere -->
-          <circle cx="240" cy="240" r="158" stroke="#C8B89A" stroke-width="0.8" stroke-opacity="0.3" fill="url(#sphere-grad)"/>
-
-          <!-- Latitude lines (clipped) -->
-          <g clip-path="url(#sphere-clip)" opacity="0.22">
-            <ellipse cx="240" cy="240" rx="158" ry="40" stroke="#073156" stroke-width="0.7" fill="none"/>
-            <ellipse cx="240" cy="240" rx="158" ry="80" stroke="#073156" stroke-width="0.6" fill="none"/>
-            <ellipse cx="240" cy="240" rx="158" ry="118" stroke="#073156" stroke-width="0.5" fill="none"/>
-            <ellipse cx="240" cy="240" rx="158" ry="145" stroke="#073156" stroke-width="0.5" fill="none"/>
-            <!-- Longitude lines -->
-            <ellipse cx="240" cy="240" rx="40" ry="158" stroke="#073156" stroke-width="0.7" fill="none"/>
-            <ellipse cx="240" cy="240" rx="80" ry="158" stroke="#073156" stroke-width="0.6" fill="none"/>
-            <ellipse cx="240" cy="240" rx="120" ry="158" stroke="#073156" stroke-width="0.5" fill="none"/>
-          </g>
-
-          <!-- ═══ CÉREBRO ANATÔMICO ═══ -->
-          <g clip-path="url(#sphere-clip)">
-            <defs>
-              <radialGradient id="hemi-l" cx="35%" cy="40%" r="65%">
-                <stop offset="0%" stop-color="#1a3a5c" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="#071828" stop-opacity="0.05"/>
-              </radialGradient>
-              <radialGradient id="hemi-r" cx="65%" cy="40%" r="65%">
-                <stop offset="0%" stop-color="#1a3a5c" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="#071828" stop-opacity="0.05"/>
-              </radialGradient>
-            </defs>
-
-            <!-- Fundo escuro atrás do cérebro -->
-
-            <!-- ── SILHUETA HEMISFÉRIO ESQUERDO ── -->
-            <path d="
-              M240,155
-              C228,154 214,157 202,164
-              C186,173 174,188 168,205
-              C162,222 162,241 168,257
-              C174,273 184,285 196,294
-              C206,301 218,307 230,310
-              L240,312
-              Z
-            " fill="url(#hemi-l)" stroke="#2a6a9a" stroke-width="2" stroke-opacity="0.9"/>
-
-            <!-- ── SILHUETA HEMISFÉRIO DIREITO ── -->
-            <path d="
-              M240,155
-              C252,154 266,157 278,164
-              C294,173 306,188 312,205
-              C318,222 318,241 312,257
-              C306,273 296,285 284,294
-              C274,301 262,307 250,310
-              L240,312
-              Z
-            " fill="url(#hemi-r)" stroke="#2a6a9a" stroke-width="2" stroke-opacity="0.9"/>
-
-            <!-- ── GIROS HEMISFÉRIO ESQUERDO (convoluções em camadas) ── -->
-            <!-- Sulco central de Rolando — linha mestra -->
-            <path d="M220,162 C214,178 210,196 212,214 C214,230 220,244 228,256" stroke="#3d8fc2" stroke-width="2.4" fill="none" stroke-opacity="1" stroke-linecap="round"/>
-            <!-- Sulco de Sylvius / lateral -->
-            <path d="M170,212 C180,216 194,218 208,216 C220,214 232,208 238,202" stroke="#3d8fc2" stroke-width="2.2" fill="none" stroke-opacity="1" stroke-linecap="round"/>
-            <!-- Giro frontal superior esq -->
-            <path d="M200,166 C192,180 188,196 190,212 C192,224 198,234 206,240" stroke="#2e7db5" stroke-width="1.9" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
-            <!-- Giro frontal médio esq -->
-            <path d="M208,162 C200,176 198,194 200,210 C202,222 208,232 214,238" stroke="#2e7db5" stroke-width="1.7" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
-            <!-- Giro pré-central esq -->
-            <path d="M216,160 C210,175 208,192 210,208 C212,220 218,230 224,236" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
-            <!-- Giro pós-central / parietal esq -->
-            <path d="M228,260 C222,272 218,286 218,298 C218,304 220,308 224,310" stroke="#2e7db5" stroke-width="1.8" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
-            <path d="M234,262 C230,276 228,290 228,302" stroke="#2573a8" stroke-width="1.5" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <!-- Sulcos occipitais esq -->
-            <path d="M178,262 C182,274 186,284 192,292 C196,298 202,304 208,308" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <path d="M186,266 C188,278 192,290 196,300" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
-            <!-- Giros temporais esq -->
-            <path d="M172,228 C180,234 190,238 200,238 C208,238 216,234 222,228" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <path d="M170,244 C178,250 188,254 198,254 C206,254 214,250 220,244" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
-            <path d="M172,258 C180,264 190,268 200,268 C208,268 214,264 220,258" stroke="#1a577f" stroke-width="1.2" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
-
-            <!-- ── GIROS HEMISFÉRIO DIREITO (espelho) ── -->
-            <!-- Sulco central de Rolando dir -->
-            <path d="M260,162 C266,178 270,196 268,214 C266,230 260,244 252,256" stroke="#3d8fc2" stroke-width="2.4" fill="none" stroke-opacity="1" stroke-linecap="round"/>
-            <!-- Sulco lateral dir -->
-            <path d="M310,212 C300,216 286,218 272,216 C260,214 248,208 242,202" stroke="#3d8fc2" stroke-width="2.2" fill="none" stroke-opacity="1" stroke-linecap="round"/>
-            <!-- Giro frontal superior dir -->
-            <path d="M280,166 C288,180 292,196 290,212 C288,224 282,234 274,240" stroke="#2e7db5" stroke-width="1.9" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
-            <!-- Giro frontal médio dir -->
-            <path d="M272,162 C280,176 282,194 280,210 C278,222 272,232 266,238" stroke="#2e7db5" stroke-width="1.7" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
-            <!-- Giro pré-central dir -->
-            <path d="M264,160 C270,175 272,192 270,208 C268,220 262,230 256,236" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
-            <!-- Giro pós-central dir -->
-            <path d="M252,260 C258,272 262,286 262,298 C262,304 260,308 256,310" stroke="#2e7db5" stroke-width="1.8" fill="none" stroke-opacity="0.92" stroke-linecap="round"/>
-            <path d="M246,262 C250,276 252,290 252,302" stroke="#2573a8" stroke-width="1.5" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <!-- Sulcos occipitais dir -->
-            <path d="M302,262 C298,274 294,284 288,292 C284,298 278,304 272,308" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <path d="M294,266 C292,278 288,290 284,300" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
-            <!-- Giros temporais dir -->
-            <path d="M308,228 C300,234 290,238 280,238 C272,238 264,234 258,228" stroke="#2573a8" stroke-width="1.6" fill="none" stroke-opacity="0.88" stroke-linecap="round"/>
-            <path d="M310,244 C302,250 292,254 282,254 C274,254 266,250 260,244" stroke="#1f6596" stroke-width="1.4" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
-            <path d="M308,258 C300,264 290,268 280,268 C272,268 266,264 260,258" stroke="#1a577f" stroke-width="1.2" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
-
-            <!-- ── FISSURA LONGITUDINAL ── -->
-            <line x1="240" y1="155" x2="240" y2="312" stroke="#030e1a" stroke-width="3" stroke-opacity="1"/>
-            <line x1="240" y1="155" x2="240" y2="312" stroke="#0a2030" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="5 6"/>
-
-            <!-- ── CEREBELO — lamelas horizontais ── -->
-            <path d="M208,312 C212,318 220,322 230,324 C236,325 240,325 240,325 C240,325 244,325 250,324 C260,322 268,318 272,312 L262,310 L240,312 L218,310 Z"
-              fill="#0a1e34" stroke="#2a6a9a" stroke-width="1.8" stroke-opacity="0.95"/>
-            <!-- Lamelas -->
-            <path d="M210,316 C220,320 230,322 240,322 C250,322 260,320 270,316" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
-            <path d="M212,321 C221,325 231,327 240,327 C249,327 259,325 268,321" stroke="#2573a8" stroke-width="1.2" fill="none" stroke-opacity="0.85" stroke-linecap="round"/>
-            <path d="M214,326 C222,330 232,332 240,332 C248,332 258,330 266,326" stroke="#1f6596" stroke-width="1.1" fill="none" stroke-opacity="0.8" stroke-linecap="round"/>
-            <path d="M216,330 C224,334 232,336 240,336 C248,336 256,334 264,330" stroke="#1a577f" stroke-width="1" fill="none" stroke-opacity="0.75" stroke-linecap="round"/>
-            <path d="M218,334 C226,338 233,340 240,340 C247,340 254,338 262,334" stroke="#154d72" stroke-width="0.9" fill="none" stroke-opacity="0.7" stroke-linecap="round"/>
-
-            <!-- ── TRONCO CEREBRAL ── -->
-            <path d="M226,312 C224,324 224,338 226,348 L254,348 C256,338 256,324 254,312 Z"
-              fill="none" stroke="#2a6a9a" stroke-width="1.8" stroke-opacity="0.95"/>
-            <line x1="226" y1="322" x2="254" y2="322" stroke="#2e7db5" stroke-width="1.2" stroke-opacity="0.85"/>
-            <line x1="225" y1="332" x2="255" y2="332" stroke="#2573a8" stroke-width="1.1" stroke-opacity="0.78"/>
-            <line x1="225" y1="342" x2="255" y2="342" stroke="#1f6596" stroke-width="1" stroke-opacity="0.7"/>
-
-            <!-- ── MÓDULO CYBER ── -->
-            <rect x="217" y="348" width="46" height="18" rx="3" fill="none" stroke="#2e7db5" stroke-width="1.8" stroke-opacity="1"/>
-            <rect x="221" y="352" width="11" height="10" rx="1.5" fill="#1a4a72" stroke="#3d8fc2" stroke-width="1.2" stroke-opacity="1"/>
-            <rect x="235" y="352" width="11" height="10" rx="1.5" fill="#1a4a72" stroke="#3d8fc2" stroke-width="1.2" stroke-opacity="1"/>
-            <rect x="249" y="352" width="10" height="10" rx="1.5" fill="#122e4a" stroke="#2573a8" stroke-width="1.1" stroke-opacity="0.9"/>
-            <!-- LED no primeiro quadrado -->
-            <circle cx="226" cy="357" r="2" fill="#4ab0f0" fill-opacity="0.9" class="orb-dot"/>
-            <circle cx="240" cy="357" r="2" fill="#3d8fc2" fill-opacity="0.8" class="orb-dot-2"/>
-            <!-- Fios -->
-            <path d="M223,366 L218,376 L210,376" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
-            <path d="M240,366 L240,378" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.9" stroke-linecap="round"/>
-            <path d="M257,366 L262,376 L270,376" stroke="#2e7db5" stroke-width="1.4" fill="none" stroke-opacity="0.95" stroke-linecap="round"/>
-
-            <!-- ── NÓS NEURAIS ── -->
-            <circle cx="194" cy="218" r="4.5" fill="#4ab0f0" fill-opacity="1" class="orb-dot"/>
-            <circle cx="186" cy="254" r="4" fill="#3d8fc2" fill-opacity="1" class="orb-dot-2"/>
-            <circle cx="194" cy="286" r="4" fill="#3d8fc2" fill-opacity="0.95" class="orb-dot-3"/>
-            <circle cx="286" cy="218" r="4.5" fill="#4ab0f0" fill-opacity="1" class="orb-dot-2"/>
-            <circle cx="294" cy="254" r="4" fill="#3d8fc2" fill-opacity="1" class="orb-dot-3"/>
-            <circle cx="286" cy="286" r="4" fill="#3d8fc2" fill-opacity="0.95" class="orb-dot"/>
-            <circle cx="240" cy="158" r="4.5" fill="#4ab0f0" fill-opacity="0.9" class="orb-dot-3"/>
-            <!-- Conexões -->
-            <line x1="194" y1="218" x2="186" y2="254" stroke="#2e7db5" stroke-width="1" stroke-opacity="0.8"/>
-            <line x1="186" y1="254" x2="194" y2="286" stroke="#2573a8" stroke-width="1" stroke-opacity="0.75"/>
-            <line x1="286" y1="218" x2="294" y2="254" stroke="#2e7db5" stroke-width="1" stroke-opacity="0.8"/>
-            <line x1="294" y1="254" x2="286" y2="286" stroke="#2573a8" stroke-width="1" stroke-opacity="0.75"/>
-            <line x1="240" y1="158" x2="194" y2="218" stroke="#1f6596" stroke-width="0.8" stroke-opacity="0.55"/>
-            <line x1="240" y1="158" x2="286" y2="218" stroke="#1f6596" stroke-width="0.8" stroke-opacity="0.55"/>
-          </g>
-
-          <!-- Orbiting dots on outer ring -->
-          <g class="orb-ring-1">
-            <circle cx="458" cy="240" r="4" fill="#c9e3fa" class="orb-dot" fill-opacity="0.8"/>
-            <circle cx="22" cy="240" r="3" fill="#C8B89A" class="orb-dot-2" fill-opacity="0.6"/>
-          </g>
-          <g class="orb-ring-2">
-            <circle cx="435" cy="240" r="3.5" fill="#c9e3fa" class="orb-dot-3" fill-opacity="0.7" transform="rotate(60 240 240)"/>
-          </g>
-
-          <!-- Node connectors (outside sphere, decorative) -->
-          <g filter="url(#soft-glow)" opacity="0.7">
-            <line x1="398" y1="165" x2="370" y2="185" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.4"/>
-            <circle cx="398" cy="165" r="3" fill="#c9e3fa" fill-opacity="0.5"/>
-            <line x1="82" y1="170" x2="112" y2="190" stroke="#c9e3fa" stroke-width="0.7" stroke-opacity="0.35"/>
-            <circle cx="82" cy="170" r="2.5" fill="#c9e3fa" fill-opacity="0.4"/>
-            <line x1="380" y1="330" x2="356" y2="308" stroke="#C8B89A" stroke-width="0.6" stroke-opacity="0.35"/>
-            <circle cx="380" cy="330" r="2.5" fill="#C8B89A" fill-opacity="0.4"/>
-            <line x1="100" y1="330" x2="126" y2="308" stroke="#C8B89A" stroke-width="0.6" stroke-opacity="0.3"/>
-            <circle cx="100" cy="330" r="2" fill="#C8B89A" fill-opacity="0.3"/>
-          </g>
-
-          <!-- Outer dashed accent ring -->
-          <g class="orb-ring-4">
-            <circle cx="240" cy="240" r="210" stroke="#C8B89A" stroke-width="0.5" stroke-dasharray="3 20" stroke-opacity="0.2" fill="none"/>
-          </g>
-        </g>
-      </svg>
-      <canvas id="orbParticles" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:10;"></canvas>
+<!-- ── HERO ── -->
+<section class="sobre-hero">
+  <div class="sobre-hero-noise"></div>
+  <div class="sobre-hero-bg-gradient"></div>
+  <div class="hero-overline">Infinity <br> Hub</div>
+  <div class="hero-content">
+    <div class="hero-tag reveal">Infinity Hub</div>
+    <h1 class="hero-title-sobre reveal stagger-1">
+      Criamos marcas<br>
+      <em>que marcam.</em>
+    </h1> 
+    <div class="hero-bottom-row">
+      <p class="hero-desc-sobre reveal stagger-2">
+        Comunicação descomplicada para conectar marcas com as pessoas certas.
+         </div>
     </div>
   </div>
-
-  <!-- LINHA 2: de impactar. — na frente do orb -->
-  <div class="hc-title-front">
-    <span class="hc-word">de impactar.</span>
-  </div>
-
-  <!-- Info lateral esquerda -->
-  <div class="hc-side-left">
-    <div class="eyebrow-tag" style="margin-bottom:16px;">Infinity Hub</div>
-    <p style="font-size:13px;line-height:1.7;color:var(--light);max-width:200px;font-weight:300;">Ag&#234;ncia criativa e hub de inova&#231;&#227;o digital</p>
-  </div>
-
-  <!-- Info lateral direita -->
-  <div class="hc-side-right">
-    <p style="font-size:14px;line-height:1.6;color:var(--light);max-width:220px;font-weight:300;">Transformamos marcas em experi&#234;ncias que ficam na mem&#243;ria.</p>
-  </div>
-
-  <!-- Marquee na base -->
-  <div class="hc-bottom">
-    <div class="scroll-hint"><div class="scroll-line"></div>Rolar para explorar</div>
-  </div>
-
-</section><!-- /hero-wrap -->
+</section>
 
 <div class="strip">
   <div class="strip-inner">
@@ -1317,6 +1072,6 @@
   </div>
 </footer>>
 
-<script src="assets/js/script.js?v=2.5"></script>
+<script src="assets/js/script.js?v=2.6"></script>
 </body>
 </html>
