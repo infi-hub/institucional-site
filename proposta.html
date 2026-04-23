@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta | Infinity Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #F5F0E8; --ink: #0D0D0D; --warm: #C8B89A;
+  --accent: #073156; --muted: #8A8278; --light: #EDE8DF;
+  --card-shadow: 0 20px 60px rgba(13,13,13,0.12), 0 4px 16px rgba(13,13,13,0.06);
+  --card-shadow-hover: 0 40px 100px rgba(13,13,13,0.2), 0 8px 32px rgba(13,13,13,0.1);
+  --blue-light: #c9e3fa;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+/* ── HEADER ── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 48px;
+  background: rgba(245,240,232,0.92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(7,49,86,0.08);
+}
+.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+.logo span { color: var(--accent); }
+.header-tag { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); opacity: 0.6; }
+
+/* ── STRIP ── */
+.strip { background: var(--blue-light); padding: 14px 0; overflow: hidden; margin-top: 73px; }
+.strip-inner { display: flex; animation: ticker 22s linear infinite; }
+.strip-group { display: flex; flex-shrink: 0; align-items: center; white-space: nowrap; }
+.strip-item { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); padding: 0 24px; white-space: nowrap; }
+.strip-item.dot { color: var(--ink); opacity: 0.3; padding: 0 4px; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── HERO ── */
+.hero-section {
+  min-height: 70vh; background: var(--ink);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 120px 48px 80px; position: relative; overflow: hidden;
+}
+.hero-noise {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-bg-gradient {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(20,76,129,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-overline { display: none; }
+.hero-content { position: relative; z-index: 2; width: 100%; max-width: 900px; text-align: center; }
+.hero-tag {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-light);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-bottom: 28px; opacity: 0.7;
+}
+.hero-tag::before, .hero-tag::after { content: ''; display: block; width: 32px; height: 1px; background: currentColor; }
+.hero-title {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: clamp(40px, 6vw, 80px); line-height: 1.05;
+  letter-spacing: -0.03em; color: var(--cream); margin-bottom: 28px;
+}
+.hero-title em { font-style: italic; color: var(--blue-light); }
+.hero-desc {
+  font-size: 17px; line-height: 1.8; color: rgba(245,240,232,0.5);
+  max-width: 560px; font-weight: 300; margin: 0 auto 44px;
+}
+.hero-bottom-row {
+  display: flex; justify-content: center; align-items: center; gap: 10px;
+  padding-top: 40px; border-top: 1px solid rgba(201,227,250,0.1);
+  flex-wrap: wrap;
+}
+.service-pill {
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(201,227,250,0.6); border: 1px solid rgba(201,227,250,0.15); padding: 7px 16px;
+}
+
+/* ── SECTION BASE ── */
+.section { padding: 100px 48px; }
+.section-label {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.section-label.on-dark { color: var(--blue-light); }
+.section-label.on-dark::before { background: var(--blue-light); }
+h2.section-title {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: clamp(36px, 5vw, 68px); letter-spacing: -0.03em; line-height: 1.05;
+  margin-bottom: 56px; color: var(--ink);
+}
+h2.section-title.on-dark { color: var(--cream); }
+h2.section-title em { font-style: italic; color: var(--accent); }
+h2.section-title.on-dark em { color: var(--blue-light); }
+
+/* ── SOBRE ── */
+.sobre { background: var(--cream); padding-bottom: 0; }
+.sobre-top { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-bottom: 64px; }
+.sobre-text p { font-size: 17px; line-height: 1.85; color: var(--muted); font-weight: 300; margin-bottom: 20px; }
+.sobre-tagline {
+  display: inline-block; margin-top: 8px;
+  font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic;
+  color: var(--accent); border-bottom: 1px solid rgba(7,49,86,0.2); padding-bottom: 4px;
+}
+
+.services-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.service-row {
+  display: flex; align-items: center; gap: 20px; padding: 20px 0;
+  border-bottom: 1px solid rgba(13,13,13,0.08);
+  font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink);
+  transition: color 0.2s;
+}
+.service-row:first-of-type { border-top: 1px solid rgba(13,13,13,0.08); }
+.service-row:hover { color: var(--accent); }
+.service-row-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--accent); min-width: 28px; font-style: italic; }
+
+.sobre-diferenciais {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--accent);
+  margin: 0 -48px;
+}
+.diferencial {
+  background: var(--accent); padding: 48px 40px;
+  border-right: 1px solid rgba(201,227,250,0.1);
+  transition: background 0.3s;
+}
+.diferencial:hover { background: rgba(7,49,86,0.85); }
+.diferencial:last-child { border-right: none; }
+.diferencial-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+.diferencial-title {
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue-light); margin-bottom: 12px;
+}
+.diferencial p { font-size: 15px; color: rgba(245,240,232,0.6); line-height: 1.75; font-weight: 300; }
+
+/* ── COMO FUNCIONA ── */
+.como { background: var(--blue-light); position: relative; overflow: hidden; }
+.como::before {
+  content: 'PROCESSO';
+  position: absolute; top: -20px; right: -40px;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: clamp(80px, 14vw, 180px); letter-spacing: -0.06em;
+  color: rgba(7,49,86,0.06); pointer-events: none; user-select: none; line-height: 1;
+}
+.como .section-label.on-dark { color: var(--accent); }
+.como .section-label.on-dark::before { background: var(--accent); }
+.como h2.section-title.on-dark { color: var(--ink); }
+.como h2.section-title.on-dark em { color: var(--accent); }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.step {
+  background: #fff; padding: 44px 36px; border-radius: 4px; border: none;
+  box-shadow: 0 4px 24px rgba(7,49,86,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; overflow: hidden;
+}
+.step::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.77,0,0.18,1);
+}
+.step:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(7,49,86,0.16); }
+.step:hover::after { transform: scaleX(1); }
+.step-num {
+  font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 900;
+  font-style: italic; color: var(--accent); opacity: 0.15;
+  line-height: 1; margin-bottom: 20px; letter-spacing: -0.03em;
+}
+.step h3 { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.step p, .step ul { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; }
+.step ul { list-style: none; }
+.step ul li { padding-left: 18px; position: relative; margin-bottom: 8px; color: var(--ink); font-size: 15px; font-weight: 400; }
+.step ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 2px; }
+.pratica-block {
+  background: var(--accent); border-radius: 4px; padding: 52px 56px;
+  position: relative; overflow: hidden;
+}
+.pratica-block::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(201,227,250,0.06); pointer-events: none;
+}
+.pratica-block-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.pratica-titulo {
+  font-family: 'Playfair Display', serif; font-weight: 900; font-style: italic;
+  font-size: clamp(28px, 3vw, 42px); line-height: 1.1;
+  color: var(--cream); letter-spacing: -0.02em;
+}
+.pratica-titulo span { color: var(--blue-light); }
+.pratica-textos p { font-size: 15px; color: rgba(245,240,232,0.65); line-height: 1.9; font-weight: 300; margin-bottom: 14px; }
+.pratica-textos p:last-child { margin-bottom: 0; color: var(--cream); font-weight: 500; }
+
+/* ── MODELO DE GANHO ── */
+.ganho { background: var(--light); }
+.ganho-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+.split-card { padding: 60px 48px; }
+.split-card.dark { background: var(--ink); }
+.split-card.blue { background: var(--accent); }
+.split-percent { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 100px; line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
+.split-card.dark .split-percent { color: var(--blue-light); }
+.split-card.blue .split-percent { color: var(--cream); }
+.split-who { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px; }
+.split-card.dark .split-who { color: rgba(201,227,250,0.5); }
+.split-card.blue .split-who { color: rgba(245,240,232,0.5); }
+.split-desc { font-size: 15px; line-height: 1.8; font-weight: 300; }
+.split-card.dark .split-desc { color: rgba(245,240,232,0.5); }
+.split-card.blue .split-desc { color: rgba(245,240,232,0.65); }
+.resp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.resp-item { background: var(--cream); padding: 32px 28px; border: 1px solid rgba(13,13,13,0.06); }
+.resp-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; font-style: italic; color: var(--accent); opacity: 0.35; line-height: 1; margin-bottom: 12px; }
+.resp-item p { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); }
+
+/* ── POR QUE PARTICIPAR ── */
+.porque { background: var(--ink); border-top: 1px solid rgba(13,13,13,0.06); position: relative; overflow: hidden; }
+.porque::before {
+  content: '';
+  position: absolute; bottom: -100px; right: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(201,227,250,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.porque .section-label { color: var(--blue-light); }
+.porque .section-label::before { background: var(--blue-light); }
+.porque h2.section-title { color: var(--cream); }
+.porque h2.section-title em { color: var(--blue-light); }
+
+.beneficios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+.beneficio {
+  background: rgba(201,227,250,0.04);
+  border: 1px solid rgba(201,227,250,0.08);
+  padding: 48px 40px;
+  display: flex; flex-direction: column; gap: 0;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative; overflow: hidden;
+}
+.beneficio::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--blue-light); opacity: 0;
+  transition: opacity 0.3s;
+}
+.beneficio:hover { background: rgba(201,227,250,0.08); border-color: rgba(201,227,250,0.18); }
+.beneficio:hover::after { opacity: 1; }
+
+.bene-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.bene-icon { font-size: 2rem; flex-shrink: 0; }
+.bene-title {
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream);
+}
+.bene-desc { font-size: 15px; color: rgba(245,240,232,0.55); line-height: 1.8; font-weight: 300; }
+.bene-tag {
+  display: inline-block; margin-top: 20px;
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue-light); border: 1px solid rgba(201,227,250,0.2);
+  padding: 5px 12px; align-self: flex-start;
+}
+
+.aside-note {
+  background: var(--blue-light); padding: 36px 44px;
+  border-left: none; display: flex; align-items: center; gap: 20px;
+}
+.aside-note-icon { font-size: 1.8rem; flex-shrink: 0; }
+.aside-note p {
+  font-size: 17px; line-height: 1.7; font-style: normal; font-weight: 400;
+  color: var(--accent);
+}
+.aside-note p strong { font-weight: 700; }
+
+/* ── VISÃO ── */
+.visao {
+  background: var(--accent);
+  padding: 120px 48px 0;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.visao::before {
+  content: '';
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(201,227,250,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.visao-eyebrow {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--blue-light); opacity: 0.7;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-bottom: 32px;
+}
+.visao-eyebrow::before, .visao-eyebrow::after { content: ''; width: 32px; height: 1px; background: var(--blue-light); opacity: 0.4; }
+.visao-title {
+  font-family: 'Playfair Display', serif; font-weight: 900;
+  font-size: clamp(48px, 8vw, 110px); letter-spacing: -0.04em; line-height: 0.95;
+  color: var(--cream); margin-bottom: 32px;
+}
+.visao-title em { font-style: italic; color: var(--blue-light); }
+.visao-desc { font-size: 17px; color: rgba(245,240,232,0.6); max-width: 520px; margin: 0 auto 64px; line-height: 1.8; font-weight: 300; }
+
+.visao-pillars {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; margin-bottom: 64px;
+}
+.visao-pillar {
+  background: rgba(201,227,250,0.06);
+  border: 1px solid rgba(201,227,250,0.1);
+  padding: 36px 28px; text-align: center;
+  transition: background 0.3s;
+}
+.visao-pillar:hover { background: rgba(201,227,250,0.12); }
+.visao-pillar-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.visao-pillar-title {
+  font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue-light); margin-bottom: 10px;
+}
+.visao-pillar p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.7; font-weight: 300; }
+
+.convite-wrap {
+  background: var(--cream);
+  padding: 80px 48px;
+  margin: 0 -48px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center; text-align: left;
+}
+.convite-left h3 {
+  font-family: 'Playfair Display', serif; font-weight: 900; font-style: italic;
+  font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 16px;
+}
+.convite-left { padding: 0 0 0 8px; }
+.convite-left h3 em { color: var(--accent); }
+.convite-left p { font-size: 15px; color: var(--muted); font-weight: 300; line-height: 1.8; }
+.convite-right {
+  background: var(--accent); padding: 48px 44px;
+  border-left: 3px solid var(--blue-light);
+}
+.convite-label {
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--blue-light); opacity: 0.7; margin-bottom: 20px;
+}
+.convite-right p { font-size: 16px; color: rgba(245,240,232,0.75); line-height: 1.9; font-weight: 300; }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); border-top: 1px solid rgba(201,227,250,0.08); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; color: var(--cream); }
+.footer-logo span { color: var(--blue-light); }
+footer p { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.25); }
+
+/* ══════════════════════════════════════
+   RESPONSIVIDADE COMPLETA
+   ══════════════════════════════════════ */
+
+/* ── TABLET LANDSCAPE (max 1024px) ── */
+@media (max-width: 1024px) {
+  .section { padding: 80px 40px; }
+  .visao { padding: 80px 40px 0; }
+  .sobre-top { gap: 48px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .ganho-split { gap: 2px; }
+  .split-percent { font-size: 72px; }
+  .resp-grid { grid-template-columns: 1fr 1fr; }
+  .sobre-diferenciais { margin: 0 -40px; }
+  .convite-wrap { gap: 48px; padding: 60px 40px; margin: 0 -40px; }
+  .pratica-block { padding: 40px; }
+  .visao-pillars { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ── TABLET PORTRAIT (max 768px) ── */
+@media (max-width: 768px) {
+  /* Header */
+  header { padding: 16px 24px; }
+  .header-tag { font-size: 9px; letter-spacing: 0.1em; }
+
+  /* Strip */
+  .strip { margin-top: 65px; }
+
+  /* Hero */
+  .hero-section { min-height: 60vh; padding: 100px 24px 60px; }
+  .hero-title { font-size: clamp(32px, 7vw, 52px); }
+  .hero-desc { font-size: 15px; }
+  .hero-bottom-row { gap: 8px; }
+  .service-pill { font-size: 9px; padding: 6px 12px; }
+
+  /* Sections */
+  .section { padding: 64px 24px; }
+  .visao { padding: 64px 24px 0; }
+  h2.section-title { font-size: clamp(30px, 7vw, 48px); margin-bottom: 36px; }
+
+  /* Sobre */
+  .sobre-top { grid-template-columns: 1fr; gap: 40px; }
+  .sobre-diferenciais { grid-template-columns: 1fr; margin: 0 -24px; }
+  .diferencial { border-right: none; border-bottom: 1px solid rgba(201,227,250,0.1); }
+  .diferencial:last-child { border-bottom: none; }
+
+  /* Como */
+  .steps-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .pratica-block { padding: 36px 28px; }
+  .pratica-block-inner { grid-template-columns: 1fr; gap: 24px; }
+  .pratica-titulo { font-size: clamp(24px, 5vw, 36px); }
+
+  /* Ganho */
+  .ganho-split { grid-template-columns: 1fr; }
+  .split-card { padding: 44px 32px; }
+  .split-percent { font-size: 80px; }
+  .resp-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+
+  /* Benefícios */
+  .beneficios-grid { grid-template-columns: 1fr; }
+  .aside-note { padding: 28px 24px; gap: 14px; }
+  .aside-note p { font-size: 15px; }
+
+  /* Visão */
+  .visao-title { font-size: clamp(36px, 8vw, 64px); }
+  .visao-desc { font-size: 15px; margin-bottom: 40px; }
+  .visao-pillars { grid-template-columns: 1fr; gap: 2px; }
+  .visao-pillar { padding: 28px 24px; }
+  .convite-wrap { grid-template-columns: 1fr; gap: 0; margin: 0 -24px; padding: 0; }
+  .convite-left { padding: 48px 24px 32px; }
+  .convite-right { padding: 36px 24px; border-left: none; border-top: 3px solid var(--blue-light); }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+}
+
+/* ── MOBILE (max 480px) ── */
+@media (max-width: 480px) {
+  /* Header */
+  header { padding: 14px 16px; }
+  .header-tag { display: none; }
+
+  /* Strip */
+  .strip { margin-top: 57px; }
+  .strip-item { font-size: 10px; padding: 0 16px; }
+
+  /* Hero */
+  .hero-section { min-height: 55vh; padding: 90px 20px 48px; }
+  .hero-tag { font-size: 9px; gap: 8px; }
+  .hero-tag::before, .hero-tag::after { width: 20px; }
+  .hero-title { font-size: clamp(28px, 8vw, 40px); margin-bottom: 20px; }
+  .hero-desc { font-size: 14px; margin-bottom: 32px; }
+  .hero-bottom-row { gap: 6px; }
+  .service-pill { font-size: 8px; padding: 5px 10px; letter-spacing: 0.1em; }
+
+  /* Sections */
+  .section { padding: 52px 20px; }
+  .visao { padding: 52px 20px 0; }
+  .section-label { font-size: 9px; }
+  h2.section-title { font-size: clamp(26px, 8vw, 40px); margin-bottom: 28px; }
+
+  /* Sobre */
+  .sobre-text p { font-size: 15px; }
+  .sobre-tagline { font-size: 16px; }
+  .service-row { font-size: 13px; padding: 16px 0; }
+  .sobre-diferenciais { margin: 0 -20px; }
+  .diferencial { padding: 32px 20px; }
+
+  /* Como */
+  .step { padding: 32px 24px; }
+  .step-num { font-size: 44px; }
+  .pratica-block { padding: 28px 20px; }
+
+  /* Ganho */
+  .split-card { padding: 36px 24px; }
+  .split-percent { font-size: 68px; }
+  .resp-grid { grid-template-columns: 1fr 1fr; }
+  .resp-item { padding: 24px 16px; }
+  .resp-num { font-size: 28px; }
+
+  /* Benefícios */
+  .beneficio { padding: 32px 24px; }
+  .bene-icon { font-size: 1.6rem; }
+
+  /* Visão */
+  .visao-title { font-size: clamp(28px, 9vw, 48px); }
+  .visao-eyebrow { font-size: 9px; }
+  .visao-pillars { grid-template-columns: 1fr; }
+  .convite-wrap { margin: 0 -20px; }
+  .convite-left { padding: 40px 20px 28px; }
+  .convite-right { padding: 28px 20px; }
+  .convite-left h3 { font-size: clamp(24px, 6vw, 36px); }
+
+  /* Footer */
+  footer { padding: 24px 20px; }
+  .footer-logo { font-size: 16px; }
+}
+
+/* ── MOBILE XS (max 375px) ── */
+@media (max-width: 375px) {
+  header { padding: 12px 16px; }
+  .hero-section { padding: 80px 16px 40px; }
+  .hero-title { font-size: clamp(24px, 8vw, 34px); }
+  .section { padding: 44px 16px; }
+  .visao { padding: 44px 16px 0; }
+  .sobre-diferenciais { margin: 0 -16px; }
+  .convite-wrap { margin: 0 -16px; }
+  .convite-left { padding: 36px 16px 24px; }
+  .convite-right { padding: 24px 16px; }
+  .resp-grid { grid-template-columns: 1fr 1fr; }
+  .split-percent { font-size: 60px; }
+  .pratica-block { padding: 24px 16px; }
+  footer { padding: 20px 16px; }
+}
+
+/* ── ACESSIBILIDADE ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── PREVENÇÃO DE OVERFLOW ── */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">Infinity<span>.</span>Hub</a>
+  <span class="header-tag">Proposta de Parceria · 2026</span>
+</header>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-group">
+      <span class="strip-item">Bots & Automações</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Sites & Landing Pages</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Marketing Digital</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Identidade Visual</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Tráfego Pago</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Branding</span><span class="strip-item dot">·</span>
+    </div>
+    <div class="strip-group">
+      <span class="strip-item">Bots & Automações</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Sites & Landing Pages</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Marketing Digital</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Identidade Visual</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Tráfego Pago</span><span class="strip-item dot">·</span>
+      <span class="strip-item">Branding</span><span class="strip-item dot">·</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero-section">
+  <div class="hero-noise"></div>
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Proposta de Parceria · 2026</div>
+    <h1 class="hero-title">Infinity Hub —<br><em>Hub de Soluções Digitais.</em></h1>
+    <p class="hero-desc">Uma nova forma de construir soluções digitais, conectando os especialistas certos para cada projeto com gestão, estratégia e resultado.</p>
+    <div class="hero-bottom-row">
+      <span class="service-pill">Bots</span>
+      <span class="service-pill">Automações</span>
+      <span class="service-pill">Sites</span>
+      <span class="service-pill">Marketing</span>
+      <span class="service-pill">Branding</span>
+      <span class="service-pill">Tráfego Pago</span>
+    </div>
+  </div>
+</div>
+
+<section class="section sobre" id="sobre">
+  <div class="section-label">01 · Sobre a marca</div>
+  <div class="sobre-top">
+    <div class="sobre-text">
+      <h2 class="section-title">Hub de<br><em>Soluções</em><br>Digitais.</h2>
+      <p>A Infinity Hub é uma agência tech moderna que funciona como um hub de especialistas digitais. Em vez de um modelo tradicional com equipe fixa, conectamos profissionais altamente qualificados para desenvolver soluções digitais de forma estratégica, ágil e escalável.</p>
+      <p>Nosso foco é simples: criar projetos digitais de alto impacto com as pessoas certas em cada projeto.</p>
+      <span class="sobre-tagline">"As pessoas certas, no projeto certo."</span>
+    </div>
+    <div>
+      <p class="services-label">O que desenvolvemos</p>
+      <div class="service-row"><span class="service-row-num">01</span> Bots e automações</div>
+      <div class="service-row"><span class="service-row-num">02</span> Criação de sites e landing pages</div>
+      <div class="service-row"><span class="service-row-num">03</span> Marketing e tráfego digital</div>
+      <div class="service-row"><span class="service-row-num">04</span> Identidade visual e branding</div>
+    </div>
+  </div>
+
+  <div class="sobre-diferenciais">
+    <div class="diferencial">
+      <span class="diferencial-icon">⚡</span>
+      <div class="diferencial-title">Ágil por natureza</div>
+      <p>Sem burocracia de agência tradicional. Montamos o time certo em horas, não semanas.</p>
+    </div>
+    <div class="diferencial">
+      <span class="diferencial-icon">🎯</span>
+      <div class="diferencial-title">Especialistas sob demanda</div>
+      <p>Cada projeto recebe exatamente o profissional ideal — sem generalistas tentando fazer tudo.</p>
+    </div>
+    <div class="diferencial">
+      <span class="diferencial-icon">📊</span>
+      <div class="diferencial-title">Gestão completa</div>
+      <p>A Infinity cuida de tudo: cliente, prazo, qualidade e pagamento. Você só executa o que faz de melhor.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section como" id="como">
+  <div class="section-label on-dark">02 · Como funciona</div>
+  <h2 class="section-title on-dark">O <em>Processo.</em></h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>A Infinity Hub realiza</h3>
+      <ul>
+        <li>Captação de clientes</li>
+        <li>Vendas</li>
+        <li>Planejamento estratégico</li>
+        <li>Gestão dos projetos</li>
+      </ul>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Para cada projeto</h3>
+      <p>Montamos um time sob medida, com especialistas ideais para cada demanda específica.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Execução</h3>
+      <ul>
+        <li>Cada profissional atua na sua especialidade</li>
+        <li>Com organização e suporte da agência</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pratica-block">
+    <div class="pratica-block-inner">
+      <div>
+        <p class="pratica-titulo">Na prática,<br>é <span>simples.</span></p>
+      </div>
+      <div class="pratica-textos">
+        <p>A Infinity Hub funciona como o centro estratégico e operacional de cada projeto. Somos responsáveis por atrair oportunidades, conduzir negociações, organizar processos e garantir que cada entrega aconteça com qualidade e prazo.</p>
+        <p>Quando um novo projeto entra, analisamos a demanda e selecionamos os profissionais mais adequados. Cada colaborador atua no que faz de melhor, dentro da sua especialidade.</p>
+        <p>Enquanto o time executa, a Infinity Hub cuida de toda a gestão, alinhamento com o cliente, acompanhamento de resultados e suporte contínuo.</p>
+        <p>Nosso modelo é simples: a Infinity Hub vende, organiza e lidera. Os especialistas executam com excelência. Juntos, entregamos resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ganho" id="ganho">
+  <div class="section-label">03 · Modelo de ganho</div>
+  <h2 class="section-title">Divisão de <em>Valores.</em></h2>
+  <div class="ganho-split">
+    <div class="split-card blue">
+      <div class="split-percent">60%</div>
+      <div class="split-who">Especialistas executores</div>
+      <p class="split-desc">Você foca no que faz de melhor: executar e gerar resultado. Sem teto fixo, sem burocracia.</p>
+    </div>
+    <div class="split-card dark">
+      <div class="split-percent">40%</div>
+      <div class="split-who">Infinity Hub</div>
+      <p class="split-desc">Cuidamos de toda a estrutura: aquisição de clientes, operacional, gestão e crescimento da marca.</p>
+    </div>
+  </div>
+  <div class="resp-grid">
+    <div class="resp-item"><div class="resp-num">01</div><p>Aquisição de clientes</p></div>
+    <div class="resp-item"><div class="resp-num">02</div><p>Estrutura operacional</p></div>
+    <div class="resp-item"><div class="resp-num">03</div><p>Gestão</p></div>
+    <div class="resp-item"><div class="resp-num">04</div><p>Crescimento da marca</p></div>
+  </div>
+</section>
+
+<section class="section porque" id="porque">
+  <div class="section-label">04 · Por que participar</div>
+  <h2 class="section-title em">Suas <em>Vantagens.</em></h2>
+  <div class="beneficios-grid">
+    <div class="beneficio">
+      <div class="bene-top">
+        <div class="bene-icon">💰</div>
+        <div class="bene-title">Ganho por projeto</div>
+      </div>
+      <p class="bene-desc">Sem teto fixo. Quanto mais projetos, mais você ganha — proporcional ao que entrega. Você define seu ritmo.</p>
+      <span class="bene-tag">Sem limite de ganhos</span>
+    </div>
+    <div class="beneficio">
+      <div class="bene-top">
+        <div class="bene-icon">🕐</div>
+        <div class="bene-title">Flexibilidade total</div>
+      </div>
+      <p class="bene-desc">Você organiza seu próprio horário e trabalha de onde quiser. Foco em resultado, não em bater ponto.</p>
+      <span class="bene-tag">100% remoto</span>
+    </div>
+    <div class="beneficio">
+      <div class="bene-top">
+        <div class="bene-icon">📈</div>
+        <div class="bene-title">Crescer junto</div>
+      </div>
+      <p class="bene-desc">À medida que a Infinity Hub escala, mais oportunidades surgem para quem faz parte da rede. Crescimento coletivo.</p>
+      <span class="bene-tag">Longo prazo</span>
+    </div>
+    <div class="beneficio">
+      <div class="bene-top">
+        <div class="bene-icon">🚀</div>
+        <div class="bene-title">Projetos reais e escaláveis</div>
+      </div>
+      <p class="bene-desc">Nada de freelas avulsos sem futuro. Aqui você participa de projetos com estrutura, gestão e continuidade.</p>
+      <span class="bene-tag">Projetos com propósito</span>
+    </div>
+  </div>
+  <div class="aside-note">
+    <div class="aside-note-icon">💡</div>
+    <p><strong>Não precisa mudar nada agora.</strong> Você pode atuar em paralelo com o que já faz hoje, conforme surgirem oportunidades.</p>
+  </div>
+</section>
+
+<section class="visao" id="visao">
+  <div class="visao-eyebrow">Visão & Convite</div>
+  <h2 class="visao-title">Estamos construindo<br><em>algo maior.</em></h2>
+  <p class="visao-desc">A Infinity Hub é um ecossistema de talentos, onde cada especialista contribui para algo muito maior do que um freela avulso.</p>
+
+  <div class="visao-pillars">
+    <div class="visao-pillar">
+      <span class="visao-pillar-icon">🤝</span>
+      <div class="visao-pillar-title">Rede forte de profissionais</div>
+      <p>Especialistas conectados, cada um brilhando na sua área, juntos entregando mais.</p>
+    </div>
+    <div class="visao-pillar">
+      <span class="visao-pillar-icon">📈</span>
+      <div class="visao-pillar-title">Escalar projetos digitais</div>
+      <p>Projetos reais, com estrutura, gestão e crescimento contínuo para todos.</p>
+    </div>
+    <div class="visao-pillar">
+      <span class="visao-pillar-icon">🚀</span>
+      <div class="visao-pillar-title">Crescimento coletivo</div>
+      <p>Quanto mais a Infinity cresce, mais oportunidades surgem para quem faz parte.</p>
+    </div>
+  </div>
+
+  <div class="convite-wrap">
+    <div class="convite-left">
+      <h3>Vamos <em>crescer juntos?</em></h3>
+      <p>Estamos construindo mais que uma agência. Queremos pessoas que se importam com o que fazem e querem fazer parte de algo com propósito e resultado.</p>
+    </div>
+    <div class="convite-right">
+      <div class="convite-label">Convite</div>
+      <p>Gostaria de te convidar para fazer parte da Infinity Hub. Acredito que sua experiência pode somar muito na construção desse projeto. Se fizer sentido para você, vamos conversar melhor. Quero te mostrar a visão completa e como podemos crescer juntos.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Infinity<span>.</span>Hub</span>
+  <p>Hub de Soluções Digitais · 2026</p>
+</footer>
+
+</body>
+</html>
