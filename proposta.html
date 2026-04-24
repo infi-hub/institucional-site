@@ -114,16 +114,59 @@ h2.section-title.on-dark em { color: var(--blue-light); }
   color: var(--accent); border-bottom: 1px solid rgba(7,49,86,0.2); padding-bottom: 4px;
 }
 
-.services-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.services-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+
+.servicos-grid { display: flex; flex-direction: column; gap: 2px; }
+.servico-card {
+  display: flex; align-items: flex-start; gap: 20px;
+  background: var(--white, #fff); padding: 24px 28px;
+  border: 1px solid rgba(7,49,86,0.07);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  cursor: default;
+}
+.servico-card:hover {
+  border-color: rgba(7,49,86,0.2);
+  box-shadow: 0 8px 32px rgba(7,49,86,0.08);
+  transform: translateX(4px);
+}
+.servico-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: var(--blue-light);
+  font-style: normal;
+  transition: transform 0.25s;
+}
+.servico-card:hover .servico-icon { transform: scale(1.08); }
+.servico-title {
+  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+  color: var(--ink); margin-bottom: 6px; letter-spacing: 0.01em;
+}
+.servico-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.65;
+  font-weight: 300;
+}
 .service-row {
-  display: flex; align-items: center; gap: 20px; padding: 20px 0;
+  display: flex; align-items: center; gap: 24px; padding: 24px 0;
   border-bottom: 1px solid rgba(13,13,13,0.08);
-  font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink);
-  transition: color 0.2s;
+  font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700;
+  letter-spacing: -0.01em; color: var(--ink);
+  transition: color 0.2s, padding-left 0.25s; cursor: default;
 }
 .service-row:first-of-type { border-top: 1px solid rgba(13,13,13,0.08); }
-.service-row:hover { color: var(--accent); }
-.service-row-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--accent); min-width: 28px; font-style: italic; }
+.service-row:hover { color: var(--accent); padding-left: 10px; }
+.service-row-num {
+  font-family: 'Playfair Display', serif; font-size: 14px;
+  color: var(--accent); min-width: 32px; font-style: italic; opacity: 0.45;
+  transition: opacity 0.2s;
+}
+.service-row:hover .service-row-num { opacity: 1; }
+.service-row-arrow {
+  margin-left: auto; font-size: 18px; color: var(--accent);
+  opacity: 0; transform: translateX(-8px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.service-row:hover .service-row-arrow { opacity: 1; transform: translateX(0); }
 
 .sobre-diferenciais {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -204,7 +247,7 @@ h2.section-title.on-dark em { color: var(--blue-light); }
 /* ── MODELO DE GANHO ── */
 .ganho { background: var(--light); }
 .ganho-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
-.split-card { padding: 60px 48px; }
+.split-card { padding: 60px 52px 56px; }
 .split-card.dark { background: var(--ink); }
 .split-card.blue { background: var(--accent); }
 .split-percent { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 100px; line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
@@ -216,67 +259,116 @@ h2.section-title.on-dark em { color: var(--blue-light); }
 .split-desc { font-size: 15px; line-height: 1.8; font-weight: 300; }
 .split-card.dark .split-desc { color: rgba(245,240,232,0.5); }
 .split-card.blue .split-desc { color: rgba(245,240,232,0.65); }
+.split-list { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.split-list li {
+  font-size: 14px; font-weight: 400; padding-left: 20px; position: relative; line-height: 1.6;
+}
+.split-card.blue .split-list li { color: rgba(245,240,232,0.75); }
+.split-card.dark .split-list li { color: rgba(245,240,232,0.6); }
+.split-list li::before {
+  content: '✓'; position: absolute; left: 0;
+  font-size: 12px; font-weight: 700;
+}
+.split-card.blue .split-list li::before { color: var(--blue-light); }
+.split-card.dark .split-list li::before { color: var(--blue-light); }
 .resp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
 .resp-item { background: var(--cream); padding: 32px 28px; border: 1px solid rgba(13,13,13,0.06); }
 .resp-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; font-style: italic; color: var(--accent); opacity: 0.35; line-height: 1; margin-bottom: 12px; }
 .resp-item p { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); }
 
 /* ── POR QUE PARTICIPAR ── */
-.porque { background: var(--ink); border-top: 1px solid rgba(13,13,13,0.06); position: relative; overflow: hidden; }
-.porque::before {
-  content: '';
-  position: absolute; bottom: -100px; right: -100px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(201,227,250,0.06) 0%, transparent 70%);
-  pointer-events: none;
+.porque {
+  background: var(--blue-light);
+  position: relative; overflow: hidden;
+  padding-bottom: 0;
 }
-.porque .section-label { color: var(--blue-light); }
-.porque .section-label::before { background: var(--blue-light); }
-.porque h2.section-title { color: var(--cream); }
-.porque h2.section-title em { color: var(--blue-light); }
+.porque .section-label { color: var(--accent); }
+.porque .section-label::before { background: var(--accent); }
+.porque h2.section-title { color: var(--ink); }
+.porque h2.section-title em { color: var(--accent); }
 
-.beneficios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px; }
+.beneficios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .beneficio {
-  background: rgba(201,227,250,0.04);
-  border: 1px solid rgba(201,227,250,0.08);
-  padding: 48px 40px;
-  display: flex; flex-direction: column; gap: 0;
-  transition: background 0.3s, border-color 0.3s;
+  background: var(--cream);
+  border: none;
+  padding: 48px 40px 40px;
+  display: flex; flex-direction: column;
+  border-radius: 2px;
+  transition: box-shadow 0.35s, transform 0.35s;
   position: relative; overflow: hidden;
 }
 .beneficio::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--blue-light); opacity: 0;
-  transition: opacity 0.3s;
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.77,0,0.18,1);
 }
-.beneficio:hover { background: rgba(201,227,250,0.08); border-color: rgba(201,227,250,0.18); }
-.beneficio:hover::after { opacity: 1; }
+.beneficio:hover { box-shadow: 0 28px 72px rgba(7,49,86,0.2); transform: translateY(-6px); }
+.beneficio:hover::after { transform: scaleX(1); }
 
 .bene-top { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-.bene-icon { font-size: 2rem; flex-shrink: 0; }
-.bene-title {
-  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream);
+.bene-icon {
+  width: 60px; height: 60px;
+  background: var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; flex-shrink: 0; transition: transform 0.3s;
 }
-.bene-desc { font-size: 15px; color: rgba(245,240,232,0.55); line-height: 1.8; font-weight: 300; }
+.beneficio:hover .bene-icon { transform: scale(1.1); }
+.bene-title {
+  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+}
+.bene-desc {
+  font-size: 16px; color: var(--muted);
+  line-height: 1.8; font-weight: 300; flex: 1; margin-bottom: 28px;
+}
 .bene-tag {
-  display: inline-block; margin-top: 20px;
+  display: inline-flex; align-items: center; gap: 6px;
   font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--blue-light); border: 1px solid rgba(201,227,250,0.2);
-  padding: 5px 12px; align-self: flex-start;
+  color: var(--cream);
+  background: var(--accent);
+  padding: 8px 16px; align-self: flex-start; transition: background 0.3s;
 }
+.beneficio:hover .bene-tag { background: #0a3f6b; }
+.bene-tag::before { content: '→'; font-size: 10px; }
 
-.aside-note {
-  background: var(--blue-light); padding: 36px 44px;
-  border-left: none; display: flex; align-items: center; gap: 20px;
+.porque-cta {
+  background: var(--ink);
+  margin: 0 -48px;
+  padding: 56px 48px;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 40px;
 }
-.aside-note-icon { font-size: 1.8rem; flex-shrink: 0; }
-.aside-note p {
-  font-size: 17px; line-height: 1.7; font-style: normal; font-weight: 400;
-  color: var(--accent);
+.porque-cta-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-style: italic; font-weight: 700;
+  color: var(--cream); line-height: 1.4;
 }
-.aside-note p strong { font-weight: 700; }
+.porque-cta-text p span { color: var(--blue-light); }
+.porque-cta-note {
+  margin-top: 10px;
+  font-size: 14px; color: rgba(245,240,232,0.5);
+  font-weight: 300; line-height: 1.7;
+  font-family: 'DM Sans', sans-serif; font-style: normal;
+}
+.cta-badge {
+  display: flex; flex-direction: column; align-items: center;
+  background: rgba(201,227,250,0.06);
+  border: 1px solid rgba(201,227,250,0.15);
+  padding: 32px 40px; text-align: center; flex-shrink: 0;
+}
+.cta-badge-icon { font-size: 2.4rem; margin-bottom: 12px; }
+.cta-badge-title {
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--blue-light); margin-bottom: 6px;
+}
+.cta-badge-sub { font-size: 13px; color: rgba(245,240,232,0.45); font-weight: 300; }
+
+.aside-note { display: none; }
 
 /* ── VISÃO ── */
 .visao {
@@ -328,30 +420,76 @@ h2.section-title.on-dark em { color: var(--blue-light); }
 .visao-pillar p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.7; font-weight: 300; }
 
 .convite-wrap {
-  background: var(--cream);
-  padding: 80px 48px;
+  background: var(--ink);
+  padding: 0;
   margin: 0 -48px;
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center; text-align: left;
+  gap: 0; align-items: stretch; text-align: left;
+}
+.convite-left {
+  padding: 72px 56px;
+  background: var(--ink);
+  border-right: 1px solid rgba(201,227,250,0.1);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.convite-left-tag {
+  font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--blue-light); margin-bottom: 20px; opacity: 0.6;
 }
 .convite-left h3 {
   font-family: 'Playfair Display', serif; font-weight: 900; font-style: italic;
-  font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.02em;
-  color: var(--ink); margin-bottom: 16px;
+  font-size: clamp(32px, 3.5vw, 50px); line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--cream); margin-bottom: 20px;
 }
-.convite-left { padding: 0 0 0 8px; }
-.convite-left h3 em { color: var(--accent); }
-.convite-left p { font-size: 15px; color: var(--muted); font-weight: 300; line-height: 1.8; }
+.convite-left h3 em { color: var(--blue-light); }
+.convite-left > p { font-size: 16px; color: rgba(245,240,232,0.55); font-weight: 300; line-height: 1.8; margin-bottom: 44px; }
+.convite-stats { display: flex; align-items: center; gap: 0; border-top: 1px solid rgba(201,227,250,0.1); padding-top: 36px; }
+.convite-stat { flex: 1; text-align: center; }
+.convite-stat-num {
+  display: block; font-family: 'Playfair Display', serif;
+  font-weight: 900; font-style: italic; font-size: 40px;
+  color: var(--blue-light); line-height: 1; margin-bottom: 6px; letter-spacing: -0.02em;
+}
+.convite-stat-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.35); }
+.convite-stat-divider { width: 1px; height: 52px; background: rgba(201,227,250,0.1); }
+
 .convite-right {
-  background: var(--accent); padding: 48px 44px;
-  border-left: 3px solid var(--blue-light);
+  padding: 72px 56px;
+  background: var(--cream);
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.convite-right::before {
+  content: '∞';
+  position: absolute; bottom: -40px; right: -20px;
+  font-size: 220px; color: rgba(7,49,86,0.05);
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  pointer-events: none; line-height: 1;
 }
 .convite-label {
   font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--blue-light); opacity: 0.7; margin-bottom: 20px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); opacity: 0.6; margin-bottom: 28px;
 }
-.convite-right p { font-size: 16px; color: rgba(245,240,232,0.75); line-height: 1.9; font-weight: 300; }
+.convite-quote {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(18px, 2vw, 23px); color: var(--ink);
+  line-height: 1.55; margin-bottom: 24px; font-weight: 700;
+  border-left: 3px solid var(--accent); padding-left: 20px;
+}
+.convite-body { font-size: 15px; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 40px; }
+.convite-action {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cream); background: var(--accent);
+  padding: 16px 32px; align-self: flex-start;
+  text-decoration: none;
+  transition: background 0.3s, gap 0.3s;
+}
+.convite-action:hover { background: #0a3f6b; gap: 20px; }
+.convite-action-icon { font-size: 16px; }
 
 /* ── FOOTER ── */
 footer { background: var(--ink); border-top: 1px solid rgba(201,227,250,0.08); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
@@ -373,7 +511,8 @@ footer p { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; l
   .split-percent { font-size: 72px; }
   .resp-grid { grid-template-columns: 1fr 1fr; }
   .sobre-diferenciais { margin: 0 -40px; }
-  .convite-wrap { gap: 48px; padding: 60px 40px; margin: 0 -40px; }
+  .porque-cta { margin: 0 -40px; padding: 48px 40px; }
+  .convite-wrap { margin: 0 -40px; }
   .pratica-block { padding: 40px; }
   .visao-pillars { grid-template-columns: 1fr 1fr 1fr; }
 }
@@ -418,9 +557,9 @@ footer p { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; l
   .resp-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
 
   /* Benefícios */
-  .beneficios-grid { grid-template-columns: 1fr; }
-  .aside-note { padding: 28px 24px; gap: 14px; }
-  .aside-note p { font-size: 15px; }
+  .beneficios-grid { grid-template-columns: 1fr; gap: 12px; }
+  .porque-cta { grid-template-columns: 1fr; margin: 0 -24px; padding: 44px 24px; gap: 28px; }
+  .cta-badge { width: 100%; }
 
   /* Visão */
   .visao-title { font-size: clamp(36px, 8vw, 64px); }
@@ -428,8 +567,9 @@ footer p { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; l
   .visao-pillars { grid-template-columns: 1fr; gap: 2px; }
   .visao-pillar { padding: 28px 24px; }
   .convite-wrap { grid-template-columns: 1fr; gap: 0; margin: 0 -24px; padding: 0; }
-  .convite-left { padding: 48px 24px 32px; }
-  .convite-right { padding: 36px 24px; border-left: none; border-top: 3px solid var(--blue-light); }
+  .convite-left { padding: 52px 24px 40px; }
+  .convite-right { padding: 40px 24px 52px; }
+  .convite-right::before { font-size: 140px; }
 
   /* Footer */
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
@@ -561,7 +701,7 @@ img, video, iframe { max-width: 100%; height: auto; }
   <div class="hero-bg-gradient"></div>
   <div class="hero-content">
     <div class="hero-tag">Proposta de Parceria · 2026</div>
-    <h1 class="hero-title">Infinity Hub —<br><em>Hub de Soluções Digitais.</em></h1>
+    <h1 class="hero-title">Infinity Hub <br><em>Hub de Soluções Digitais.</em></h1>
     <p class="hero-desc">Uma nova forma de construir soluções digitais, conectando os especialistas certos para cada projeto com gestão, estratégia e resultado.</p>
     <div class="hero-bottom-row">
       <span class="service-pill">Bots</span>
@@ -585,10 +725,36 @@ img, video, iframe { max-width: 100%; height: auto; }
     </div>
     <div>
       <p class="services-label">O que desenvolvemos</p>
-      <div class="service-row"><span class="service-row-num">01</span> Bots e automações</div>
-      <div class="service-row"><span class="service-row-num">02</span> Criação de sites e landing pages</div>
-      <div class="service-row"><span class="service-row-num">03</span> Marketing e tráfego digital</div>
-      <div class="service-row"><span class="service-row-num">04</span> Identidade visual e branding</div>
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="servico-icon">🤖</div>
+          <div class="servico-info">
+            <div class="servico-title">Bots & Automações</div>
+            <div class="servico-desc">Chatbots, automações de processos e integrações que economizam tempo e escalam operações.</div>
+          </div>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🌐</div>
+          <div class="servico-info">
+            <div class="servico-title">Sites & Landing Pages</div>
+            <div class="servico-desc">Sites institucionais, portfolios e páginas de conversão com design profissional.</div>
+          </div>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">📣</div>
+          <div class="servico-info">
+            <div class="servico-title">Marketing & Tráfego</div>
+            <div class="servico-desc">Estratégias de marketing digital e gestão de tráfego pago para gerar resultados reais.</div>
+          </div>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">✦</div>
+          <div class="servico-info">
+            <div class="servico-title">Identidade & Branding</div>
+            <div class="servico-desc">Criação de marca do zero: logo, paleta, tipografia e linguagem visual completa.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -660,33 +826,37 @@ img, video, iframe { max-width: 100%; height: auto; }
   <div class="ganho-split">
     <div class="split-card blue">
       <div class="split-percent">60%</div>
-      <div class="split-who">Especialistas executores</div>
-      <p class="split-desc">Você foca no que faz de melhor: executar e gerar resultado. Sem teto fixo, sem burocracia.</p>
+      <div class="split-who">Para você — o especialista</div>
+      <p class="split-desc">Você executa, você recebe mais. Sem teto, sem burocracia, sem precisar se preocupar com vendas ou gestão.</p>
+      <ul class="split-list">
+        <li>Ganho proporcional ao que entrega</li>
+        <li>Recebe por projeto concluído</li>
+        <li>Foco total na sua especialidade</li>
+      </ul>
     </div>
     <div class="split-card dark">
       <div class="split-percent">40%</div>
-      <div class="split-who">Infinity Hub</div>
-      <p class="split-desc">Cuidamos de toda a estrutura: aquisição de clientes, operacional, gestão e crescimento da marca.</p>
+      <div class="split-who">Para a Infinity Hub</div>
+      <p class="split-desc">A Infinity cuida de tudo que você não quer fazer: vender, gerir, cobrar e garantir a entrega.</p>
+      <ul class="split-list">
+        <li>Aquisição e negociação com clientes</li>
+        <li>Gestão completa do projeto</li>
+        <li>Crescimento e estrutura da marca</li>
+      </ul>
     </div>
-  </div>
-  <div class="resp-grid">
-    <div class="resp-item"><div class="resp-num">01</div><p>Aquisição de clientes</p></div>
-    <div class="resp-item"><div class="resp-num">02</div><p>Estrutura operacional</p></div>
-    <div class="resp-item"><div class="resp-num">03</div><p>Gestão</p></div>
-    <div class="resp-item"><div class="resp-num">04</div><p>Crescimento da marca</p></div>
   </div>
 </section>
 
 <section class="section porque" id="porque">
   <div class="section-label">04 · Por que participar</div>
-  <h2 class="section-title em">Suas <em>Vantagens.</em></h2>
+  <h2 class="section-title">Suas <em>Vantagens.</em></h2>
   <div class="beneficios-grid">
     <div class="beneficio">
       <div class="bene-top">
         <div class="bene-icon">💰</div>
         <div class="bene-title">Ganho por projeto</div>
       </div>
-      <p class="bene-desc">Sem teto fixo. Quanto mais projetos, mais você ganha — proporcional ao que entrega. Você define seu ritmo.</p>
+      <p class="bene-desc">Sem teto fixo. Quanto mais projetos, mais você ganha — proporcional ao que entrega. Você define seu ritmo e suas metas.</p>
       <span class="bene-tag">Sem limite de ganhos</span>
     </div>
     <div class="beneficio">
@@ -702,7 +872,7 @@ img, video, iframe { max-width: 100%; height: auto; }
         <div class="bene-icon">📈</div>
         <div class="bene-title">Crescer junto</div>
       </div>
-      <p class="bene-desc">À medida que a Infinity Hub escala, mais oportunidades surgem para quem faz parte da rede. Crescimento coletivo.</p>
+      <p class="bene-desc">À medida que a Infinity Hub escala, mais oportunidades surgem para quem faz parte da rede. Crescimento coletivo e contínuo.</p>
       <span class="bene-tag">Longo prazo</span>
     </div>
     <div class="beneficio">
@@ -710,13 +880,21 @@ img, video, iframe { max-width: 100%; height: auto; }
         <div class="bene-icon">🚀</div>
         <div class="bene-title">Projetos reais e escaláveis</div>
       </div>
-      <p class="bene-desc">Nada de freelas avulsos sem futuro. Aqui você participa de projetos com estrutura, gestão e continuidade.</p>
+      <p class="bene-desc">Nada de freelas avulsos sem futuro. Aqui você participa de projetos com estrutura, gestão e continuidade real.</p>
       <span class="bene-tag">Projetos com propósito</span>
     </div>
   </div>
-  <div class="aside-note">
-    <div class="aside-note-icon">💡</div>
-    <p><strong>Não precisa mudar nada agora.</strong> Você pode atuar em paralelo com o que já faz hoje, conforme surgirem oportunidades.</p>
+
+  <div class="porque-cta">
+    <div class="porque-cta-text">
+      <p>Não precisa mudar nada agora.<br><span>Pode começar em paralelo.</span></p>
+      <p class="porque-cta-note">Você pode atuar junto com o que já faz hoje, conforme surgirem oportunidades. Sem pressão, sem compromisso imediato — só resultado.</p>
+    </div>
+    <div class="cta-badge">
+      <div class="cta-badge-icon">💡</div>
+      <div class="cta-badge-title">Entrada flexível</div>
+      <div class="cta-badge-sub">Comece quando<br>fizer sentido para você</div>
+    </div>
   </div>
 </section>
 
@@ -745,12 +923,34 @@ img, video, iframe { max-width: 100%; height: auto; }
 
   <div class="convite-wrap">
     <div class="convite-left">
+      <div class="convite-left-tag">✦ Faça parte</div>
       <h3>Vamos <em>crescer juntos?</em></h3>
-      <p>Estamos construindo mais que uma agência. Queremos pessoas que se importam com o que fazem e querem fazer parte de algo com propósito e resultado.</p>
+      <p>Estamos construindo mais que uma agência. Queremos pessoas que se importam com o que fazem e querem fazer parte de algo com propósito e resultado real.</p>
+      <div class="convite-stats">
+        <div class="convite-stat">
+          <span class="convite-stat-num">60%</span>
+          <span class="convite-stat-label">para o especialista</span>
+        </div>
+        <div class="convite-stat-divider"></div>
+        <div class="convite-stat">
+          <span class="convite-stat-num">100%</span>
+          <span class="convite-stat-label">remoto e flexível</span>
+        </div>
+        <div class="convite-stat-divider"></div>
+        <div class="convite-stat">
+          <span class="convite-stat-num">∞</span>
+          <span class="convite-stat-label">potencial de crescimento</span>
+        </div>
+      </div>
     </div>
     <div class="convite-right">
-      <div class="convite-label">Convite</div>
-      <p>Gostaria de te convidar para fazer parte da Infinity Hub. Acredito que sua experiência pode somar muito na construção desse projeto. Se fizer sentido para você, vamos conversar melhor. Quero te mostrar a visão completa e como podemos crescer juntos.</p>
+      <div class="convite-label">✦ Convite pessoal</div>
+      <p class="convite-quote">"Gostaria de te convidar para fazer parte da Infinity Hub."</p>
+      <p class="convite-body">Acredito que sua experiência pode somar muito na construção desse projeto. Se fizer sentido para você, vamos conversar melhor — quero te mostrar a visão completa e como podemos crescer juntos.</p>
+      <a href="https://wa.me/5531988047931" target="_blank" class="convite-action">
+        <span class="convite-action-icon">→</span>
+        <span>Vamos conversar</span>
+      </a>
     </div>
   </div>
 </section>
